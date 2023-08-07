@@ -1,0 +1,60 @@
+---
+title: 'Static Charges'
+---
+
+<Frame type="glass" caption="Static Charges Guide">
+  <img src="https://i.imgur.com/r91FYxM.png" alt="Static Charges Guide" />
+</Frame>
+<br />
+
+# Static Charges
+
+Static Charges are a type of Payment Request QR code in the Bitcoin Lightning Network that has some incredible characteristics and capabiltiies. Whereas [Charges](/api/charges/create) create `fixed-amount` and `single-use` Payment Requests that expire, [Static Charges](/api/static-charges/create) provide you a lot more flexibility & capabilities, including:
+
+*   **Variable Amounts** -> Static Charges have both `minAmount` and `maxAmount` properties, allowing for variable amounts set by the payer.
+*   **Multi-use** -> By default Static Charges have no expiration time, making them usable for any N payers/payments.
+*   **Success Message** -> When a payer completes the payment flow for this Static Charge, a Success Message is displayed to them.
+*   **Slots** -> Static Charges can also have the notion of allowedSlots. This means only N payments will be accepted at this Static Charge before disabling them.
+
+**A Static Charge is a static QR code that can be used an unlimited number of times, does not expire, accepts various amounts, accepts attached messages, and allows for full configurability --> ALL WHILE MAINTAINING THE SAME IMMUTABLE QR CODE.**
+
+A Static Charge QR code looks like the one show below:
+
+<Frame type="glass" caption="ZEBEDEE Static Charge">
+  <img src="https://docs.zebedee.io/img/static-charge.jpeg" alt="ZEBEDEE Static Charge" />
+</Frame>
+<br />
+
+## Use Cases for Static Charges[​](#use-cases-for-static-charges "Direct link to heading")
+
+There are many potential scenarios where Static Charges are very handy. Let's take a look at couple of them.
+
+### User Deposits[​](#user-deposits "Direct link to heading")
+
+Static Charges are excellent for handling user deposits. You can generate a Static Charge for each unique users in your platform and provide that QR code to them. Whenever payments come in through that specific Static QR code, you will know it belongs to such user. Your users can now receive money from any Bitcoin Lightning wallet.
+
+Static Charges can be set up such that they can be used an unlimited number of times and they do not expire. It makes receiving payments extremely easy.
+
+\*Just like every user has a $venmotag for Venmo, every ZBD user has an Static Charge. The only difference between the two is that there is interoperability between different providers since they understand the same money protocol.
+
+### In-person Fundraising[​](#in-person-fundraising "Direct link to heading")
+
+One crafty thing you can do for donations is throw a Static Charge QR code on a large screen and anyone who has a wallet can now pay you directly just by scanning and confirming a payment.
+
+The ZEBEDEE API makes this increibly easy. Since there are no limits to the number of Static Charges created, you could create one for each campaign and properly measure donation goal reach. Cool, right?
+
+This is great for nonprofits!
+
+### Remote Fundraising / Donations[​](#remote-fundraising--donations "Direct link to heading")
+
+Streamers can take their QR image and easily add it to any streaming software (e.g. OBS) to enable direct payments to them from their audience. Never has this been possible before.
+
+Please check out [ZBD Streamer](https://streamer.zebedee.io) to view this live in a ZEBEDEE product.
+
+### User Tips / Zaps / User-to-User Payments[​](#user-tips--zaps--user-to-user-payments "Direct link to heading")
+
+Static Charges are great for tips or commonly referred to as “zaps”. It can also be used for user-to-user payments, since they are a static QR code. Though the best user experience for these use cases is a [Lightning Address](/api/lightning-address/send-payment).
+
+### Deposits[​](#deposits "Direct link to heading")
+
+Users can attach Static QR codes to their blog posts, social media posts, images, live streams, videos, & art.

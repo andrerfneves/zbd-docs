@@ -1,0 +1,24 @@
+---
+title: 'Authentication'
+---
+
+The [ZEBEDEE API](/api/intro) uses API Keys to authenticate requests. Each of your Projects in the [ZEBEDEE Developer Dashboard](https://dashboard.zebedee.io) will have an unique API Key that allows for the management and control over that Project's Wallet.
+
+[Check this guide](/docs/dashboard/projects/api) to find your unique `API_KEY`, or to regenerate the API Key for a specific Project.
+
+# Authenticating Requests
+
+Authentication to the API is **required** for all endpoints provided, and is performed by passing the Project's API Key as the `apikey` HTTP request header property.
+
+| Request Header | Value |
+| --- | :-: |
+| `apikey` | `API_KEY` |
+
+  
+<Note>Any requests that do not feature a valid `apikey` header property in the request will be rejected.</Note>  
+
+# SSL / HTTPS Access
+
+The ZEBEDEE API only provides a secure interface over HTTPS with SSL certificate support. Any requests that attempt to reach the ZEBEDEE API in an insecure fashion (plain-text over HTTP requests) will be rejected.
+
+<Note>Secure Sockets Layer (SSL) is the standard security technology for establishing an encrypted link between a server and a client. SSL allows sensitive information such as credit card numbers, social security numbers, and login credentials to be transmitted securely.</Note>

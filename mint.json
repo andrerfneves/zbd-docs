@@ -1,9 +1,9 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "ZEBEDEE",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/light.png",
+    "light": "/logo/dark.png"
   },
   "favicon": "/favicon.png",
   "colors": {
@@ -20,13 +20,21 @@
   },
   "topbarLinks": [
     {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "name": "Status",
+      "url": "https://status.zebedee.io/"
+    },
+    {
+      "name": "Blog",
+      "url": "https://blog.zebedee.io/"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/zebedeeio"
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Discord",
+    "url": "https://discord.gg/zbd"
   },
   "tabs": [
     {
@@ -34,49 +42,136 @@
       "url": "api-reference"
     }
   ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
-  ],
+  "anchors": [],
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": ["introduction", "quickstart", "development"]
-    },
-    {
-      "group": "Essentials",
-      "pages": ["essentials/markdown", "essentials/code", "essentials/images", "essentials/settings", "essentials/navigation"]
-    },
-    {
-      "group": "API Documentation",
-      "pages": ["api-reference/authentication"]
-    },
-    {
-      "group": "Endpoint Examples",
+      "group": "Overview",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "docs/quick-start",
+        "docs/lightning-network",
+        "docs/glossary"
+      ]
+    },
+    {
+      "group": "ZEBEDEE API",
+      "pages": [
+        "docs/zebedee-api/overview",
+        "docs/zebedee-api/authentication",
+        "docs/zebedee-api/error-handling",
+        "docs/zebedee-api/sdks",
+        "docs/zebedee-api/resources",
+        {
+          "group": "Payouts",
+          "pages": [
+            "docs/payouts/lightning-address",
+            "docs/payouts/lightning-charges",
+            "docs/payouts/withdrawal-requests",
+            "docs/payouts/zbd-gamertag"
+          ]
+        },
+        {
+          "group": "Payins",
+          "pages": [
+            "docs/payins/charges",
+            "docs/payins/zbd-gamertag"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Guides",
+      "pages": [
+        {
+          "group": "ZBD Login",
+          "pages": [
+            "docs/zbd-login/intro",
+            "docs/zbd-login/building",
+            "docs/zbd-login/design",
+            "docs/zbd-login/walkthrough",
+            "docs/zbd-login/advanced"
+          ]
+        },
+        {
+          "group": "Miscellaneous",
+          "pages": [
+            "docs/guides/nostr-relay",
+            "docs/guides/lightning-address",
+            "docs/guides/static-charges"
+          ]
+        },
+        {
+          "group": "Community",
+          "pages": [
+            "docs/guides/custom-lightning-address-app",
+            "docs/guides/send-payment-to-ln-address-app"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Walkthroughs",
+      "pages": [
+        {
+          "group": "Developer Dashboard",
+          "pages": [
+            "docs/dashboard/overview",
+            {
+              "group": "Account",
+              "pages": [
+                "docs/dashboard/signup",
+                "docs/dashboard/complete-profile"
+              ]
+            },
+            {
+              "group": "Projects",
+              "pages": [
+                "docs/dashboard/projects/create",
+                "docs/dashboard/projects/sandbox",
+                "docs/dashboard/projects/edit",
+                "docs/dashboard/projects/wallet",
+                "docs/dashboard/projects/api",
+                "docs/dashboard/projects/archive"
+              ]
+            },
+            {
+              "group": "Vouchers",
+              "pages": [
+                "docs/dashboard/vouchers"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "ZBD Shield",
+          "pages": [
+            "docs/zbd-shield/overview",
+            "docs/zbd-shield/access",
+            "docs/zbd-shield/apikey",
+            "docs/zbd-shield/connect",
+            "docs/zbd-shield/faq"
+          ]
+        },
+        {
+          "group": "ZBD App",
+          "pages": [
+            "docs/zbd-app/download",
+            "docs/zbd-app/uri-schemes",
+            "docs/zbd-app/wallet-limits"
+          ]
+        },
+        {
+          "group": "ZBD Streamer",
+          "pages": [
+            "docs/zbd-streamer/overview",
+            "docs/zbd-streamer/customization"
+          ]
+        }
       ]
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "twitter": "https://twitter.com/zebedeeio",
+    "github": "https://github.com/zebedeeio",
+    "discord": "https://discord.gg/zbd"
   }
 }
