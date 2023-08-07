@@ -3,7 +3,7 @@ title: 'Build a Pay Lightning Address App'
 ---
 
 <Frame type="glass" caption="Build a Pay Lightning Address App Guide">
-  <img src="https://i.imgur.com/XbzK3tk.png" alt="Build a Pay Lightning Address App Guide" />
+  <img src="/img/XbzK3tk.png" alt="Build a Pay Lightning Address App Guide" />
 </Frame>
 <br />
 
@@ -28,14 +28,14 @@ If you’ve never used Django before, check out the documentation [here](https:/
 Open VS Code, our code editor, open a folder where you want to store the project and then select `Yes, I trust the authors`.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/1.png" alt="Screenshot 1" />
+  <img src="/img/guides/send-payment/1.png" alt="Screenshot 1" />
 </Frame>
 <br />
 
 Let’s go ahead and create our own virtual environment. Close the welcome screen now and start a new terminal.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/2.png" alt="Screenshot 2" />
+  <img src="/img/guides/send-payment/2.png" alt="Screenshot 2" />
 </Frame>
 <br />
 
@@ -46,7 +46,7 @@ python3 -m venv env
 ```
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/3.png" alt="Screenshot 3" />
+  <img src="/img/guides/send-payment/3.png" alt="Screenshot 3" />
 </Frame>
 <br />
 
@@ -59,7 +59,7 @@ source ./env/bin/activate
 You’ll now see a prefix of (env) in front of your username in the terminal or command prompt.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/4.png" alt="Screenshot 4" />
+  <img src="/img/guides/send-payment/4.png" alt="Screenshot 4" />
 </Frame>
 <br />
 
@@ -70,7 +70,7 @@ python3 -m pip install Django
 ```
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/5.png" alt="Screenshot 5" />
+  <img src="/img/guides/send-payment/5.png" alt="Screenshot 5" />
 </Frame>
 <br />
 
@@ -83,14 +83,14 @@ django-admin startproject lightning_app
 ```
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/6.png" alt="Screenshot 6" />
+  <img src="/img/guides/send-payment/6.png" alt="Screenshot 6" />
 </Frame>
 <br />
 
 Navigate to the core project directory by entering `cd lightning_app` into your terminal.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/7.png" alt="Screenshot 7" />
+  <img src="/img/guides/send-payment/7.png" alt="Screenshot 7" />
 </Frame>
 <br />
 
@@ -103,7 +103,7 @@ python3 manage.py runserver
 And then in your web browser open the link [http://127.0.0.1:8000](http://127.0.0.1:8000) and you should see the following site.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/8.png" alt="Screenshot 8" />
+  <img src="/img/guides/send-payment/8.png" alt="Screenshot 8" />
 </Frame>
 <br />
 
@@ -116,7 +116,7 @@ python manage.py startapp lightning_address_payment
 ```
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/9.png" alt="Screenshot 9" />
+  <img src="/img/guides/send-payment/9.png" alt="Screenshot 9" />
 </Frame>
 <br />
 
@@ -142,7 +142,7 @@ INSTALLED_APPS = [
 ```
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/10.png" alt="Screenshot 10" />
+  <img src="/img/guides/send-payment/10.png" alt="Screenshot 10" />
 </Frame>
 <br />
 
@@ -153,7 +153,7 @@ INSTALLED_APPS = [
 Open up the `lightning_app/lightning_address_payment/views.py` file.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/11.png" alt="Screenshot 11" />
+  <img src="/img/guides/send-payment/11.png" alt="Screenshot 11" />
 </Frame>
 <br />
 
@@ -183,7 +183,7 @@ Routes are what is used to handle page requests. So for example, when a user tri
 If it’s a bit fuzzy, that’s okay. It’ll make more sense as we work through the the tutorial. Start by creating a new file in the `lightning_address_payment` folder called `[urls.py](http://urls.py)` .
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/12.png" alt="Screenshot 12" />
+  <img src="/img/guides/send-payment/12.png" alt="Screenshot 12" />
 </Frame>
 <br />
 
@@ -227,7 +227,7 @@ python3 manage.py runserver
 ```
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/13.png" alt="Screenshot 13" />
+  <img src="/img/guides/send-payment/13.png" alt="Screenshot 13" />
 </Frame>
 <br />
 
@@ -238,12 +238,12 @@ Let’s head to the following URLs to verify our changes worked.
 [http://127.0.0.1:8000/success/](http://127.0.0.1:8000/success/)
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/14.png" alt="Screenshot 14" />
+  <img src="/img/guides/send-payment/14.png" alt="Screenshot 14" />
 </Frame>
 <br />
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/15.png" alt="Screenshot 15" />
+  <img src="/img/guides/send-payment/15.png" alt="Screenshot 15" />
 </Frame>
 <br />
 
@@ -258,7 +258,7 @@ A template is what our views render and show to the user. They can be populated 
 To get started, create a new folder called `templates` in the `lightning_address_payment` folder.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/16.png" alt="Screenshot 16" />
+  <img src="/img/guides/send-payment/16.png" alt="Screenshot 16" />
 </Frame>
 <br />
 
@@ -305,7 +305,7 @@ This template, which we’ll call **`base.html`**, defines an HTML skeleton doc
 Check out the screenshot to see the folder structure with the file.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/17.png" alt="Screenshot 17" />
+  <img src="/img/guides/send-payment/17.png" alt="Screenshot 17" />
 </Frame>
 <br />
 
@@ -427,12 +427,12 @@ def success(request):
 Let’s run our server and check out the templates! Looking good so far.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/18.png" alt="Screenshot 18" />
+  <img src="/img/guides/send-payment/18.png" alt="Screenshot 18" />
 </Frame>
 <br />
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/19.png" alt="Screenshot 19" />
+  <img src="/img/guides/send-payment/19.png" alt="Screenshot 19" />
 </Frame>
 <br />
 
@@ -467,19 +467,19 @@ Now the GET request all appears fine. Let’s get the data from the user submitt
 Reviewing the HTML file, we named the Lightning Address field `lnaddress` and the amount field `amount` .
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/20.png" alt="Screenshot 20" />
+  <img src="/img/guides/send-payment/20.png" alt="Screenshot 20" />
 </Frame>
 <br />
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/21.png" alt="Screenshot 21" />
+  <img src="/img/guides/send-payment/21.png" alt="Screenshot 21" />
 </Frame>
 <br />
 
 Django makes it really easy to parse form data, so let’s go ahead and do that.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/22.png" alt="Screenshot 22" />
+  <img src="/img/guides/send-payment/22.png" alt="Screenshot 22" />
 </Frame>
 <br />
 
@@ -512,7 +512,7 @@ pip3 install requests
 ```
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/23.png" alt="Screenshot 23" />
+  <img src="/img/guides/send-payment/23.png" alt="Screenshot 23" />
 </Frame>
 <br />
 
@@ -543,7 +543,7 @@ Grab your `apikey` from your project in the Developer Dashboard project. **Make 
 *   If you haven’t already, Top Up with MoonPay or create a charge to deposit funds into your Developer Wallet and then Transfer the funds to to your project!
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/24.png" alt="Screenshot 24" />
+  <img src="/img/guides/send-payment/24.png" alt="Screenshot 24" />
 </Frame>
 <br />
 
@@ -629,21 +629,21 @@ def success(request):
 Now everything is hooked up. Let’s go ahead and fill out the form and give it a go! This assumes you already have a valid Lightning Address.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/25.png" alt="Screenshot 25" />
+  <img src="/img/guides/send-payment/25.png" alt="Screenshot 25" />
 </Frame>
 <br />
 
 Click submit!
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/26.jpeg" alt="Screenshot 26" />
+  <img src="/img/guides/send-payment/26.jpeg" alt="Screenshot 26" />
 </Frame>
 <br />
 
 Yay! Everything went through just as expected.
 
 <Frame type="glass" caption="">
-  <img src="https://docs.zebedee.io/img/guides/send-payment/27.png" alt="Screenshot 27" />
+  <img src="/img/guides/send-payment/27.png" alt="Screenshot 27" />
 </Frame>
 <br />
 

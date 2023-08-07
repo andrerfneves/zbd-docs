@@ -3,7 +3,7 @@ title: 'Set Up a Paid Nostr Relay with ZEBEDEE API'
 ---
 
 <Frame type="glass" caption="Nostr Relay Guide">
-  <img src="https://i.imgur.com/JLoaHFF.png" alt="Nostr Relay Guide" />
+  <img src="/img/JLoaHFF.png" alt="Nostr Relay Guide" />
 </Frame>
 <br />
 
@@ -106,7 +106,7 @@ server {
 To map your VM’s IP address to your subdomain.mydomain.com you need to have an A record like below in your domain DNS settings.
 
 <Frame type="glass" caption="DNS Settings for Nostr Relay">
-  <img src="https://docs.zebedee.io/img/v2/guides/nostr-relay/dns.webp" alt="DNS Settings for Nostr Relay" />
+  <img src="/img/v2/guides/nostr-relay/dns.webp" alt="DNS Settings for Nostr Relay" />
 </Frame>
 <br />
 
@@ -123,7 +123,7 @@ Now that our VM is setup, let's get our Nostr relay hooked up to ZEBEDEE. First 
 Once you're all set with your ZEBEDEE account, let's create a project and title it something like _Nostr Relay_.
 
 <Frame type="glass" caption="Create Project on ZEBEDEE Developer Dashboard">
-  <img src="https://docs.zebedee.io/img/v2/guides/nostr-relay/create-project.webp" alt="Create Project on ZEBEDEE Developer Dashboard" />
+  <img src="/img/v2/guides/nostr-relay/create-project.webp" alt="Create Project on ZEBEDEE Developer Dashboard" />
 </Frame>
 <br />
 
@@ -138,7 +138,7 @@ You will need a **Production API Key** for this integration. Sandbox API Keys ar
 To get a Production API Key, you need to click _LIVE_ on your Project dashboard.
 
 <Frame type="glass" caption="Project Details - API">
-  <img src="https://docs.zebedee.io/img/v2/guides/nostr-relay/apikey.webp" alt="Project Details - API" />
+  <img src="/img/v2/guides/nostr-relay/apikey.webp" alt="Project Details - API" />
 </Frame>
 <br />
 
@@ -200,7 +200,7 @@ tmux a
 Go ahead and edit the contents of your Nostream settings file. The file can be found at _.nostr/settings.yaml_
 
 <Frame type="glass" caption="settings.yaml Configuration">
-  <img src="https://docs.zebedee.io/img/v2/guides/nostr-relay/settingsyaml.webp" alt="settings.yaml Configuration" />
+  <img src="/img/v2/guides/nostr-relay/settingsyaml.webp" alt="settings.yaml Configuration" />
 </Frame>
 <br />
 
@@ -209,21 +209,21 @@ At first, make sure to change the **info** properties so they match your taste. 
 Then scroll down to **payments** properties and enable the ZBD processor and select the admission fee cost you’d like to charge. You can also add any pubkeys to a whitelist if you wish to bypass the charge.
 
 <Frame type="glass" caption="settings.yaml Configuration">
-  <img src="https://docs.zebedee.io/img/v2/guides/nostr-relay/settingsyaml2.webp" alt="settings.yaml Configuration" />
+  <img src="/img/v2/guides/nostr-relay/settingsyaml2.webp" alt="settings.yaml Configuration" />
 </Frame>
 <br />
 
 Under **paymentsProcessors** make sure to change _nostream.your-domain.com_ to your actual Nostr relay domain.
 
 <Frame type="glass" caption="settings.yaml Configuration">
-  <img src="https://docs.zebedee.io/img/v2/guides/nostr-relay/settingsyaml3.webp" alt="settings.yaml Configuration" />
+  <img src="/img/v2/guides/nostr-relay/settingsyaml3.webp" alt="settings.yaml Configuration" />
 </Frame>
 <br />
 
 Change _limits.event.pubkey.minBalance_ to the amount you are charging for admission to your relay. (this should not be 0)
 
 <Frame type="glass" caption="settings.yaml Configuration">
-  <img src="https://docs.zebedee.io/img/v2/guides/nostr-relay/settingsyaml4.webp" alt="settings.yaml Configuration" />
+  <img src="/img/v2/guides/nostr-relay/settingsyaml4.webp" alt="settings.yaml Configuration" />
 </Frame>
 <br />
 
@@ -234,7 +234,7 @@ Change _limits.event.pubkey.minBalance_ to the amount you are charging for admis
 Once you restart the relay, you should see a console that looks a little bit like this.
 
 <Frame type="glass" caption="Nostream">
-  <img src="https://docs.zebedee.io/img/v2/guides/nostr-relay/nostream.webp" alt="Nostream" />
+  <img src="/img/v2/guides/nostr-relay/nostream.webp" alt="Nostream" />
 </Frame>
 <br />
 
@@ -245,14 +245,14 @@ The special part is `Payments Provider: zebedee` and `Pay-to-relay = enabled`. Y
 In order to check that the relay is setup correctly, head on over to [WebSocketKing](https://websocketking.com/) and test the connection to your _subdomain.domain.com_.
 
 <Frame type="glass" caption="WebSocket King">
-  <img src="https://docs.zebedee.io/img/v2/guides/nostr-relay/websocket.webp" alt="WebSocket King" />
+  <img src="/img/v2/guides/nostr-relay/websocket.webp" alt="WebSocket King" />
 </Frame>
 <br />
 
 If you’re able to connect to your relay, then it is time to test that the paid access functionality is working. To go through that flow head on over to _[https://subdomain.domain.com](https://subdomain.domain.com)_ and follow the admission payment flows.
 
 <Frame type="glass" caption="Nostream Relay Payment Screen">
-  <img src="https://docs.zebedee.io/img/v2/guides/nostr-relay/fe.webp" alt="Nostream Relay Payment Screen" />
+  <img src="/img/v2/guides/nostr-relay/fe.webp" alt="Nostream Relay Payment Screen" />
 </Frame>
 <br />
 

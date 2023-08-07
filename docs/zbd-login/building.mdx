@@ -11,7 +11,7 @@ The authorization sequence begins when your app redirects a browser to a ZEBEDEE
 The app must store the `refresh token` for future use and use the `access token` to fetch user data through the ZBD API. When the `access token` expires, the app will use the `refresh token` to request a new one.
 
 <Frame type="glass" caption="ZBD Login - OAuth2 flow">
-  <img src="https://docs.zebedee.io/img/oauth2-flow.png" alt="ZBD Login - OAuth2 flow" />
+  <img src="/img/oauth2-flow.png" alt="ZBD Login - OAuth2 flow" />
 </Frame>
 <br />
 
@@ -115,14 +115,14 @@ In order to be able to implement `ZBD Login` functionality, you must first get y
 After creating a game inside of the ZEBEDEE Developer Dashboard, head on over to the `OAuth2` tab inside of that game's single details view.
 
 <Frame type="glass" caption="OAuth2 Menu - ZEBEDEE Developer Dashboard">
-  <img src="https://docs.zebedee.io/img/oauth2-keys.png" alt="OAuth2 Menu - ZEBEDEE Developer Dashboard" />
+  <img src="/img/oauth2-keys.png" alt="OAuth2 Menu - ZEBEDEE Developer Dashboard" />
 </Frame>
 <br />
 
 You can now get your `Client ID` (first field) and `Client Secret` (second field).
 
 <Frame type="glass" caption="OAuth2 Settings - ZEBEDEE Developer Dashboard">
-  <img src="https://docs.zebedee.io/img/oauth2-keys2.png" alt="OAuth2 Settings - ZEBEDEE Developer Dashboard" />
+  <img src="/img/oauth2-keys2.png" alt="OAuth2 Settings - ZEBEDEE Developer Dashboard" />
 </Frame>
 <br />
 
@@ -139,14 +139,14 @@ Now its time to set up your OAuth2 redirect URLs. Head on over to the OAuth2 set
 > It is a requirement that the same redirect URL be used in the first step of the OAuth2 flow (`authorization endpoint`) - if you set a redirect URL different from the one being used when building the authorization URL, or if you don't set a redirect URL at all, the Authorization redirect will not work.
 
 <Frame type="glass" caption="View OAuth2 Settings - ZEBEDEE Developer Dashboard">
-  <img src="https://docs.zebedee.io/img/oauth2-vs.png" alt="View OAuth2 Settings - ZEBEDEE Developer Dashboard" />
+  <img src="/img/oauth2-vs.png" alt="View OAuth2 Settings - ZEBEDEE Developer Dashboard" />
 </Frame>
 <br />
 
 From the opened OAuth2 Settings modal, you can add up to 3 redirect URLs (whether native mobile URIs or HTTPS-based URLs). To get started use the `+` button.
 
 <Frame type="glass" caption="Add Redirect URLs - ZEBEDEE Developer Dashboard">
-  <img src="https://docs.zebedee.io/img/oauth2-ru.png" alt="Add Redirect URLs - ZEBEDEE Developer Dashboard" />
+  <img src="/img/oauth2-ru.png" alt="Add Redirect URLs - ZEBEDEE Developer Dashboard" />
 </Frame>
 <br />
 
