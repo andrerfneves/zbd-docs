@@ -1,0 +1,63 @@
+---
+title: "Validate Lightning Address"
+---
+
+## Description
+
+Not all internet identifiers are Lightning Addresses / compatible with the Lightning Address protocol. In order to validate whether a user's entered Lightning Address is indeed a real Lightning Address, make use of this endpoint.
+
+## Usage
+
+The idea behind this API endpoint is to verify whether an internet-indentifier (e.g. `user@domain.com`) is in fact a Lightning Address and NOT an email address. Once verified, use the [Send Lightning Address Payment](/api-reference/lightning-address/send) to perform the transaction.
+
+## Configuration
+
+### Path Parameters
+
+<ParamField required body="LIGHTNING_ADDRESS" type="string">
+  Lightning Address to be verified
+</ParamField>
+
+### Header Parameters
+
+<ParamField required body="apikey" type="string">
+  ZEBEDEE Project API Key
+</ParamField>
+
+<RequestExample>
+
+```bash Request
+curl -L -X GET 'https://api.zebedee.io/v0/ln-address/validate/:LIGHTNING_ADDRESS'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "success": true,
+  "data": {
+    "valid": true,
+    "metadata": {
+      "minSendable": 10000,
+      "maxSendable": 150000000,
+      "commentAllowed": 150,
+      "tag": "payRequest",
+      "metadata": "[[\"text/plain\",\"andre - Welcome to ZEBEDEE! ;)\"],[\"text/identifier\",\"andre@zbd.gg\"],[\"image/png;base64\",\"/9j/2wBDAAYEBQ......IUeDcpP9akPkjm3XPid8/OmYZB//9k=\"]]",
+      "callback": "https://api.zebedee.io/v0/process-static-charges/d0f2c3da-e836-480a-bf8c-f5d5b167d6f8",
+      "payerData": {
+        "name": {
+          "mandatory": false
+        },
+        "identifier": {
+          "mandatory": false
+        }
+      },
+      "disposable": false
+    }
+  }
+}
+```
+
+</ResponseExample>
