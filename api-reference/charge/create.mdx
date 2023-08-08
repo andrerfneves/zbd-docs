@@ -24,7 +24,6 @@ On a successful 200 HTTP response from the ZEBEDEE API, you should render the co
   ZEBEDEE Project API Key
 </ParamField>
 
-
 ### Body
 
 <ParamField required body="amount" type="string">
@@ -50,9 +49,9 @@ On a successful 200 HTTP response from the ZEBEDEE API, you should render the co
 <RequestExample>
 
 ```bash Request
-curl --location --request POST 'https://api.zebedee.io/v0/charges' \
---header 'Content-Type: application/json' \
---header 'apikey: <token>' \
+curl -L -X POST 'https://api.zebedee.io/v0/charges' \
+-H 'Content-Type: application/json' \
+-H 'apikey: <api-key>' \
 --data-raw '{
   "amount": "15000",
   "description": "Test Charge",
