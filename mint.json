@@ -46,11 +46,7 @@
   "navigation": [
     {
       "group": "Overview",
-      "pages": [
-        "docs/quick-start",
-        "docs/lightning-network",
-        "docs/glossary"
-      ]
+      "pages": ["docs/quick-start", "docs/lightning-network", "docs/glossary"]
     },
     {
       "group": "ZEBEDEE API",
@@ -71,10 +67,7 @@
         },
         {
           "group": "Payins",
-          "pages": [
-            "docs/payins/charges",
-            "docs/payins/zbd-gamertag"
-          ]
+          "pages": ["docs/payins/charges", "docs/payins/zbd-gamertag"]
         }
       ]
     },
@@ -135,9 +128,7 @@
             },
             {
               "group": "Vouchers",
-              "pages": [
-                "docs/dashboard/vouchers"
-              ]
+              "pages": ["docs/dashboard/vouchers"]
             }
           ]
         },
@@ -179,6 +170,77 @@
         "api-reference/charge/get",
         "api-reference/charge/decode"
       ]
+    },
+    {
+      "group": "Static Charges",
+      "pages": [
+        "api-reference/static-charges/create",
+        "api-reference/static-charges/get",
+        "api-reference/static-charges/update"
+      ]
+    },
+    {
+      "group": "Payments",
+      "pages": ["api-reference/payments/send", "api-reference/payments/get"]
+    },
+    {
+      "group": "Lightning Address",
+      "pages": [
+        "api-reference/lightning-address/send",
+        "api-reference/lightning-address/validate",
+        "api-reference/lightning-address/create"
+      ]
+    },
+    {
+      "group": "Keysend",
+      "pages": ["api-reference/keysend/send"]
+    },
+    {
+      "group": "ZBD Gamertags",
+      "pages": [
+        "api-reference/zbd/send",
+        "api-reference/zbd/get",
+        "api-reference/zbd/create",
+        "api-reference/zbd/get-user-id",
+        "api-reference/zbd/get-gamertag"
+      ]
+    },
+    {
+      "group": "Wallet",
+      "pages": ["api-reference/wallet/get"]
+    },
+    {
+      "group": "Utils",
+      "pages": [
+        "api-reference/utils/btc-usd",
+        "api-reference/utils/is-supported-region",
+        "api-reference/utils/api"
+      ]
+    },
+    {
+      "group": "Internal Transfer",
+      "pages": ["api-reference/internal-transfer/initiate"]
+    },
+    {
+      "group": "Withdrawal Requests",
+      "pages": [
+        "api-reference/withdrawal-requests/create",
+        "api-reference/withdrawal-requests/get"
+      ]
+    },
+    {
+      "group": "ZBD Login (OAuth2)",
+      "pages": [
+        "api-reference/login/authorization",
+        "api-reference/login/fetch-access-token",
+        "api-reference/login/refresh-token",
+        "api-reference/login/get-user",
+        "api-reference/login/get-wallet"
+      ]
+    },
+    {
+      "group": "Sandbox API",
+      "pages": ["api-reference/sandbox/send-gamertag"]
     }
   ],
   "footerSocials": {
