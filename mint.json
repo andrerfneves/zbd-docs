@@ -167,6 +167,18 @@
           ]
         }
       ]
+    },
+    {
+      "group": "API Documentation",
+      "pages": ["api-reference/introduction"]
+    },
+    {
+      "group": "Charges",
+      "pages": [
+        "api-reference/charge/create",
+        "api-reference/charge/get",
+        "api-reference/charge/decode"
+      ]
     }
   ],
   "footerSocials": {
