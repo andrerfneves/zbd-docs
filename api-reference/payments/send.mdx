@@ -1,0 +1,87 @@
+---
+title: "Send Payment"
+---
+
+## Description
+
+Pays a [Charge](/docs/glossary#charge) / Payment Request in the Bitcoin Lightning Network. This is one of the main APIs which allow you to pay any Lightning Network request.
+
+<Tip>The words `Charge`, `Payment Request`, and `Invoice` can be seen as equivalent in the context of requesting funds in Lightning Network.</Tip>
+
+## Usage
+
+All payments in the Lightning Network are asynchronous. This means that, though possible, most payments will not settle immediately on the API invocation. They do tend to settle immediately thereafter, which means you need to provide the `callbackUrl` to receive updates.
+
+If the Charge / Payment Request is an `amountless invoice` (technical term for a Charge that does not specify an amount and lets the payer define an amount), you can pass the `amount` property with a defined value.
+
+## Configuration
+
+### Header Parameters
+
+<ParamField body="Content-Type" type="application/json" />
+
+<ParamField required body="apikey" type="string">
+  ZEBEDEE Project API Key
+</ParamField>
+
+### Body
+
+<ParamField required body="invoice" type="string">
+  Lightning Network Payment Request / Charge
+</ParamField>
+
+<ParamField body="description" type="string">
+  Note or comment for this Payment
+</ParamField>
+
+<ParamField body="amount" type="string">
+  Amount to be paid to this Charge/Invoice -> in millisatoshis (only valid if Amountless Invoice)
+</ParamField>
+
+<ParamField body="internalId" type="string">
+  Open metadata string property
+</ParamField>
+
+<ParamField body="callbackUrl" type="string">
+  The endpoint ZEBEDEE will POST Payment updates to
+</ParamField>
+
+<RequestExample>
+
+```bash Request
+curl -L -X POST 'https://api.zebedee.io/v0/payments' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+  "description": "Custom Payment Description",
+  "internalId": "11af004b8",
+  "invoice": "lnbc100n1p372kyapp5d05jv33he63yalk5zv4k42lr28m53svt2nq8yhuvwxrmnzzynneqdpzf4ujqsmgv9exwefqg3jhxcmjd9c8g6t0dccqzpgxqzfvsp5zemcntxvez75cdndfhy6hzs4g9vfm6qfcztmyzz4dr8ec6udmgks9qyyssqegxaw9ypwujwfnw92z7s2fpcyzqfjgkf33efehmg9dg2rfhct9trrse07z2meuh020uunx6jmfpzac8vgfsqpk60nk5r7ufgv8kwr9spmv2sp4",
+  "callbackUrl": "https://my-website.com/callback/zbd",
+  "amount": "10000"
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "success": true,
+    "message": "Payment done.",
+    "data": {
+        "id": "caafd318-527c-466b-81f2-441d3a092aae",
+        "fee": "2000",
+        "unit": "msats",
+        "amount": "101000",
+        "invoice": "lnbc1010n1p3mt8akpp5uyxhllflux2fvl36wjxh80wtqzdh2vjmu8cdyzuap578az80v74qdqcd3hzucmpwd5zqurp09kk2mn5cqzpgxqzjhsp550s770zy4puj76wqnua0hmym883gr07dhuast5ygcm44grl6z7ns9qyyssqgf7sumdmxwzgkq2m0h9lcv530sqs0m4t4shlu98djrrckrtulcmr8rear70dyftdm67jvgncxgz4jmd6ksx87jvnj88e39un48ssk4gp8vs4u5",
+        "preimage": "8a14f6da89d4a8ffd09677f585b7c377de72744b7c3713d3c115fa71ca4fc290",
+        "internalId": "11af01d092444a317cb33faa6b8304b8",
+        "status": "completed"
+        "processedAt": "2023-01-04T15:48:29.805Z",
+        "confirmedAt": "2023-01-04T15:48:29.805Z",
+        "description": "Custom Payment Description",
+    }
+}
+```
+
+</ResponseExample>
