@@ -1,0 +1,52 @@
+---
+title: 'Vouchers'
+---
+
+A ZBD Voucher is a single-time use coupon that can be redeemed by another ZBD user to transfer funds from your Developer Wallet into their wallet.
+
+## Voucher Use Cases[​](#voucher-use-cases "Direct link to heading")
+
+You can create these anytime you want to send another ZBD user sats from your Developer Wallet
+
+Examples:
+
+*   You want to gift a user but don’t know their gamertag or Lightning Address
+*   You want to send a voucher to a user’s email to re-engage them
+*   You want to run a promotion where you generate 100 vouchers and give them away to people
+
+## Create Voucher[​](#create-voucher "Direct link to heading")
+
+To create vouchers, go to the `Vouchers` page in the Developer Dashboard and click `Create Voucher`. When you create a voucher, it debits the funds from your Developer Wallet.
+
+## Redeem Voucher[​](#redeem-voucher "Direct link to heading")
+
+Vouchers are redeemed by entering the unique 8-digit code within the Developer Dashboard or Mobile App. The funds from the Voucher will be credited to your wallet balance.
+
+## Share Voucher[​](#share-voucher "Direct link to heading")
+
+The unique 8-digit code from a Voucher can be shared with another ZBD user, who can redeem it to transfer the funds from your wallet to their own.
+
+ZBD Mobile App users are able to redeem vouchers by x, y, z
+
+## View Created Vouchers[​](#view-created-vouchers "Direct link to heading")
+
+Navigate to the `Vouchers` page within the [Developer Dashboard](https://dashboard.zebedee.io/vouchers) to view a list of your vouchers,
+
+## Revoke a voucher[​](#revoke-a-voucher "Direct link to heading")
+
+If you issue a voucher, but want to revoke (cancel) it, you can:
+
+1.  Revoke it via the `revoke-voucher` API endpoint
+2.  Revoke it within the Developer Dashboard:
+    1.  Navigate to the `Vouchers` page within the Developer Dashboard
+    2.  Find the applicable voucher within the data table
+    3.  Click on the voucher to open the voucher modal
+    4.  Click `Revoke` on the modal
+    5.  The voucher funds will be credited to your Developer Wallet
+
+## Voucher Statuses[​](#voucher-statuses "Direct link to heading")
+
+| Valid | This means the Voucher is active and available for another user to redeem. |
+| --- | --- |
+| Redeemed | This means the Voucher has been redeemed by you or another user. Since Vouchers are single-time use, a Redeemed voucher cannot be redeemed again. |
+| Revoked | This means the Voucher has been cancelled and can no longer be redeemed. |

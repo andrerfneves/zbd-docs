@@ -1,0 +1,35 @@
+---
+title: 'SDKs & Libraries'
+---
+
+The ZEBEDEE API was built with ease-of-use and standardization in mind. Because of that any language, framework, or environment that can speak HTTP can interact with the API.
+
+However, we understand that not everyone wants to build their own HTTP client and would rather use a prebuilt library or SDK to interact with the API. We've got you covered there too!
+
+# @zbd/node
+
+For those developing in a Node.js environment, the best way to interact with the ZEBEDEE API is through our official Node.js library. It's available on [NPM](https://www.npmjs.com/package/@zbd/node) and is open-source on [GitHub](https://github.com/zebedeeio/zbd-node).
+
+Just run `npm install @zbd/node` and you're off to the races!
+
+<Frame type="glass" caption="@zbd/node - Node.js Library for ZEBEDEE API">
+  <img src="/img/zbd-node-snippet.png" alt="@zbd/node - Node.js Library for ZEBEDEE API" />
+</Frame>
+<br />
+
+For full documentation on the Node.js library, please visit the [official documentation](https://zbd-node.dev.zebedee.cloud/).
+
+## Software Development Kits (SDK)[​](#software-development-kits-sdk "Direct link to heading")
+
+In addition to the Node.js library, we also provide SDKs for other popular languages and frameworks.
+
+Community-built SDKs are also available. If you have built an SDK for your favorite language or framework, please let us know and we'll add it to the list!
+
+| Framework / Environment | Status | Version | Link |
+| --- | :-: | --- | --- |
+| NodeJS | ✅ Production | v0.6.1 | [@zbd/node](https://github.com/zebedeeio/zbd-node) |
+| Go | ✅ Production | v1.0.0 | [@zbd/go](https://github.com/zebedeeio/zbd-go) |
+| Rust | 🟦 Community Built | v0.3.4 | [crates/zebedee-rust](https://crates.io/crates/zebedee-rust) |
+| Python | 🟦 Community Built | v0.0.6 | [zebedee/pip](https://pypi.org/project/zebedee/) |
+
+<Tip>It is likely that we will focus development efforts around introducing features specific to the SDK bundle that aren't necessarily part of the HTTP RESTful API. If you are building upon one of the above platforms/environments, we suggest you check the SDK solutions first as they may provide all the utilities you seek.</Tip>

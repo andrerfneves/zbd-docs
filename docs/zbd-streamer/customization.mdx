@@ -1,0 +1,26 @@
+---
+title: 'Streamer Customization'
+---
+
+The ZEBEDEE team is working on a lot of new features for the ZBD Streamer app, including text-to-speech, audio snippet support, and much more. That being said, the system was purposefully built open enough that more tech-savyy folks can do custom things with it.
+
+## Tapping into Payments to ZBD Streamer[​](#tapping-into-payments-to-zbd-streamer "Direct link to heading")
+
+You can reuse the QR code from your [ZBD Streamer](https://streamer.zebedee.io) account and have it power things other than the main GIFs + comment module inside OBS (or your favorite streaming tool).
+
+To do so you must grab the **`rk`** code from the alert URL (e.g. **`https://streamer.zebedee.io/o/alert?rk=CODE_HERE`**), and use it to build a new URL like **`https://streamer-backend.zebedee.io/events/CODE_HERE`**.
+
+<Frame type="glass" caption="ZBD Streamer QR Code URL">
+  <img src="/img/v1/streamer-qr.png" alt="ZBD Streamer QR Code URL" />
+</Frame>
+<br />
+
+**`https://streamer-backend.zebedee.io/events/CODE_HERE`**
+
+This new URL is an SSE event streamer that fires a JSON object every time someone makes a payment to your ZBD Streamer QR code.
+
+<Tip>You can use a simple **`curl https://streamer-backend.zebedee.io/events/CODE_HERE`** to view the payment stream directly on a terminal window.</Tip>
+
+Each payment payload object in the SSE stream contains the amount, the payer name, and comment (if available). With this information one can plug any payment to the ZBD Streamer QR code and have it power any other event in any other system. One could build an entire separate UI for showing these payments inside of the stream, or you could set it up to activate a fog machine or turn off the lights. Imagination is your limits here.
+
+See [SSE Documentation](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) to learn more about SSE event streams.

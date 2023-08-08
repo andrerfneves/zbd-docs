@@ -1,0 +1,62 @@
+---
+title: 'Advanced OAuth2'
+---
+
+## Permissions and ZBD API[​](#permissions-and-zbd-api "Direct link to heading")
+
+Permissions are a form of detailed authorization granted by the user. Before your app can use an endpoint to access a user's data, the user must first grant the permissions required by that endpoint. The easiest way to get permissions from app users is by implementing `ZBD Login`.
+
+In order to obtain these permissions, you must complete the following steps:
+
+*   Choose the permissions necessary for the desired functioning of the application.
+*   Upon entering your app and undergoing the `ZBD Login (OAuth2)` flow, users are prompted to grant the requested permissions. They will be able to grant or deny permissions or subsets of them.
+
+### Permission Scopes[​](#permission-scopes "Direct link to heading")
+
+Below is a breakdown of the many scopes/permissions available at the `ZBD Login`.
+
+| Scope | Top-Level Scope | Description |
+| --- | :-: | --- |
+| ZBD Gamertag | `User` | The logged in user's ZBD Gamertag (e.g. `satoshi`) |
+| Email | `User` | The logged in user's Email (e.g. `satoshi@zebedee.io`) |
+| Lightning Address | `User` | The logged in user's Lightning Address (e.g. `satoshi@zbd.gg`) |
+| Profile Photo | `User` | The logged in user's profile image |
+| Biography | `User` | The logged in user's biography description |
+| Static Charge QR | `User` | The logged in user's unique static payment QR code (e.g. also seen at the user's personal ZBD.gg page [https://zbd.gg/zebedee](https://zbd.gg/zebedee)) |
+| Verification Level | `User` | The logged in user's verification level with ZBD |
+| Social URLs | `User` | The logged in user's social media/personal website URLs (configured manually by the user on the ZEBEDEE App) |
+| Current Balance | `Wallet` | The logged in user's wallet's current balance |
+| Current Limits | `Wallet` | The logged in user's wallet's current spending limits |
+| Transaction History | `Wallet` | Transaction history between the logged in user's wallet and the application/game wallet |
+
+> **As part of this initial release of `ZBD Login`, we haven't yet released the ability to select specific user access permissions. This will come on a new release soon.**
+
+## Understanding Access Tokens[​](#understanding-access-tokens "Direct link to heading")
+
+An `access token` is an opaque string that identifies a user, application, or page. It can be used by the application or game to get user and wallet data. When someone connects to an app using `ZBD Login` and approves the permission request, the app receives a temporary and secure `access token` to ZBD APIs.\\
+
+The token includes information about when the token will expire and which application generated the token. Due to privacy checks, most API calls on ZBD API need to include an access token.
+
+## Additional Security[​](#additional-security "Direct link to heading")
+
+As required from RFCX, for authenticating with `ZBD Login` you will need PKCE enabled, and also an endpoint for handling the secret and getting the access token.
+
+### PKCE[​](#pkce "Direct link to heading")
+
+PKCE is a new, more secure authorization flow (based on the OAuth 2.0 spec) that was originally created to better secure mobile apps, but is valuable across _all_ OAuth2 clients.
+
+From the official [OAuth 2.0 spec for PKCE](https://oauth.net/2/pkce/):
+
+“PKCE ([RFC 7636](https://tools.ietf.org/html/rfc7636)) is an extension to the [Authorization Code flow](https://oauth.net/2/grant-types/authorization-code/) to prevent several attacks and to be able to securely perform the OAuth exchange from public clients.”
+
+The OAuth 2.0 spec is the industry standard protocol for authorization and allows users to grant permission for apps to access their ZEBEDEE data. Using OAuth 2.0, users can access their ZEBEDEE data from third party applications without sensitive information (like passwords) ever changing hands.
+
+### Secret[​](#secret "Direct link to heading")
+
+The `client_secret` is a secret known only to the application and the authorization server. It is essentially the application’s own password. It must be sufficiently random to not be guessable, which means you should avoid using common UUID libraries which often take into account the timestamp or MAC address of the server generating it.
+
+A great way to generate a secure secret is to use a cryptographically-secure library to generate a 256-bit value and then convert it to a hexadecimal representation.
+
+# Support and Feature Request
+
+If you find issues when setting `ZBD Login` or want to request new scopes or features, please reach us on [support@zebedee.io](mailto:support@zebedee.io).
