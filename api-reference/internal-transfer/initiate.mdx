@@ -1,0 +1,71 @@
+---
+title: "Initiate Internal Transfer"
+---
+
+## Description
+
+Initiates a transfer of funds between two Project Wallets you own.
+
+## Usage
+
+The API Key used is the Project Wallet that is `SPENDING` the funds, so the `apikey` used in this request must be the `SENDER` Project Wallet.
+
+In the body payload, the API also expects a `receiverWalletId`. This Project Wallet ID has to match the `RECEIVING` Project Wallet ID, which can be found in the ZEBEDEE Developer Dashboard under Project Details.
+
+This API is primarily to be used for any programmatic movement of funds between any two of your Projects.
+
+## Configuration
+
+### Header Parameters
+
+<ParamField body="Content-Type" type="application/json" />
+
+<ParamField required body="apikey" type="string">
+  ZEBEDEE Project API Key
+</ParamField>
+
+### Body
+
+<ParamField required body="amount" type="string">
+  The amount to be transferred -> in millisatoshis
+</ParamField>
+
+<ParamField required body="receiverWalletId" type="string">
+  The Wallet ID of the recipient Project
+</ParamField>
+
+<RequestExample>
+
+```bash Request
+curl -L -X POST 'https://api.zebedee.io/v0/internal-transfer' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+  "amount": "10000",
+  "receiverWalletId": "b904ee02-ec0b-4fd4-b99f-1f2d3d0001a6"
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+    "success": true,
+    "data": {
+        "id": "c8571a4c-3c34-47af-8ded-ebd476f519c1",
+        "senderWalletId": "b81fa874-ac60-4a08-84f2-0af79684c506",
+        "receiverWalletId": "b804ee02-ec0b-4fd4-b99f-1f2d3d0001a6",
+        "userId": "2470d896-9dc8-4d49-b18c-a4e83263e76d",
+        "sendTxId": "f532db20-2cfa-41b0-8c00-40cfbe124b54",
+        "receiveTxId": "4b4640e0-d8a2-4f1e-8973-d98196f79a88",
+        "status": "TRANSFER_STATUS_COMPLETED",
+        "amount": "1000",
+        "createdAt": "2023-02-16T02:28:32.754Z",
+        "updatedAt": "2023-02-16T02:28:32.777Z"
+    },
+    "message": "Internal Transfer done."
+}
+```
+
+</ResponseExample>
