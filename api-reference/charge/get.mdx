@@ -1,5 +1,6 @@
 ---
 title: "Get Charge"
+api: "GET https://api.zebedee.io/v0/charges/:CHARGE_ID"
 ---
 
 ## Description
@@ -16,13 +17,13 @@ If you're not using the `callbackUrl` property, then you'll likely need this API
 
 ### Path Parameters
 
-<ParamField required body="CHARGE_ID" type="string">
+<ParamField required path="CHARGE_ID" type="string">
   CHARGE ID
 </ParamField>
 
 ### Header Parameters
 
-<ParamField required body="apikey" type="string">
+<ParamField required header="apikey" type="string">
   ZEBEDEE Project API Key
 </ParamField>
 

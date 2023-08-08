@@ -1,5 +1,6 @@
 ---
 title: "Create Charge"
+api: "POST https://api.zebedee.io/v0/charges"
 ---
 
 ## Description
@@ -18,9 +19,9 @@ On a successful 200 HTTP response from the ZEBEDEE API, you should render the co
 
 ### Header Parameters
 
-<ParamField body="Content-Type" type="application/json" />
+<ParamField required header="Content-Type" default="application/json" type="application/json" />
 
-<ParamField required body="apikey" type="string">
+<ParamField required header="apikey" type="string">
   ZEBEDEE Project API Key
 </ParamField>
 

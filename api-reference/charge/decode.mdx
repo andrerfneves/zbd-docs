@@ -1,5 +1,6 @@
 ---
 title: "Decode Charge"
+api: "POST https://api.zebedee.io/v0/decode-invoice"
 ---
 
 ## Description
@@ -16,9 +17,9 @@ Any Lightning Network invoice can be used as a property here, even those not gen
 
 ### Header Parameters
 
-<ParamField body="Content-Type" type="application/json" />
+<ParamField required header="Content-Type" default="application/json" type="application/json" />
 
-<ParamField required body="apikey" type="string">
+<ParamField required header="apikey" type="string">
   ZEBEDEE Project API Key
 </ParamField>
 
