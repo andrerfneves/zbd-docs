@@ -2,65 +2,34 @@
 title: "Get Charge"
 ---
 
-### Body
+## Description
 
-<ParamField body="current_token" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
+Retrieves all information relating a specific [Charge](/docs/glossary#charge) / Payment Request.
+
+## Usage
+
+While the best approach is to rely on the `callbackUrl` property and expect async Charge updates sent from ZEBEDEE servers, this API can be used to check any information about any Charge, specifically properties such as `status` and `internalId`.
+
+If you're not using the `callbackUrl` property, then you'll likely need this API to fetch whether a Charge has been paid.
+
+## Configuration
+
+### Path Parameters
+
+<ParamField required body="CHARGE_ID" type="string">
+  CHARGE ID
 </ParamField>
 
-### Response
+### Header Parameters
 
-<ResponseField name="success" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
-
-<ResponseField name="user_group" type="object">
-
-The contents of the user group
-
-<Expandable title="Toggle object">
-
-<ResponseField name="team_id" type="number">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
-</ResponseField>
-
-<ResponseField name="token" type="string">
-  This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be
-  used to identify which user group is viewing the dashboard. You should save
-  this on your end to use when rendering an embedded dashboard.
-</ResponseField>
-
-<ResponseField name="name" type="string">
-  This is the name of the user group provided in the request body.
-</ResponseField>
-
-<ResponseField name="provided_id" type="string">
-  This is the user_group_id provided in the request body.
-</ResponseField>
-
-<ResponseField name="api_environment_tag" type="JSON or null">
-  This is the environment tag of the user group. Possible values are 'Customer'
-  and 'Testing'. User group id's must be unique to each environment, so you can
-  not create multiple user groups with with same id. If you have a production
-  customer and a test user group with the same id, you will be required to label
-  one as 'Customer' and another as 'Testing'
-</ResponseField>
-
-</Expandable>
-
-</ResponseField>
+<ParamField required body="apikey" type="string">
+  ZEBEDEE Project API Key
+</ParamField>
 
 <RequestExample>
 
-```bash Example Request
-curl --location --request POST 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "current_token": ""
-}'
+```bash Request
+curl -L -X GET 'https://api.zebedee.io/v0/charges/:CHARGE_ID'
 ```
 
 </RequestExample>
@@ -69,12 +38,23 @@ curl --location --request POST 'https://api.mintlify.com/api/user' \
 
 ```json Response
 {
-  "success": 1,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
+  "success": true,
+  "message": "Successfully retrieved Charge.",
+  "data": {
+    "unit": "msats",
+    "amount": "10000",
+    "confirmedAt": null,
+    "status": "pending",
+    "description": "My Charge Description",
+    "createdAt": "2020-05-09T15:09:05.765Z",
+    "expiresAt": "2020-05-09T15:14:05.618Z",
+    "id": "1907b0fe-789b-4e25-b18a-0c4c0f5cced7",
+    "internalId": "11af01d092444a317cb33faa6b8304b8",
+    "callbackUrl": "https://your-website.com/callback",
+    "invoice": {
+        "request": "lnbc100n1p0td3u3pp5z2ed9yjfrz0rgu0fzuc5cdwfu8dtjlgrfztz5uga8hakkjy2yzgsdpzf4ujqsmgv9exwefqg3jhxcmjd9c8g6t0dccqzpgxqzfvsp5q8z5mkghmuzrnusxdwtmls7x8vuy63j25rt4z55gj3s7340dv72q9qy9qsqz02rlmlzcvew3vk90c6l0369ewk7tkr2tx0yrk3qa235v07w6d3qeksk99wm7y8f8ug7zqy6yjudu4cs2f4umpey43cw7msyj7uqj2qq8x03te",
+        "uri": "lightning:lnbc100n1p0td3u3pp5z2ed9yjfrz0rgu0fzuc5cdwfu8dtjlgrfztz5uga8hakkjy2yzgsdpzf4ujqsmgv9exwefqg3jhxcmjd9c8g6t0dccqzpgxqzfvsp5q8z5mkghmuzrnusxdwtmls7x8vuy63j25rt4z55gj3s7340dv72q9qy9qsqz02rlmlzcvew3vk90c6l0369ewk7tkr2tx0yrk3qa235v07w6d3qeksk99wm7y8f8ug7zqy6yjudu4cs2f4umpey43cw7msyj7uqj2qq8x03te"
+    }
   }
 }
 ```
