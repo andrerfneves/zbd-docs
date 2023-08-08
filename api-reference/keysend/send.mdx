@@ -1,0 +1,89 @@
+---
+title: "Send Keysend Payment"
+---
+
+## Description
+
+Every Lightning Network node has a Public Key identifying it to the wider network. While most payments in the Lightning Network require Payment Requests ([Charges](/docs/glossary#charges)) QR codes to be created and then paid for, there is another type of payment known as `Spontaneous Payment` or `Keysend Payment` on a more technical note.
+
+This endpoint exposes the ability to make payment directly to a Lightning Network node Public Key, without the need for a Payment Request / Charge.
+
+## Usage
+
+If your system relies on sending Bitcoin over the Lightning Network to specific node Public Keys, this API is what you're looking for.
+
+Additional metadata and TLV record data can be attached to this endpoint as well. Both of these properties/values will be returned on the `callbackUrl` POST call from ZEBEDEE.
+
+As with all asynchronous payments in the Lightning Network, in order to receive updates about whether a payment settled, you must provide the `callbackUrl` property. As you will note from the response example below, if the Keysend Payment doesn't settle (almost) immediately, you will receive a `Payment Processing` response payload. Once it settles, you'll receive the update on the `callbackUrl`.
+
+## Configuration
+
+### Header Parameters
+
+<ParamField body="Content-Type" type="application/json" />
+
+<ParamField required body="apikey" type="string">
+  ZEBEDEE Project API Key
+</ParamField>
+
+### Body
+
+<ParamField required body="amount" type="string">
+  The amount for the Payment -> in millisatoshis
+</ParamField>
+
+<ParamField required body="pubkey" type="string">
+  The Public Key for the destination Lightning node
+</ParamField>
+
+<ParamField body="callbackUrl" type="string">
+  The endpoint ZEBEDEE will POST Charge updates to
+</ParamField>
+
+<ParamField body="metadata" type="object">
+  Open metadata object property
+</ParamField>
+
+<ParamField body="tlvRecords" type="array">
+  TLV data records
+</ParamField>
+
+<RequestExample>
+
+```bash Request
+curl -L -X POST 'https://api.zebedee.io/v0/keysend-payment' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+  "amount": "1000",
+  "pubkey": "0332d57355d673e217238ce3e4be8491aa6b2a13f95494133ee243e57df1653ace",
+  "callbackUrl": "https://your-site.com/zbd-callback"
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "message": "Payment processing.",
+  "success": true,
+  "data": {
+    "keysendId": "0d54521c-f41c-4cec-8799-edf9d87cf6b5",
+    "paymentId": "276e6f54-65fb-4c30-9b86-b44659015cd6",
+    "transaction": {
+      "id": "a51bd8d3-1d65-4785-bfd2-3341dc696f84",
+      "walletId": "cce98a9b-c52a-427c-8cf5-d7ca39c5035e",
+      "type": "KEYSEND_PAYMENT",
+      "totalAmount": "3000",
+      "fee": "2000",
+      "amount": "1000",
+      "description": "Keysend Payment",
+      "status": "TRANSACTION_STATUS_PROCESSING",
+      "confirmedAt": null
+    }
+  }
+}
+```
+
+</ResponseExample>
