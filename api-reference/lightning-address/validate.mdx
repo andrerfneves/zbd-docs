@@ -1,5 +1,6 @@
 ---
 title: "Validate Lightning Address"
+api: "GET https://api.zebedee.io/v0/ln-address/validate/:LIGHTNING_ADDRESS"
 ---
 
 ## Description
@@ -14,13 +15,13 @@ The idea behind this API endpoint is to verify whether an internet-indentifier (
 
 ### Path Parameters
 
-<ParamField required body="LIGHTNING_ADDRESS" type="string">
+<ParamField required path="LIGHTNING_ADDRESS" type="string">
   Lightning Address to be verified
 </ParamField>
 
 ### Header Parameters
 
-<ParamField required body="apikey" type="string">
+<ParamField required header="apikey" type="string">
   ZEBEDEE Project API Key
 </ParamField>
 

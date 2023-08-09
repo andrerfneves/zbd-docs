@@ -1,5 +1,6 @@
 ---
 title: "[SANDBOX] Send Payment to ZBD Gamertag"
+api: "POST https://sandbox-api.zebedee.io/v0/gamertag/send-payment"
 ---
 
 <Warning>
@@ -20,9 +21,9 @@ The idea behind this API endpoint is to allow developers integrating ZBD Gamerta
 
 ### Header Parameters
 
-<ParamField body="Content-Type" type="application/json" />
+<ParamField required default="application/json" header="Content-Type" type="application/json" />
 
-<ParamField required body="apikey" type="string">
+<ParamField required header="apikey" type="string">
   ZEBEDEE Project API Key
 </ParamField>
 

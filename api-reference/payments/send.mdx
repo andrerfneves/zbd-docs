@@ -1,5 +1,6 @@
 ---
 title: "Send Payment"
+api: "POST https://api.zebedee.io/v0/payments"
 ---
 
 ## Description
@@ -18,9 +19,9 @@ If the Charge / Payment Request is an `amountless invoice` (technical term for a
 
 ### Header Parameters
 
-<ParamField body="Content-Type" type="application/json" />
+<ParamField required default="application/json" header="Content-Type" type="application/json" />
 
-<ParamField required body="apikey" type="string">
+<ParamField required header="apikey" type="string">
   ZEBEDEE Project API Key
 </ParamField>
 

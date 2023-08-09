@@ -1,5 +1,6 @@
 ---
 title: "Create Charge for Lightning Address"
+api: "POST https://api.zebedee.io/v0/ln-address/fetch-charge"
 ---
 
 ## Description
@@ -20,9 +21,9 @@ The way to think of this is:
 
 ### Header Parameters
 
-<ParamField body="Content-Type" type="application/json" />
+<ParamField required default="application/json" header="Content-Type" type="application/json" />
 
-<ParamField required body="apikey" type="string">
+<ParamField required header="apikey" type="string">
   ZEBEDEE Project API Key
 </ParamField>
 

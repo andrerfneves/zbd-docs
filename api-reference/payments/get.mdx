@@ -1,5 +1,6 @@
 ---
 title: "Get Payment"
+api: "GET https://api.zebedee.io/v0/payments/:PAYMENT_ID"
 ---
 
 ## Description
@@ -14,13 +15,13 @@ Use this API endpoint to get all of the properties of a given Payment record. Wh
 
 ### Path Parameters
 
-<ParamField required body="PAYMENT_ID" type="string">
+<ParamField required path="PAYMENT_ID" type="string">
   PAYMENT ID
 </ParamField>
 
 ### Header Parameters
 
-<ParamField required body="apikey" type="string">
+<ParamField required header="apikey" type="string">
   ZEBEDEE Project API Key
 </ParamField>
 
