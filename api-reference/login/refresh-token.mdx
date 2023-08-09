@@ -1,0 +1,42 @@
+---
+title: "Refresh Token"
+api: "POST https://api.zebedee.io/v1/oauth2/token"
+---
+
+## Description
+
+In order to fetch a new `accessToken` for a given ZBD User, make sure to use the `refreshToken` using the token endpoint.
+
+## Usage
+
+[Read here for more details](/docs/zbd-login/intro) on how to setup ZBD Login (OAuth2) with your platform.
+
+## Configuration
+
+### Header Parameters
+
+<ParamField required header="Content-Type" default="application/json" type="application/json" />
+
+### Body
+
+<ParamField required body="client_id" type="string" />
+<ParamField required body="client_secret" type="string" />
+<ParamField required body="grant_type" type="string" />
+<ParamField required body="redirect_uri" type="string" />
+<ParamField required body="refresh_token" type="string" />
+
+<RequestExample>
+
+```bash Request
+curl -L -X POST 'https://api.zebedee.io/v1/oauth2/token' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+  "client_id": "{{client_id}}",
+  "client_secret": "{{client_secret}}",
+  "grant_type": "refresh_token",
+  "redirect_uri": "{{your_url_callback}}",
+  "refresh_token": "{{refreshToken}}"
+}'
+```
+
+</RequestExample>

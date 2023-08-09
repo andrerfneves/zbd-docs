@@ -1,0 +1,46 @@
+---
+title: "Fetch Access Token"
+api: "POST https://api.zebedee.io/v1/oauth2/token"
+---
+
+## Description
+
+After accessing the ZEBEDEE login portal URL and successfully authenticating, the user will be redirected back to your application with `state` and `code` query parameters included. These two properties allow you to hit the `token` endpoint, and get the user's access token.
+
+Once you have the `code` returned from the previous `authorization` endpoint, you must now make a `POST` request to get the token from this endpoint.
+
+## Usage
+
+[Read here for more details](/docs/zbd-login/intro) on how to setup ZBD Login (OAuth2) with your platform.
+
+## Configuration
+
+### Header Parameters
+
+<ParamField required header="Content-Type" default="application/json" type="application/json" />
+
+### Body
+
+<ParamField required body="client_id" type="string" />
+<ParamField required body="client_secret" type="string" />
+<ParamField required body="grant_type" type="string" />
+<ParamField required body="redirect_uri" type="string" />
+<ParamField required body="code" type="string" />
+<ParamField required body="code_verifier" type="string" />
+
+<RequestExample>
+
+```bash Request
+curl -L -X POST 'https://api.zebedee.io/v1/oauth2/token' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+  "client_id": "{{client_id}}",
+  "client_secret": "{{client_secret}}",
+  "grant_type": "authorization_code",
+  "redirect_uri": "{{your_url_callback}}",
+  "code": "{{code}}",
+  "code_verifier": "{{code_verifier}}"
+}'
+```
+
+</RequestExample>
