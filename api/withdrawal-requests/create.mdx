@@ -61,7 +61,7 @@ Withdrawal Requests created by ZEBEDEE are `single-use` and will not work if att
 
 <ResponseExample>
 
-```json Response
+```json 200 Response
 {
   "success": true,
   "data": {
@@ -83,6 +83,13 @@ Withdrawal Requests created by ZEBEDEE are `single-use` and will not work if att
     }
   },
   "message": "Successfully created Withdrawal Request."
+}
+```
+
+```json 400 Response
+{
+  "success": false,
+  "message": "The minimum Withdrawal amount supported is 10 satoshis."
 }
 ```
 

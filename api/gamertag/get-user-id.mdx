@@ -29,12 +29,19 @@ This is needed because ZBD Gamertags are akin to social media handles, they are 
 
 <ResponseExample>
 
-```json Response
+```json 200 Response
 {
   "success": true,
   "data": {
     "id": "0a59bf56-daa3-4888-8330-cbc02eba3a6e"
   }
+}
+```
+
+```json 400 Response
+{
+  "success": false,
+  "message": "No user found with this gamertag"
 }
 ```
 

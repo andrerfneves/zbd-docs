@@ -45,7 +45,7 @@ The idea behind this API endpoint is to allow developers integrating ZBD Gamerta
 
 <ResponseExample>
 
-```json Response
+```json 200 Response
 {
   "success": true,
   "data": {
@@ -58,6 +58,13 @@ The idea behind this API endpoint is to allow developers integrating ZBD Gamerta
     "settledAt": "2023-04-13T15:38:54.595Z"
   },
   "message": "Payment done.",
+}
+```
+
+```json 400 Response
+{
+  "success": false,
+  "message": "You cannot pay to this user, missing destination"
 }
 ```
 
