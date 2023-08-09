@@ -37,33 +37,19 @@ To learn about the many ways in which a Lightning Address could make sense for y
   The amount for the Payment -> in millisatoshis
 </ParamField>
 
-<ParamField body="comment" type="string">
+<ParamField initialValue="‎" body="comment" type="string">
   Note or description of this Payment
 </ParamField>
 
-<ParamField body="internalId" type="string">
+<ParamField initialValue="‎" body="internalId" type="string">
   Open metadata string property
 </ParamField>
 
-<ParamField body="callbackUrl" type="string">
+<ParamField initialValue="‎" body="callbackUrl" type="string">
   The endpoint ZEBEDEE will POST Charge updates to
 </ParamField>
 
-<RequestExample>
-
-```bash Request
-curl -L -X POST 'https://api.zebedee.io/v0/ln-address/send-payment' \
--H 'Content-Type: application/json' \
---data-raw '{
-  "amount": "15000",
-  "lnAddress": "andre@zbd.gg",
-  "comment": "Lightning fast!",
-  "internalId": "1b8h1-h1675",
-  "callbackUrl": "https://your-domain.com/zbd-callback"
-}'
-```
-
-</RequestExample>
+<CodeGroup />
 
 <ResponseExample>
 

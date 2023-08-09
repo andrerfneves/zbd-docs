@@ -28,19 +28,4 @@ Once you have the `code` returned from the previous `authorization` endpoint, yo
 <ParamField required body="code" type="string" />
 <ParamField required body="code_verifier" type="string" />
 
-<RequestExample>
-
-```bash Request
-curl -L -X POST 'https://api.zebedee.io/v1/oauth2/token' \
--H 'Content-Type: application/json' \
---data-raw '{
-  "client_id": "{{client_id}}",
-  "client_secret": "{{client_secret}}",
-  "grant_type": "authorization_code",
-  "redirect_uri": "{{your_url_callback}}",
-  "code": "{{code}}",
-  "code_verifier": "{{code_verifier}}"
-}'
-```
-
-</RequestExample>
+<CodeGroup />

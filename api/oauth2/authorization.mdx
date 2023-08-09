@@ -17,17 +17,11 @@ This API endpoint helps you create that authorization URL.
 
 ### Query Parameters
 
-<ParamField required query="client_id" type="string" />
-<ParamField required query="response_type" type="string" />
-<ParamField required query="redirect_uri" type="string" />
-<ParamField required query="code_challenge_method" type="string" />
-<ParamField required query="code_challenge" type="string" />
-<ParamField required query="scope" type="string" />
+<ParamField required initialValue="‎" query="client_id" type="string" />
+<ParamField required initialValue="‎" query="response_type" type="string" />
+<ParamField required initialValue="‎" query="redirect_uri" type="string" />
+<ParamField required initialValue="‎" query="code_challenge_method" type="string" />
+<ParamField required initialValue="‎" query="code_challenge" type="string" />
+<ParamField required initialValue="‎" query="scope" type="string" />
 
-<RequestExample>
-
-```bash Request
-curl -L -X GET 'https://api.zebedee.io/v1/oauth2/authorize'
-```
-
-</RequestExample>
+<CodeGroup />

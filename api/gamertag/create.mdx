@@ -31,33 +31,19 @@ The response payload will include a `invoiceRequest` which is the contents of th
   Destination ZBD Gamertag
 </ParamField>
 
-<ParamField body="description" type="string">
+<ParamField initialValue="‎" body="description" type="string">
   Note or comment for this Payment (visible to recipient)
 </ParamField>
 
-<ParamField body="internalId" type="string">
+<ParamField initialValue="‎" body="internalId" type="string">
   Open metadata string property
 </ParamField>
 
-<ParamField body="callbackUrl" type="string">
+<ParamField initialValue="‎" body="callbackUrl" type="string">
   The endpoint ZEBEDEE will POST Charge updates to
 </ParamField>
 
-<RequestExample>
-
-```bash Request
-curl -L -X POST 'https://api.zebedee.io/v0/gamertag/charges' \
--H 'Content-Type: application/json' \
---data-raw '{
-  "amount": "1000",
-  "callbackUrl": "https://your-website.com/zbd-callback",
-  "description": "Requesting Charge for Gamertag",
-  "gamertag": "andre",
-  "internalId": "ANY_INTERNAL_STRING"
-}'
-```
-
-</RequestExample>
+<CodeGroup />
 
 <ResponseExample>
 

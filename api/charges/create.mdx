@@ -35,34 +35,19 @@ On a successful 200 HTTP response from the ZEBEDEE API, you should render the co
   Note or comment for this Charge (visible to payer)
 </ParamField>
 
-<ParamField body="expiresIn" type="number">
+<ParamField initialValue={1} body="expiresIn" type="number">
   Time until Charge expiration -> in seconds
 </ParamField>
 
-<ParamField body="callbackUrl" type="string">
+<ParamField initialValue="‎" body="callbackUrl" type="string">
   The endpoint ZEBEDEE will POST Charge updates to
 </ParamField>
 
-<ParamField body="internalId" type="string">
+<ParamField initialValue="‎" body="internalId" type="string">
   Open metadata string property
 </ParamField>
 
-<RequestExample>
-
-```bash Request
-curl -L -X POST 'https://api.zebedee.io/v0/charges' \
--H 'Content-Type: application/json' \
--H 'apikey: <api-key>' \
---data-raw '{
-  "amount": "15000",
-  "description": "Test Charge",
-  "expiresIn": 300,
-  "internalId": "11af01d0",
-  "callbackUrl": "https://my-website.com/zbd-callback"
-}'
-```
-
-</RequestExample>
+<CodeGroup />
 
 <ResponseExample>
 

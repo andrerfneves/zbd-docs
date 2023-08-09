@@ -41,37 +41,23 @@ Withdrawal Requests created by ZEBEDEE are `single-use` and will not work if att
   The amount for the Withdrawal Request -> in millisatoshis
 </ParamField>
 
-<ParamField body="description" type="string">
+<ParamField initialValue="‎" body="description" type="string">
   Note or comment for this Withdrawal Request
 </ParamField>
 
-<ParamField body="expiresIn" type="number">
+<ParamField initialValue={1} body="expiresIn" type="number">
   Time until Withdrawal Request expiration -> in seconds
 </ParamField>
 
-<ParamField body="internalId" type="string">
+<ParamField initialValue="‎" body="internalId" type="string">
   Open metadata string property
 </ParamField>
 
-<ParamField body="callbackUrl" type="string">
+<ParamField initialValue="‎" body="callbackUrl" type="string">
   The endpoint ZEBEDEE will POST Charge updates to
 </ParamField>
 
-<RequestExample>
-
-```bash Request
-curl -L -X POST 'https://api.zebedee.io/v0/withdrawal-requests' \
--H 'Content-Type: application/json' \
---data-raw '{
-  "amount": "15000",
-  "description": "Withdraw QR!",
-  "expiresIn": 300,
-  "internalId": "1c3b1-f61j2",
-  "callbackUrl": "https://your-website.com/zbd-callback"
-}'
-```
-
-</RequestExample>
+<CodeGroup />
 
 <ResponseExample>
 

@@ -37,31 +37,19 @@ As with all asynchronous payments in the Lightning Network, in order to receive 
   The Public Key for the destination Lightning node
 </ParamField>
 
-<ParamField body="callbackUrl" type="string">
+<ParamField initialValue="‎" body="callbackUrl" type="string">
   The endpoint ZEBEDEE will POST Charge updates to
 </ParamField>
 
-<ParamField body="metadata" type="object">
+<ParamField initialValue={{"id": 1}} body="metadata" type="object">
   Open metadata object property
 </ParamField>
 
-<ParamField body="tlvRecords" type="array">
+<ParamField initialValue={[]} body="tlvRecords" type="array">
   TLV data records
 </ParamField>
 
-<RequestExample>
-
-```bash Request
-curl -L -X POST 'https://api.zebedee.io/v0/keysend-payment' \
--H 'Content-Type: application/json' \
---data-raw '{
-  "amount": "1000",
-  "pubkey": "0332d57355d673e217238ce3e4be8491aa6b2a13f95494133ee243e57df1653ace",
-  "callbackUrl": "https://your-site.com/zbd-callback"
-}'
-```
-
-</RequestExample>
+<CodeGroup />
 
 <ResponseExample>
 

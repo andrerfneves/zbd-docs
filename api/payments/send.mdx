@@ -31,37 +31,23 @@ If the Charge / Payment Request is an `amountless invoice` (technical term for a
   Lightning Network Payment Request / Charge
 </ParamField>
 
-<ParamField body="description" type="string">
+<ParamField initialValue="‎" body="description" type="string">
   Note or comment for this Payment
 </ParamField>
 
-<ParamField body="amount" type="string">
+<ParamField initialValue="‎" body="amount" type="string">
   Amount to be paid to this Charge/Invoice -> in millisatoshis (only valid if Amountless Invoice)
 </ParamField>
 
-<ParamField body="internalId" type="string">
+<ParamField initialValue="‎" body="internalId" type="string">
   Open metadata string property
 </ParamField>
 
-<ParamField body="callbackUrl" type="string">
+<ParamField initialValue="‎" body="callbackUrl" type="string">
   The endpoint ZEBEDEE will POST Payment updates to
 </ParamField>
 
-<RequestExample>
-
-```bash Request
-curl -L -X POST 'https://api.zebedee.io/v0/payments' \
--H 'Content-Type: application/json' \
---data-raw '{
-  "description": "Custom Payment Description",
-  "internalId": "11af004b8",
-  "invoice": "lnbc100n1p372kyapp5d05jv33he63yalk5zv4k42lr28m53svt2nq8yhuvwxrmnzzynneqdpzf4ujqsmgv9exwefqg3jhxcmjd9c8g6t0dccqzpgxqzfvsp5zemcntxvez75cdndfhy6hzs4g9vfm6qfcztmyzz4dr8ec6udmgks9qyyssqegxaw9ypwujwfnw92z7s2fpcyzqfjgkf33efehmg9dg2rfhct9trrse07z2meuh020uunx6jmfpzac8vgfsqpk60nk5r7ufgv8kwr9spmv2sp4",
-  "callbackUrl": "https://my-website.com/callback/zbd",
-  "amount": "10000"
-}'
-```
-
-</RequestExample>
+<CodeGroup />
 
 <ResponseExample>
 
