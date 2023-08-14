@@ -1,0 +1,46 @@
+---
+title: "Is Supported Region"
+api: "GET https://api.zebedee.io/v0/is-supported-region/{IP_ADDRESS}"
+---
+
+## Description
+
+The ZEBEDEE API is available in over 100 countries around the world. For a full list please see our [Supported Regions](https://zebedee.io/countries) page that outlines the many jurisdictions ZEBEDEE is able to conduct global financial transactions.
+
+If you wish to know whether the incoming user request is coming from a region/country where ZEBEDEE is supported or not, you can use this simple API endpoint and pass the target IP address as a parameter.
+
+## Usage
+
+The idea behind this endpoint is that in order to serve your users the best way possible, you should check where they are located and ensure that they can make use of ZEBEDEE services.
+
+## Configuration
+
+### Path Parameters
+
+<ParamField required path="IP_ADDRESS" type="string">
+  IP address to check
+</ParamField>
+
+### Header Parameters
+
+<ParamField required header="apikey" type="string">
+  ZEBEDEE Project API Key
+</ParamField>
+
+<CodeGroup />
+
+<ResponseExample>
+
+```json Response
+{
+  "success": true,
+  "data": {
+    "ipAddress": "66.109.221.0",
+    "isSupported": true,
+    "ipCountry": "US",
+    "ipRegion": "CO"
+  }
+}
+```
+
+</ResponseExample>
