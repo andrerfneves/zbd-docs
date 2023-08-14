@@ -1,0 +1,57 @@
+---
+title: "Get Static Charge"
+api: "GET https://api.zebedee.io/v0/static-charges/{STATIC_CHARGE_ID}"
+---
+
+## Description
+
+Retrieves all information relating to a specific [Static Charge](/docs/static-charge).
+
+## Usage
+
+You should rely on `callbackUrl` property and expect async Static Charge updates sent from ZBD servers. However, this API can be used to check any information about any specific Static Charge, specifically properties such as `slots`, `successMessage`, and `status`.
+
+## Configuration
+
+### Path Parameters
+
+<ParamField required path="STATIC_CHARGE_ID" type="string">
+  ID of the Static Charge
+</ParamField>
+
+### Header Parameters
+
+<ParamField required header="apikey" type="string">
+  ZBD Project API Key
+</ParamField>
+
+<CodeGroup />
+
+<ResponseExample>
+
+```json Response
+{
+  "message":"Successfully fetched Static Charge.",
+  "data":{
+    "id":"45c225b1-022b-4a37-98d6-5a5568f78d11",
+    "unit":"msats",
+    "slots":0,
+    "minAmount":"10000",
+    "maxAmount":"100000",
+    "createdAt":"2023-03-07T20:07:06.910Z",
+    "expiresAt":null,
+    "internalId":"myInternalId",
+    "description":"This is my static charge",
+    "callbackUrl":"https://my-website/zbd-callback",
+    "allowedSlots":1000,
+    "successMessage":"Congratulations your payment was successful!",
+    "status":"active",
+    "invoice":{
+"request":"lnurl1dp68gurn8ghj7ctsdyh85etzv4jx2efwd9hj7a3s9aex2ut4v4ehgttnw3shg6tr943ksctjvajhxte5x43nyv34vgcj6vpjxf3z6drpxvmj6wfcvsmz6dtpx56nvwrxxuuxgvf3uzvpfy",
+      "uri":"lightning:lnurl1dp68gurn8ghj7ctsdyh85etzv4jx2efwd9hj7a3s9aex2ut4v4ehgttnw3shg6tr943ksctjvajhxte5x43nyv34vgcj6vpjxf3z6drpxvmj6wfcvsmz6dtpx56nvwrxxuuxgvf3uzvpfy"
+    }
+  }
+}
+```
+
+</ResponseExample>

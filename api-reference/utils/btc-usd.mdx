@@ -1,0 +1,29 @@
+---
+title: "BTC-USD Exchange Rate"
+api: "GET https://api.zebedee.io/v0/btcusd"
+---
+
+## Description
+
+Get the latest price for Bitcoin in US Dollars. The exchange rate feed is refreshed every 5 seconds and is based upon a combination of industry-leading partner exchange providers's price feeds.
+
+## Usage
+
+Use this API to show your users the correct USD value when paying any Satoshis/BTC Charges or Payment Requests. This API allows you to stay synced with ZBD on the `price of Bitcoin`.
+
+<CodeGroup />
+
+<ResponseExample>
+
+```json Response
+{
+  "success": true,
+  "data": {
+    "btcUsdPrice": "16825",
+    "btcUsdTimestamp": "1672847113"
+  },
+  "message": "Successfully retrieved BTC USD price ticker information."
+}
+```
+
+</ResponseExample>

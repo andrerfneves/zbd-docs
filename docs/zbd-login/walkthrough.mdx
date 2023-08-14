@@ -24,7 +24,7 @@ If you chose the second option, there are open-source libraries for handling OAu
 
 ### Node.js[​](#nodejs "Direct link to heading")
 
-This flow go over all the steps for Logging in with ZEBEDEE, from Building the authorization URL, with proper PKCE Keys, to getting the accessToken and calling ZBD API.
+This flow go over all the steps for Logging in with ZBD, from Building the authorization URL, with proper PKCE Keys, to getting the accessToken and calling ZBD API.
 
 If you are using a library that provides PKCE guidelines, it will most likely be able to handle the initial flow (building auth URL and getting the code) just fine. In this case, feel free to jump to the [Token Section](https://www.notion.so/Login-with-ZEBEDEE-1c2c384d74eb4342bf4a9aa7967043ba).
 
@@ -165,7 +165,7 @@ export const zbdLoginCallback = async (payload: Object) => {
 
 **Code explanation**
 
-Once the user is successfully authenticated on ZEBEDEE Client, there is a redirect back to your app, sending `code` and `state` as query params.
+Once the user is successfully authenticated on ZBD Client, there is a redirect back to your app, sending `code` and `state` as query params.
 
 Those values are send as payload on this next request:
 

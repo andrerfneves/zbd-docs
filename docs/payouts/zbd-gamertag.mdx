@@ -9,7 +9,7 @@ title: 'Send Bitcoin to ZBD Gamertag'
 
 ## Introduction[​](#introduction "Direct link to heading")
 
-The ZEBEDEE API allows for Partner to create Charges, perform Payments, and process Withdrawal Requests for any user, wallet, or service that understands / speaks the Lightning Network protocol. These capabilities are possible because of the underlying `Lightning Charges / Payment Requests / Invoices`, the single-use payable QR codes the platform can create and handle.
+The ZBD API allows for Partner to create Charges, perform Payments, and process Withdrawal Requests for any user, wallet, or service that understands / speaks the Lightning Network protocol. These capabilities are possible because of the underlying `Lightning Charges / Payment Requests / Invoices`, the single-use payable QR codes the platform can create and handle.
 
 While this Payment Request provides a truly interoperable experience for ZBD-powered applications, games, and services to interact with any type of Bitcoin Lightning wallet a user may use, it can at times provide for a much poorer user experience (UX). This is the case because it involves a switch of context, going in-and-out of the app / game and wallet applications to perform a simple payment or withdrawal. This is especially true for mobile devices (which comprises over 2/3 of the entire gaming market for example).
 
@@ -37,7 +37,7 @@ For the `data` portion of the POST request, you can use the following payload as
 }
 ```
 
-If the ZBD Gamertag exists and is active, the ZEBEDEE API will perform the transaction and will return a 200 status code and a JSON response with the following:
+If the ZBD Gamertag exists and is active, the ZBD API will perform the transaction and will return a 200 status code and a JSON response with the following:
 
 ```json
 {
@@ -57,4 +57,4 @@ At this stage the user will receive a Push Notification alerting them they've be
 
 ## In-Game Bitcoin Rewards through ZBD Gamertag[​](#in-game-bitcoin-rewards-through-zbd-gamertag "Direct link to heading")
 
-One of the many benefits of the ZEBEDEE API is that it is flexible enough to allow for developers to create simple in-game reward systems for their gamers. This is shown to increase user retention and improve general KPIs around ROAS and CPI. This is done by asking the user to enter their ZBD Gamertag in the game, and whenever the user completes a level, or triggers an event (depends entirely on the game and the developer's needs), some Bitcoin is immediately streamed to their ZBD App.
+One of the many benefits of the ZBD API is that it is flexible enough to allow for developers to create simple in-game reward systems for their gamers. This is shown to increase user retention and improve general KPIs around ROAS and CPI. This is done by asking the user to enter their ZBD Gamertag in the game, and whenever the user completes a level, or triggers an event (depends entirely on the game and the developer's needs), some Bitcoin is immediately streamed to their ZBD App.

@@ -1,0 +1,41 @@
+---
+title: "API Production IPs"
+api: "GET https://api.zebedee.io/v0/prod-ips"
+---
+
+## Description
+
+The ZBD API relies on callback URLs for keeping you informed about updates that occur to any Charges, Payments, or Withdrawals you've created. In order to ensure that any incoming callback message is indeed from a trusted ZBD API infrastructure server, we provide this API endpoint for you to know which IP addresses `real` requests come from.
+
+## Usage
+
+The idea is to use this API endpoint to fetch the production IP addresses for ZBD servers, such that when you receive a callback about a payment having settled, you can check the originating IP address and confirm it indeed came from ZBD.
+
+<Info>
+ZBD has a static set of IP addresses so, though possible, it is unlikely we will be changing these IPs often.
+</Info>
+
+## Configuration
+
+### Header Parameters
+
+<ParamField required header="apikey" type="string">
+  ZBD Project API Key
+</ParamField>
+
+<CodeGroup />
+
+<ResponseExample>
+
+```json Response
+{
+    "success": true,
+    "data": {
+        "ips": [
+            "3.225.112.64"
+        ]
+    }
+}
+```
+
+</ResponseExample>
