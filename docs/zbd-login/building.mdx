@@ -2,11 +2,11 @@
 title: 'Start Building'
 ---
 
-`ZBD Login` follows the [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749) standards in order to provide the best and safest experience to users. ZEBEDEE's OAuth2 implementation requires [PKCE (Proof Key for Code Exchange)](https://oauth.net/2/pkce/) as an additional feature for making sure the entire authentication flow is secure.
+`ZBD Login` follows the [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749) standards in order to provide the best and safest experience to users. ZBD's OAuth2 implementation requires [PKCE (Proof Key for Code Exchange)](https://oauth.net/2/pkce/) as an additional feature for making sure the entire authentication flow is secure.
 
 ## OAuth2 API
 
-The authorization sequence begins when your app redirects a browser to a ZEBEDEE URL. The URL includes query parameters that indicate the type of access being requested. ZEBEDEE handles authentication, session selection and user consent. The result is an authorization code, which the application can exchange for an `access token` and a `refresh token`.
+The authorization sequence begins when your app redirects a browser to a ZBD URL. The URL includes query parameters that indicate the type of access being requested. ZBD handles authentication, session selection and user consent. The result is an authorization code, which the application can exchange for an `access token` and a `refresh token`.
 
 The app must store the `refresh token` for future use and use the `access token` to fetch user data through the ZBD API. When the `access token` expires, the app will use the `refresh token` to request a new one.
 
@@ -15,7 +15,7 @@ The app must store the `refresh token` for future use and use the `access token`
 </Frame>
 <br />
 
-In order to properly redirect users to the ZEBEDEE login portal, you must open a browser session containing the built `authorization URL` as the destination address.
+In order to properly redirect users to the ZBD login portal, you must open a browser session containing the built `authorization URL` as the destination address.
 
 ### Authorization URL
 
@@ -27,7 +27,7 @@ In order to properly redirect users to the ZEBEDEE login portal, you must open a
     * `code_challenge_method` = S256
     * `code_challenge` = \<code challenge generated from [PKCE section](/docs/zbd-login/walkthrough#building-authorization-url)>
 
-> After accessing the ZEBEDEE login portal URL and successfully authenticating, the user will be redirected back to your application with `state` and `code` query parameters included. These two properties allow you to hit the `token` endpoint, and get the user's `accessToken`.
+> After accessing the ZBD login portal URL and successfully authenticating, the user will be redirected back to your application with `state` and `code` query parameters included. These two properties allow you to hit the `token` endpoint, and get the user's `accessToken`.
 
 ### Getting the Token
 
@@ -107,18 +107,18 @@ Response: {
 
 ## Integration
 
-### Get Credentials from ZEBEDEE Developer Dashboard
+### Get Credentials from ZBD Dev Dashboard
 
 In order to be able to implement `ZBD Login` functionality, you must first get your application/game's OAuth2 `Client ID` and `Client Secret`, and set up proper redirect URLs.
 
 ### Getting Keys
 
-After creating a game inside of the ZEBEDEE Developer Dashboard, head on over to the `OAuth2` tab inside of that game's single details view.
+After creating a game inside of the ZBD Dev Dashboard, head on over to the `OAuth2` tab inside of that game's single details view.
 
-<Frame type="glass" caption="OAuth2 Menu - ZEBEDEE Developer Dashboard">
+<Frame type="glass" caption="OAuth2 Menu - ZBD Dev Dashboard">
   <img
     src="/img/oauth2-keys.png"
-    alt="OAuth2 Menu - ZEBEDEE Developer Dashboard"
+    alt="OAuth2 Menu - ZBD Dev Dashboard"
   />
 </Frame>
 <br />
@@ -138,21 +138,21 @@ Now its time to set up your OAuth2 redirect URLs. Head on over to the OAuth2 set
 
 <Frame
   type="glass"
-  caption="View OAuth2 Settings - ZEBEDEE Developer Dashboard"
+  caption="View OAuth2 Settings - ZBD Dev Dashboard"
 >
   <img
     src="/img/oauth2-vs.png"
-    alt="View OAuth2 Settings - ZEBEDEE Developer Dashboard"
+    alt="View OAuth2 Settings - ZBD Dev Dashboard"
   />
 </Frame>
 <br />
 
 From the opened OAuth2 Settings modal, you can add up to 3 redirect URLs (whether native mobile URIs or HTTPS-based URLs). To get started use the `+` button.
 
-<Frame type="glass" caption="Add Redirect URLs - ZEBEDEE Developer Dashboard">
+<Frame type="glass" caption="Add Redirect URLs - ZBD Dev Dashboard">
   <img
     src="/img/oauth2-ru.png"
-    alt="Add Redirect URLs - ZEBEDEE Developer Dashboard"
+    alt="Add Redirect URLs - ZBD Dev Dashboard"
   />
 </Frame>
 <br />

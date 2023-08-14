@@ -7,14 +7,14 @@ title: 'Receiving Lightning Payments'
 </Frame>
 <br />
 
-In order to receive Bitcoin through the Lightning Network using the ZEBEDEE API, you must first create a **Charge**. A Charge accepts the following attributes:
+In order to receive Bitcoin through the Lightning Network using the ZBD API, you must first create a **Charge**. A Charge accepts the following attributes:
 
 | Property | Status | Description |
 | --- | :-: | --- |
 | **amount** | _String_ | The Charge amount (in millisatoshis). |
 | **description** | _String_ | The Charge description (_also applied as the description to the associated BOLT11 Lightning payment request_). |
 | **internalId** | _String_ | An optional free-use attribute. Usually used by setting the Player/User ID of your Game/Application in order to link specific Charges to specific Players. |
-| **callbackUrl** | _String_ | The URL ZEBEDEE API will make a POST HTTP request to with information about the Charges's status updates. |
+| **callbackUrl** | _String_ | The URL ZBD API will make a POST HTTP request to with information about the Charges's status updates. |
 | **expiresIn** | _Number_ | The desired expiration time for this Charge (in seconds). |
 
 To create a Charge, use the [`/charges`](/api/charges/create) API (or leverage one of our SDKs) by passing the correct attributes:
@@ -22,7 +22,7 @@ To create a Charge, use the [`/charges`](/api/charges/create) API (or leverage o
 <CodeGroup>
 
 ```js NodeJS
-// Using ZEBEDEE's NodeJS SDK
+// Using ZBD's NodeJS SDK
 import { zbd } from '@zbd/node';
 
 // Instantiate ZBD client

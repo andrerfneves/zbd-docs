@@ -1,9 +1,9 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "ZEBEDEE",
+  "name": "ZBD",
   "logo": {
-    "dark": "/logo/light.png",
-    "light": "/logo/dark.png"
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg"
   },
   "favicon": "/favicon.png",
   "colors": {
@@ -21,7 +21,7 @@
   "topbarLinks": [
     {
       "name": "Status",
-      "url": "https://status.zebedee.io/"
+      "url": "https://status.zbd.dev/"
     },
     {
       "name": "Blog",
@@ -39,23 +39,26 @@
   "tabs": [
     {
       "name": "API Reference",
-      "url": "api"
+      "url": "api-reference"
     }
   ],
-  "anchors": [],
   "navigation": [
     {
       "group": "Overview",
-      "pages": ["docs/quick-start", "docs/lightning-network", "docs/glossary"]
+      "pages": [
+        "docs/quick-start",
+        "docs/lightning-network",
+        "docs/glossary"
+      ]
     },
     {
-      "group": "ZEBEDEE API",
+      "group": "ZBD API",
       "pages": [
-        "docs/zebedee-api/overview",
-        "docs/zebedee-api/authentication",
-        "docs/zebedee-api/error-handling",
-        "docs/zebedee-api/sdks",
-        "docs/zebedee-api/resources",
+        "docs/zebedee-api-reference/overview",
+        "docs/zebedee-api-reference/authentication",
+        "docs/zebedee-api-reference/error-handling",
+        "docs/zebedee-api-reference/sdks",
+        "docs/zebedee-api-reference/resources",
         {
           "group": "Payouts",
           "pages": [
@@ -67,7 +70,10 @@
         },
         {
           "group": "Payins",
-          "pages": ["docs/payins/charges", "docs/payins/zbd-gamertag"]
+          "pages": [
+            "docs/payins/charges",
+            "docs/payins/zbd-gamertag"
+          ]
         }
       ]
     },
@@ -105,7 +111,7 @@
       "group": "Walkthroughs",
       "pages": [
         {
-          "group": "Developer Dashboard",
+          "group": "Dev Dashboard",
           "pages": [
             "docs/dashboard/overview",
             {
@@ -128,7 +134,9 @@
             },
             {
               "group": "Vouchers",
-              "pages": ["docs/dashboard/vouchers"]
+              "pages": [
+                "docs/dashboard/vouchers"
+              ]
             }
           ]
         },
@@ -161,84 +169,114 @@
     },
     {
       "group": "API Documentation",
-      "pages": ["api/introduction"]
+      "pages": [
+        "api-reference/introduction"
+      ]
     },
     {
       "group": "Charges",
-      "pages": ["api/charges/create", "api/charges/get", "api/charges/decode"]
+      "pages": [
+        "api-reference/charges/create",
+        "api-reference/charges/get",
+        "api-reference/charges/decode"
+      ]
     },
     {
       "group": "Static Charges",
       "pages": [
-        "api/static-charges/create",
-        "api/static-charges/get",
-        "api/static-charges/update"
+        "api-reference/static-charges/create",
+        "api-reference/static-charges/get",
+        "api-reference/static-charges/update"
       ]
     },
     {
       "group": "Payments",
-      "pages": ["api/payments/send", "api/payments/get"]
+      "pages": [
+        "api-reference/payments/send",
+        "api-reference/payments/get"
+      ]
     },
     {
       "group": "Lightning Address",
       "pages": [
-        "api/lightning-address/send",
-        "api/lightning-address/validate",
-        "api/lightning-address/create"
+        "api-reference/lightning-address/send",
+        "api-reference/lightning-address/validate",
+        "api-reference/lightning-address/create"
       ]
     },
     {
       "group": "Keysend",
-      "pages": ["api/keysend/send"]
+      "pages": [
+        "api-reference/keysend/send"
+      ]
     },
     {
       "group": "ZBD Gamertags",
       "pages": [
-        "api/gamertag/send",
-        "api/gamertag/get",
-        "api/gamertag/create",
-        "api/gamertag/get-user-id",
-        "api/gamertag/get-gamertag"
+        "api-reference/gamertag/send",
+        "api-reference/gamertag/get",
+        "api-reference/gamertag/create",
+        "api-reference/gamertag/get-user-id",
+        "api-reference/gamertag/get-gamertag"
       ]
     },
     {
       "group": "Wallet",
-      "pages": ["api/wallet/get"]
+      "pages": [
+        "api-reference/wallet/get"
+      ]
     },
     {
       "group": "Utils",
       "pages": [
-        "api/utils/btc-usd",
-        "api/utils/is-supported-region",
-        "api/utils/api"
+        "api-reference/utils/btc-usd",
+        "api-reference/utils/is-supported-region",
+        "api-reference/utils/api"
       ]
     },
     {
       "group": "Internal Transfer",
-      "pages": ["api/internal-transfer/create"]
+      "pages": [
+        "api-reference/internal-transfer/create"
+      ]
     },
     {
       "group": "Withdrawal Requests",
-      "pages": ["api/withdrawal-requests/create", "api/withdrawal-requests/get"]
+      "pages": [
+        "api-reference/withdrawal-requests/create",
+        "api-reference/withdrawal-requests/get"
+      ]
     },
     {
       "group": "ZBD Login (OAuth2)",
       "pages": [
-        "api/oauth2/authorization",
-        "api/oauth2/fetch-access-token",
-        "api/oauth2/refresh-token",
-        "api/oauth2/get-user",
-        "api/oauth2/get-wallet"
+        "api-reference/oauth2/authorization",
+        "api-reference/oauth2/fetch-access-token",
+        "api-reference/oauth2/refresh-token",
+        "api-reference/oauth2/get-user",
+        "api-reference/oauth2/get-wallet"
       ]
     },
     {
       "group": "Sandbox API",
-      "pages": ["api/gamertag/send-gamertag"]
+      "pages": [
+        "api-reference/gamertag/send-gamertag"
+      ]
     }
   ],
   "footerSocials": {
     "twitter": "https://twitter.com/zebedeeio",
     "github": "https://github.com/zebedeeio",
     "discord": "https://discord.gg/zbd"
-  }
+  },
+  "redirects": [
+    {
+      "source": "/api/",
+      "destination": "/api-reference/introduction"
+    },
+    {
+      "source": "/api/:path((?!request$).*)",
+      "destination": "/api-reference/:path*"
+    }
+  ]
 }

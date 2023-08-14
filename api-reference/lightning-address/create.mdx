@@ -1,0 +1,62 @@
+---
+title: "Create Charge for Lightning Address"
+api: "POST https://api.zebedee.io/v0/ln-address/fetch-charge"
+---
+
+## Description
+
+If instead of sending Bitcoin payments directly to a given Lightning Address, you would rather create a Charge / Payment Request QR code for that Lightning Address, you can create one using this endpoint.
+
+## Usage
+
+Depending on your system's configuration or your product's UX, you may need the ability to generate Charges for specific users. For ZBD users that's easy using the ZBD Gamertag endpoints. For any user that is using a different provider, you can use this endpoint.
+
+The way to think of this is:
+
+- Given `user@domain.com` Lightning Address and an amount, this endpoint generates a Lightning Network Charge
+
+- If this Charge is paid, the payment is sent to `user@domain.com`
+
+## Configuration
+
+### Header Parameters
+
+<ParamField required default="application/json" header="Content-Type" type="application/json" />
+
+<ParamField required header="apikey" type="string">
+  ZBD Project API Key
+</ParamField>
+
+### Body
+
+<ParamField required body="lnaddress" type="string">
+  The Lightning Address of the intended recipient
+</ParamField>
+
+<ParamField required body="amount" type="string">
+  The amount for the Charge -> in millisatoshis
+</ParamField>
+
+<ParamField initialValue="‎" body="description" type="string">
+  Note or comment of this Charge
+</ParamField>
+
+<CodeGroup />
+
+<ResponseExample>
+
+```json Response
+{
+  "success": true,
+  "data": {
+    "lnaddress": "andre@zbd.gg",
+    "amount": "15000",
+    "invoice": {
+      "uri": "lightning:lnbc100n1p3mtxc3pp5tz4srtee9c4gsvlcqa6azu60a2ak2fvrnk7jv52j6n0rzp0musnqhp5xt5ts9t74akf67j59ynkr5qz8x3hs4g09d3dttmjrwwdhrxgc03qcqzpgxqzfvsp5529t5y03yaakumqrm9cwr5t6nysnr5cv93pnvw089a25aa7wszas9qyyssqalswdlc92983203l5azl43nksehadfy2uahc9v6qwg67xs52z02hg6vh7alrm3yx46ywdrl3dxey75t9l2ekmuwc3tu4ug03dy729fspdld2lj",
+      "request": "lnbc100n1p3mtxc3pp5tz4srtee9c4gsvlcqa6azu60a2ak2fvrnk7jv52j6n0rzp0musnqhp5xt5ts9t74akf67j59ynkr5qz8x3hs4g09d3dttmjrwwdhrxgc03qcqzpgxqzfvsp5529t5y03yaakumqrm9cwr5t6nysnr5cv93pnvw089a25aa7wszas9qyyssqalswdlc92983203l5azl43nksehadfy2uahc9v6qwg67xs52z02hg6vh7alrm3yx46ywdrl3dxey75t9l2ekmuwc3tu4ug03dy729fspdld2lj"
+    }
+  }
+}
+```
+
+</ResponseExample>

@@ -1,0 +1,36 @@
+---
+title: "Get Wallet"
+api: "GET https://api.zebedee.io/v0/wallet"
+---
+
+## Description
+
+Retrieves the total balance of a given Project Wallet.
+
+## Usage
+
+To retrieve the balance of the Project Wallet for your project, just make sure to use that project's API Key in the `apikey` header property in the API endpoint.
+
+## Configuration
+
+### Header Parameters
+
+<ParamField required header="apikey" type="string">
+  ZBD Project API Key
+</ParamField>
+
+<CodeGroup />
+
+<ResponseExample>
+
+```json Response
+{
+  "message": "Successfully retrieved Wallet.",
+  "data": {
+    "unit": "msats",
+    "balance": "384000"
+  }
+}
+```
+
+</ResponseExample>
