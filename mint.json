@@ -54,11 +54,11 @@
     {
       "group": "ZBD API",
       "pages": [
-        "docs/zebedee-api-reference/overview",
-        "docs/zebedee-api-reference/authentication",
-        "docs/zebedee-api-reference/error-handling",
-        "docs/zebedee-api-reference/sdks",
-        "docs/zebedee-api-reference/resources",
+        "docs/zebedee-api/overview",
+        "docs/zebedee-api/authentication",
+        "docs/zebedee-api/error-handling",
+        "docs/zebedee-api/sdks",
+        "docs/zebedee-api/resources",
         {
           "group": "Payouts",
           "pages": [
@@ -168,7 +168,7 @@
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "API Reference",
       "pages": [
         "api-reference/introduction"
       ]

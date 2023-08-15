@@ -1,14 +1,46 @@
-# Mintlify Starter Kit
+<p align="center">
+  <a href="https://docs.zbd.dev">
+    <img src="https://avatars.githubusercontent.com/u/54384134?s=200&v=4" height="96">
+    <h3 align="center">ZBD API Docs</h3>
+  </a>
+</p>
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+<div align="center">
+  
+[![bitcoin ln payments](https://img.shields.io/badge/Bitcoin%20Lightning-Payments-orange?style=for-the-badge&logo=bitcoin)](https://zebedee.io)
+  
+</div>
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+<p align="center">
+  Instant Bitcoin Payment APIs
+</p>
 
-### 👩‍💻 Development
+<p align="center">
+  <a href="https://docs.zbd.dev"><strong>Documentation</strong></a> ·
+  <a href="https://dashboard.zebedee.io"><strong>Developer Dashboard</strong></a> ·
+  <a href="https://docs.zbd.dev/api-reference/introduction"><strong>API Reference</strong></a> ·
+  <a href="https://status.zbd.dev"><strong>API Status</strong></a>
+</p>
+<br/>
+
+## ZBD
+
+ZBD is the payments platform for modern developers, providing the speed and reliability innovators need to create monetized and meaningfully-engaging user experiences.
+
+We enable businesses and consumers to quickly introduce instantaneous Bitcoin payments to the fabric of their applications, games, and platforms. ZBD has the most comprehensive set of Bitcoin Lightning API capabilities and is industry-leader in supporting companies in the fields of gaming, social, adtech and fintech.
+
+With ZBD, it's easy! Anyone can do it. **[What are YOU building?](https://dashboard.zebedee.io/signup)**
+
+## Resources
+
+- [Help & Support](https://help.zebedee.io)
+- [Twitter](https://twitter.com/zebedeeio)
+- [Discord](https://discord.gg/zbd)
+- [Download ZBD](https://zbd.gg)
+
+## Contributing
+
+### Development
 
 Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
 
@@ -16,15 +48,15 @@ Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview th
 npm i -g mintlify
 ```
 
-Run the following command at the root of your documentation (where mint.json is)
+Run the following command at the root of the repository (where mint.json is)
 
 ```
 mintlify dev
 ```
 
-### 😎 Publishing Changes
+### Deployment
 
-Changes will be deployed to production automatically after pushing to the default branch.
+Changes will be deployed to production automatically after pushing to `main` branch.
 
 You can also preview changes using PRs, which generates a preview link of the docs.
 
