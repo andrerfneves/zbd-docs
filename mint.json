@@ -36,45 +36,71 @@
     "name": "Discord",
     "url": "https://discord.gg/zbd"
   },
-  "tabs": [
+  "anchors": [
     {
+      "icon": "terminal",
       "name": "API Reference",
       "url": "api-reference"
+    },
+    {
+      "icon": "books",
+      "name": "Knowledge Base",
+      "url": "knowledge-base"
     }
   ],
   "navigation": [
     {
-      "group": "Overview",
+      "group": "",
       "pages": [
-        "docs/quick-start",
-        "docs/lightning-network",
-        "docs/glossary"
+        "docs/overview"
+      ]
+    },
+    {
+      "group": "",
+      "pages": [
+        "knowledge-base/lightning-network",
+        "knowledge-base/glossary"
       ]
     },
     {
       "group": "ZBD API",
       "pages": [
-        "docs/zebedee-api/overview",
-        "docs/zebedee-api/authentication",
-        "docs/zebedee-api/error-handling",
-        "docs/zebedee-api/sdks",
-        "docs/zebedee-api/resources",
+        "knowledge-base/zebedee-api/overview",
+        "knowledge-base/zebedee-api/authentication",
+        "knowledge-base/zebedee-api/error-handling",
+        "knowledge-base/zebedee-api/sdks",
+        "knowledge-base/zebedee-api/resources",
         {
           "group": "Payouts",
           "pages": [
-            "docs/payouts/lightning-address",
-            "docs/payouts/lightning-charges",
-            "docs/payouts/withdrawal-requests",
-            "docs/payouts/zbd-gamertag"
+            "knowledge-base/payouts/lightning-address",
+            "knowledge-base/payouts/lightning-charges",
+            "knowledge-base/payouts/withdrawal-requests",
+            "knowledge-base/payouts/zbd-gamertag"
           ]
         },
         {
           "group": "Payins",
           "pages": [
-            "docs/payins/charges",
-            "docs/payins/zbd-gamertag"
+            "knowledge-base/payins/charges",
+            "knowledge-base/payins/zbd-gamertag"
           ]
         }
+      ]
+    },
+    {
+      "group": "Miscellaneous",
+      "pages": [
+        "knowledge-base/guides/nostr-relay",
+        "knowledge-base/guides/lightning-address",
+        "knowledge-base/guides/static-charges"
+      ]
+    },
+    {
+      "group": "Community",
+      "pages": [
+        "knowledge-base/guides/custom-lightning-address-app",
+        "knowledge-base/guides/send-payment-to-ln-address-app"
       ]
     },
     {
@@ -90,26 +116,6 @@
             "docs/zbd-login/advanced"
           ]
         },
-        {
-          "group": "Miscellaneous",
-          "pages": [
-            "docs/guides/nostr-relay",
-            "docs/guides/lightning-address",
-            "docs/guides/static-charges"
-          ]
-        },
-        {
-          "group": "Community",
-          "pages": [
-            "docs/guides/custom-lightning-address-app",
-            "docs/guides/send-payment-to-ln-address-app"
-          ]
-        }
-      ]
-    },
-    {
-      "group": "Walkthroughs",
-      "pages": [
         {
           "group": "Dev Dashboard",
           "pages": [
