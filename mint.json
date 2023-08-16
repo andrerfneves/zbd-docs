@@ -5,6 +5,10 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
+  "modeToggle": {
+    "default": "light",
+    "isHidden": true
+  },
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#9563FF",
@@ -20,12 +24,8 @@
   },
   "topbarLinks": [
     {
-      "name": "Status",
+      "name": "API Status",
       "url": "https://status.zbd.dev/"
-    },
-    {
-      "name": "Blog",
-      "url": "https://blog.zebedee.io/"
     },
     {
       "name": "GitHub",
@@ -33,8 +33,8 @@
     }
   ],
   "topbarCtaButton": {
-    "name": "Discord",
-    "url": "https://discord.gg/zbd"
+    "name": "Log In",
+    "url": "https://dashboard.zebedee.io"
   },
   "anchors": [
     {
@@ -50,61 +50,55 @@
   ],
   "navigation": [
     {
-      "group": "",
+      "group": "Documentation",
       "pages": [
         "docs/overview"
       ]
     },
     {
-      "group": "",
+      "group": "Quick Start",
       "pages": [
-        "knowledge-base/lightning-network",
-        "knowledge-base/glossary"
-      ]
-    },
-    {
-      "group": "ZBD API",
-      "pages": [
-        "knowledge-base/zebedee-api/overview",
-        "knowledge-base/zebedee-api/authentication",
-        "knowledge-base/zebedee-api/error-handling",
-        "knowledge-base/zebedee-api/sdks",
-        "knowledge-base/zebedee-api/resources",
         {
-          "group": "Payouts",
+          "group": "Node.js",
           "pages": [
-            "knowledge-base/payouts/lightning-address",
-            "knowledge-base/payouts/lightning-charges",
-            "knowledge-base/payouts/withdrawal-requests",
-            "knowledge-base/payouts/zbd-gamertag"
+            "docs/nodejs-sdk",
+            "docs/nextjs-playground-starter"
           ]
         },
         {
-          "group": "Payins",
+          "group": "Serverless",
           "pages": [
-            "knowledge-base/payins/charges",
-            "knowledge-base/payins/zbd-gamertag"
+            "docs/vercel-edge-functions"
+          ]
+        },
+        {
+          "group": "Rust",
+          "pages": [
+            "docs/rust-sdk"
+          ]
+        },
+        {
+          "group": "Go",
+          "pages": [
+            "docs/go-sdk"
+          ]
+        },
+        {
+          "group": "C#",
+          "pages": [
+            "docs/csharp-sdk"
+          ]
+        },
+        {
+          "group": "HTTP",
+          "pages": [
+            "docs/http-rest"
           ]
         }
       ]
     },
     {
-      "group": "Miscellaneous",
-      "pages": [
-        "knowledge-base/guides/nostr-relay",
-        "knowledge-base/guides/lightning-address",
-        "knowledge-base/guides/static-charges"
-      ]
-    },
-    {
-      "group": "Community",
-      "pages": [
-        "knowledge-base/guides/custom-lightning-address-app",
-        "knowledge-base/guides/send-payment-to-ln-address-app"
-      ]
-    },
-    {
-      "group": "Guides",
+      "group": "Learn",
       "pages": [
         {
           "group": "ZBD Login",
@@ -174,9 +168,57 @@
       ]
     },
     {
+      "group": "Resources",
+      "pages": [
+        "docs/examples",
+        "docs/sdk",
+        "docs/integrations"
+      ]
+    },
+    {
+      "group": "ZBD API",
+      "pages": [
+        "knowledge-base/lightning-network",
+        "knowledge-base/glossary"
+      ]
+    },
+    {
+      "group": "ZBD API",
+      "pages": [
+        "knowledge-base/payouts/lightning-address",
+        "knowledge-base/payouts/lightning-charges",
+        "knowledge-base/payouts/withdrawal-requests",
+        "knowledge-base/payouts/zbd-gamertag"
+      ]
+    },
+    {
+      "group": "Payins",
+      "pages": [
+        "knowledge-base/payins/charges",
+        "knowledge-base/payins/zbd-gamertag"
+      ]
+    },
+    {
+      "group": "Miscellaneous",
+      "pages": [
+        "knowledge-base/guides/nostr-relay",
+        "knowledge-base/guides/lightning-address",
+        "knowledge-base/guides/static-charges"
+      ]
+    },
+    {
+      "group": "Community",
+      "pages": [
+        "knowledge-base/guides/custom-lightning-address-app",
+        "knowledge-base/guides/send-payment-to-ln-address-app"
+      ]
+    },
+    {
       "group": "API Reference",
       "pages": [
-        "api-reference/introduction"
+        "api-reference/introduction",
+        "api-reference/errors",
+        "api-reference/resources"
       ]
     },
     {

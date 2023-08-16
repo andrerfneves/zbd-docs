@@ -1,35 +1,43 @@
 ---
-title: "Getting Started"
+title: "Introduction"
+description: "Understand API general concepts and authentication strategies."
 ---
-
-<Frame type="glass" caption="">
-  <img src="https://i.imgur.com/dh8IrYy.png" alt="API Docs - ZBD" />
-</Frame>
-<br />
 
 ## Overview
 
-This API Reference will detail the expected input parameters and response payloads for each API endpoint available in the ZBD API. You'll be up and running in no time!
+ZBD offers a powerful REST API that supports Bitcoin Lightning Network transactions with various payout and payin methods. Our API uses JSON data structures and makes use of industry standard HTTP response codes.
 
-ZBD offers a powerful REST API that supports Bitcoin Lightning Network nanotransactions with events, callbacks, and webhooks support. Our API uses JSON data structures and makes use of industry standard HTTP response codes.
+## Base URL
 
-## Guides & Walkthroughs
+The ZBD API is available on the following base URL:
 
-For detailed documentation, walkthroughs, and guides about how to best use the ZBD API head over to our [Documentation Portal](/docs/overview).
+```bash
+https://api.zebedee.io
+```
 
-## Resources
-
-Helpful resources and links to help you resolve any issues, converse with other developers building on ZBD, and get the most out of your ZBD experience:
-
-- [Join ZBD Discord group](https://discord.gg/zbd)
-- [Check out ZBD's GitHub](https://github.com/zebedeeio)
-- [Submit Support Ticket with ZBD](https://help.zebedee.io/hc/en-us/requests/new)
-- [ZBD FAQ](https://zebedee.io/faq)
-- [Supported Regions](https://zebedee.io/countries)
-- [Download ZBD App](https://zbd.gg/)
+<Note>If you're looking for the [Sandbox API](/api-reference/sandbox/gamertag), that's available at `https://sandbox-api.zebedee.io`.</Note>
 
 ## Authentication
 
-All ZBD APIs are protected by an API Key. To successfully make API requests against any of the endpoints you must pass an HTTP header called apikey with your Project API Key ([get it from the ZBD Dev Dashboard](/docs/dashboard/projects/api)).
+All ZBD endpoints are protected by an API Key. To make requests against these endpoints you must pass a header property called `apikey` with your ZBD Project Key ([get it from the ZBD Dev Dashboard](/docs/dashboard/projects/api)).
 
-Okay, now that you're ready, explore the left-hand menu to see the many endpoints that allow you to move money at the speed of the internet!
+```json
+apikey: "1PnXYRdcm13NJrHZVzctgCAUIEniVomQR"
+```
+
+## SSL / HTTPS Access
+
+**ZBD only provides a secure interface over HTTPS with SSL certificate support**. Any requests that attempt to reach the ZBD API in an insecure fashion (plain-text over HTTP requests) will be rejected.
+
+<Note>Secure Sockets Layer (SSL) is the standard security technology for establishing an encrypted link between a server and a client. SSL allows sensitive information such as credit card numbers, social security numbers, and login credentials to be transmitted securely.</Note>
+
+## Resources
+
+Links to help you get the most out of your ZBD development experience:
+
+<CardGroup cols={2}>
+  <Card title="Join our Discord" icon="discord" color="#9656ce" href="/api-reference/charges/create"></Card>
+  <Card title="See our GitHub Examples" icon="github" color="#000000" href="/docs/examples"></Card>
+  <Card title="View the FAQs" icon="circle-question" color="#FF9900" href="/api-reference/charges/create"></Card>
+  <Card title="Download ZBD App" icon="circle-down" color="#00ADD8" href="https://zbd.one/download"></Card>
+</CardGroup>

@@ -1,0 +1,36 @@
+---
+title: 'Developer Tools'
+description: 'Learn about common use tools for developers integrating ZBD.'
+---
+
+## Utility APIs
+
+When integrating ZBD API for payments capabilities in your system, it's important to have utility data points / functionalities available.
+
+We've made a set of these Utility APIs available in the API Reference:
+
+- [BTC USD Exchange Rate](/api-reference/utils/btc-usd) -> Fetches the latest price for 1 Bitcoin in USD
+- [Is Supported Region](/api-reference/utils/is-supported-region) -> Fetches whether a user is located in a region ZBD services are available
+- [ZBD Production IPs](/api-reference/utils/api) -> Fetches the static IP addresses for ZBD servers
+
+## External Resources
+
+The ZBD API abstracts away all of the complexity around the Bitcoin and Lightning Network protocols. But if you want to dig deeper, here are some developer tools to know:
+
+<CardGroup cols={2}>
+  <Card title="Lightning Address" icon="arrow-up-right-from-square" color="#000000" href="https://lightningaddress.com">
+    Receive Bitcoin payments to user@domain.com.
+  </Card>
+  <Card title="Lightning Decoder" icon="arrow-up-right-from-square" color="#000000" href="https://lightningdecoder.com">
+    Decode any Bitcoin Lightning QR or address.
+  </Card>
+  <Card title="LNURL Specs" icon="arrow-up-right-from-square" color="#000000" href="https://github.com/lnurl/luds">
+    Lightning Network URL protocol document specs.
+  </Card>
+  <Card title="Lightning Network Specs" icon="arrow-up-right-from-square" color="#000000" href="https://github.com/lightning/bolts">
+    Lightning Network protocol document specifications.
+  </Card>
+  <Card title="bolt11.org" icon="arrow-up-right-from-square" color="#000000" href="https://bolt11.org">
+    Overview of a Bitcoin Lightning payment request.
+  </Card>
+</CardGroup>
