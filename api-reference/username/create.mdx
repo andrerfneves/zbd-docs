@@ -1,11 +1,11 @@
 ---
-title: "Create Charge for ZBD Gamertag"
+title: "Create Charge"
 api: "POST https://api.zebedee.io/v0/gamertag/charges"
 ---
 
 ## Description
 
-While you can use the [Send Payment to ZBD Gamertag](/api-reference/gamertag/send) endpoint to make a direct Bitcoin payment to a given ZBD user, if for whatever reason you'd want to create a general Lightning Network Charge / Payment Request QR code, you can use this endpoint.
+While you can use the [Pay to ZBD Username](/api-reference/username/send) endpoint to make a direct Bitcoin payment to a given ZBD user, if for whatever reason you'd want to create a general Lightning Network Charge / Payment Request QR code, you can use this endpoint.
 
 ## Usage
 
@@ -28,7 +28,7 @@ The response payload will include a `invoiceRequest` which is the contents of th
 </ParamField>
 
 <ParamField required body="gamertag" type="string">
-  Destination ZBD Gamertag
+  Destination ZBD Username
 </ParamField>
 
 <ParamField initialValue="‎" body="description" type="string">
