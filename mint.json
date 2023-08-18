@@ -46,6 +46,11 @@
       "icon": "books",
       "name": "Knowledge Base",
       "url": "knowledge-base"
+    },
+    {
+      "icon": "play",
+      "name": "Courses",
+      "url": "courses"
     }
   ],
   "navigation": [
@@ -211,6 +216,27 @@
       "pages": [
         "knowledge-base/guides/custom-lightning-address-app",
         "knowledge-base/guides/send-payment-to-ln-address-app"
+      ]
+    },
+    {
+      "group": "Courses",
+      "pages": [
+        "courses/introduction",
+        "courses/test",
+        {
+          "group": "Courses 2",
+          "pages": [
+            "courses/introduction",
+            "courses/test",
+            {
+              "group": "Courses 3",
+              "pages": [
+                "courses/introduction",
+                "courses/test"
+              ]
+            }
+          ]
+        }
       ]
     },
     {
