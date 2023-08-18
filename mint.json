@@ -24,6 +24,10 @@
   },
   "topbarLinks": [
     {
+      "name": "Bounties",
+      "url": "https://console.algora.io/org/zebedeeio/bounties?status=open"
+    },
+    {
       "name": "API Status",
       "url": "https://status.zbd.dev/"
     },
@@ -73,7 +77,13 @@
         {
           "group": "Serverless",
           "pages": [
-            "docs/vercel-edge-functions"
+            {
+              "group": "Vercel Edge Functions",
+              "pages": [
+                "docs/vercel-edge-functions/receive",
+                "docs/vercel-edge-functions/send"
+              ]
+            }
           ]
         },
         {
@@ -86,12 +96,6 @@
           "group": "Go",
           "pages": [
             "docs/go-sdk"
-          ]
-        },
-        {
-          "group": "C#",
-          "pages": [
-            "docs/csharp-sdk"
           ]
         },
         {
