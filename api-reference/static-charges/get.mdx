@@ -1,22 +1,17 @@
 ---
 title: "Get Static Charge"
-api: "GET https://api.zebedee.io/v0/static-charges/{STATIC_CHARGE_ID}"
+description: "Retrieve all data about a single Static Charge."
+api: "GET https://api.zebedee.io/v0/static-charges/{id}"
 ---
 
-## Description
-
-Retrieves all information relating to a specific [Static Charge](/knowledge-base/guides/static-charges).
-
-## Usage
-
-You should rely on `callbackUrl` property and expect async Static Charge updates sent from ZBD servers. However, this API can be used to check any information about any specific Static Charge, specifically properties such as `slots`, `successMessage`, and `status`.
+<Tip>You should rely on `callbackUrl` property and expect async Static Charge updates sent from ZBD servers. However, this API can be used to check any information about any specific Static Charge, specifically properties such as `slots`, `successMessage`, and `status`.</Tip>
 
 ## Configuration
 
 ### Path Parameters
 
-<ParamField required path="STATIC_CHARGE_ID" type="string">
-  ID of the Static Charge
+<ParamField required path="id" type="string">
+  Static Charge ID
 </ParamField>
 
 ### Header Parameters

@@ -1,5 +1,6 @@
 ---
 title: "Send Keysend Payment"
+description: "Start sending Keysend payments on the Lightning Network."
 api: "POST https://api.zebedee.io/v0/keysend-payment"
 ---
 
@@ -15,13 +16,11 @@ If your system relies on sending Bitcoin over the Lightning Network to specific 
 
 Additional metadata and TLV record data can be attached to this endpoint as well. Both of these properties/values will be returned on the `callbackUrl` POST call from ZBD.
 
-As with all asynchronous payments in the Lightning Network, in order to receive updates about whether a payment settled, you must provide the `callbackUrl` property. As you will note from the response example below, if the Keysend Payment doesn't settle (almost) immediately, you will receive a `Payment Processing` response payload. Once it settles, you'll receive the update on the `callbackUrl`.
+<Info>As with all asynchronous payments in the Lightning Network, in order to receive updates about whether a payment settled, you must provide the `callbackUrl` property. As you will note from the response example below, if the Keysend Payment doesn't settle (almost) immediately, you will receive a `Payment Processing` response payload. Once it settles, you'll receive the update on the `callbackUrl`.</Info>
 
 ## Configuration
 
 ### Header Parameters
-
-<ParamField required header="Content-Type" default="application/json" type="application/json" />
 
 <ParamField required header="apikey" type="string">
   ZBD Project API Key
