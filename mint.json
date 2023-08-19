@@ -70,8 +70,9 @@
         {
           "group": "Node.js",
           "pages": [
-            "docs/nodejs-sdk",
-            "docs/nextjs-playground-starter"
+            "docs/nodejs-quickstart",
+            "docs/nextjs-playground-starter",
+            "docs/express-quickstart"
           ]
         },
         {
@@ -89,19 +90,19 @@
         {
           "group": "Rust",
           "pages": [
-            "docs/rust-sdk"
+            "docs/rust-quickstart"
           ]
         },
         {
           "group": "Go",
           "pages": [
-            "docs/go-sdk"
+            "docs/go-quickstart"
           ]
         },
         {
           "group": "HTTP",
           "pages": [
-            "docs/http-rest"
+            "docs/http-quickstart"
           ]
         }
       ]
@@ -187,13 +188,6 @@
     {
       "group": "ZBD API",
       "pages": [
-        "knowledge-base/lightning-network",
-        "knowledge-base/glossary"
-      ]
-    },
-    {
-      "group": "ZBD API",
-      "pages": [
         "knowledge-base/payouts/lightning-address",
         "knowledge-base/payouts/lightning-charges",
         "knowledge-base/payouts/withdrawal-requests",
@@ -210,6 +204,7 @@
     {
       "group": "Miscellaneous",
       "pages": [
+        "knowledge-base/lightning-network",
         "knowledge-base/guides/nostr-relay",
         "knowledge-base/guides/lightning-address",
         "knowledge-base/guides/static-charges"
@@ -218,8 +213,19 @@
     {
       "group": "Community",
       "pages": [
-        "knowledge-base/guides/custom-lightning-address-app",
-        "knowledge-base/guides/send-payment-to-ln-address-app"
+        {
+          "group": "Tutorials & Guides",
+          "pages": [
+            "knowledge-base/guides/custom-lightning-address-app",
+            "knowledge-base/guides/send-payment-to-ln-address-app"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "knowledge-base/glossary"
       ]
     },
     {
