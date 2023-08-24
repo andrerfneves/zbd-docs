@@ -1,21 +1,14 @@
 ---
 title: "Get Withdrawal Request"
-api: "GET https://api.zebedee.io/v0/withdrawal-requests/{WITHDRAWAL_ID}"
+description: "Retrieve all data about a single Withdrawal Request."
+api: "GET https://api.zebedee.io/v0/withdrawal-requests/{id}"
 ---
-
-## Description
-
-Retrieves details about a specific Withdrawal Request.
-
-## Usage
-
-Use this API endpoint to fetch any specific property about a given Withdrawal Request record.
 
 ## Configuration
 
 ### Path Parameters
 
-<ParamField required path="WITHDRAWAL_ID" type="string">
+<ParamField required path="id" type="string">
   Withdrawal Request ID
 </ParamField>
 

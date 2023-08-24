@@ -1,0 +1,80 @@
+---
+title: Introduction
+description: Learn how to send and receive instant Bitcoin payments with rust and ZBD.
+---
+
+## Prerequisites
+
+To complete this guide, you will need the following:
+
+- [ZBD Project with a Live API key](/docs/getting-started)
+    - create an environment variable called ZBD_API_KEY
+- [rust and cargo installed through rustup](https://www.rust-lang.org/tools/install)
+
+## 1. Create a rust project
+
+```bash
+cargo new <project-name>
+cd <project-name>
+```
+
+## 2. Add dependencies to your project
+
+Add the ZBD and tokio crates:
+
+<CodeGroup>
+
+```bash
+cargo add zebedee-rust tokio
+```
+
+</CodeGroup>
+
+## 3. Update your Cargo.toml to use full features in tokio
+```
+[package]
+name = "zbd-rust"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1.29.1", features = ['full']}
+zebedee-rust = "0.4.4"
+```
+
+4. Create a charge
+- open `main.rs` and add the following code
+```
+use std::env;
+use zebedee_rust::{charges::*, ZebedeeClient};
+
+#[tokio::main]
+async fn main(){
+    let apikey: String = end::var("ZBD_API_KEY").unwrap();
+    let zbd_client = ZebedeeClient::new().apikey(apikey).build();
+
+    let charge = Charge{
+        amount: String::from("5000"),
+        ..Default::default()
+    };
+
+    let charges_res = zbd_client.create_charge(&charge).await.unwrap();
+
+    println!("{:?}", charge_res);
+}
+```
+
+5. Try it yourself
+- Run the following command to create your charge:
+`cargo run`
+- You can now create charges using the ZBD API!
+
+<Info>Charges and payment requests are usually shown to users as QR codes that can be scanned by mobile apps (e.g. [ZBD](https://zbd.one/download)). Read [Callbacks](/yo) to understand how to receive updates about your payment asynchronously.</Info>
+
+<CardGroup cols={1}>
+  <Card title="Rust Examples" icon="github" color="#000000" href="https://github.com/miketwenty1/zebedee-rust">
+    See the full source code.
+  </Card>
+</CardGroup>

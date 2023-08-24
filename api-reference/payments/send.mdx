@@ -1,25 +1,24 @@
 ---
 title: "Send Payment"
+description: "Start sending instant Bitcoin payments through the ZBD API."
 api: "POST https://api.zebedee.io/v0/payments"
 ---
 
 ## Description
 
-Pays a [Charge](/knowledge-base/glossary#charge) / Payment Request in the Bitcoin Lightning Network. This is one of the main APIs which allow you to pay any Lightning Network request.
+This endpoint sends a payment on the Bitcoin Lightning Network. This is one of the main APIs which allow you to pay any [Charge](/knowledge-base/glossary#charge) in the network.
 
-<Tip>The words `Charge`, `Payment Request`, and `Invoice` can be seen as equivalent in the context of requesting funds in Lightning Network.</Tip>
+<Tip>The words *Charge*, *Payment Request*, and *Invoice* can be seen as equivalent in the context of requesting funds in the Bitcoin Lightning Network.</Tip>
 
 ## Usage
 
-All payments in the Lightning Network are asynchronous. This means that, though possible, most payments will not settle immediately on the API invocation. They do tend to settle immediately thereafter, which means you need to provide the `callbackUrl` to receive updates.
+All payments in the Lightning Network are asynchronous. Though possible, most payments will not settle immediately on the API invocation. They do however tend to settle *immediately thereafter*, which means you **MUST** to provide the `callbackUrl` to receive updates about your app's payments.
 
-If the Charge / Payment Request is an `amountless invoice` (technical term for a Charge that does not specify an amount and lets the payer define an amount), you can pass the `amount` property with a defined value.
+<Note>If the Charge does not have a predefined amount (e.g. an `amountless invoice`), you can pass an `amount` property with a defined value to this API call.</Note>
 
 ## Configuration
 
 ### Header Parameters
-
-<ParamField required default="application/json" header="Content-Type" type="application/json" />
 
 <ParamField required header="apikey" type="string">
   ZBD Project API Key
@@ -36,7 +35,7 @@ If the Charge / Payment Request is an `amountless invoice` (technical term for a
 </ParamField>
 
 <ParamField initialValue="‎" body="amount" type="string">
-  Amount to be paid to this Charge/Invoice -> in millisatoshis (only valid if Amountless Invoice)
+  Amount to be paid to this Charge/Invoice -> in millisatoshis *(only valid if Amountless Invoice)*
 </ParamField>
 
 <ParamField initialValue="‎" body="internalId" type="string">

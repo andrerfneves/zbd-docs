@@ -1,22 +1,19 @@
 ---
 title: "Get Payment"
-api: "GET https://api.zebedee.io/v0/payments/{PAYMENT_ID}"
+description: "Retrieve all data about a single Payment."
+api: "GET https://api.zebedee.io/v0/payments/{id}"
 ---
 
-## Description
-
-Retrieves all the information related to a specific Payment.
-
 ## Usage
-
-Use this API endpoint to get all of the properties of a given Payment record. While the proper way is to use the `callbackUrl` property to receive Payment updates, you may use this API endpoint and fetch the Payment `status`, for example.
+\
+Use this API endpoint to get all of the properties of a given Payment record, including its total fee, processing timestamp, and settlement status.
 
 ## Configuration
 
 ### Path Parameters
 
-<ParamField required path="PAYMENT_ID" type="string">
-  PAYMENT ID
+<ParamField required path="id" type="string">
+  Payment ID
 </ParamField>
 
 ### Header Parameters

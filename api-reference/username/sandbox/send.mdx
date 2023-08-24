@@ -1,5 +1,6 @@
 ---
-title: "Send Payment to ZBD Gamertag"
+title: "Pay to ZBD Username"
+description: "Start sending test Bitcoin payments to ZBD Users."
 api: "POST https://sandbox-api.zebedee.io/v0/gamertag/send-payment"
 ---
 
@@ -21,8 +22,6 @@ The idea behind this API endpoint is to allow developers integrating ZBD Gamerta
 
 ### Header Parameters
 
-<ParamField required default="application/json" header="Content-Type" type="application/json" />
-
 <ParamField required header="apikey" type="string">
   ZBD Project API Key
 </ParamField>
@@ -34,7 +33,7 @@ The idea behind this API endpoint is to allow developers integrating ZBD Gamerta
 </ParamField>
 
 <ParamField required body="gamertag" type="string">
-  Destination SANDBOX ZBD Gamertag
+  Destination SANDBOX ZBD Username
 </ParamField>
 
 <ParamField initialValue="‎" body="description" type="string">

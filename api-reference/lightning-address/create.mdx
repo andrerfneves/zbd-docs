@@ -1,27 +1,31 @@
 ---
 title: "Create Charge"
+description: "Generate a payment request for a Lightning Address."
 api: "POST https://api.zebedee.io/v0/ln-address/fetch-charge"
 ---
 
 ## Description
 
-If instead of sending Bitcoin payments directly to a given Lightning Address, you would rather create a Charge / Payment Request QR code for that Lightning Address, you can create one using this endpoint.
+If instead of sending Bitcoin payments directly to a given Lightning Address, you would rather create a Payment Request QR code for that Lightning Address, you can use this API.
 
 ## Usage
 
-Depending on your system's configuration or your product's UX, you may need the ability to generate Charges for specific users. For ZBD users that's easy using the ZBD Gamertag endpoints. For any user that is using a different provider, you can use this endpoint.
+Depending on your system's configuration or your product's UX, you may need the ability to generate Charges for specific users. For ZBD users that's easy using the ZBD Username endpoints. For any user that is using a different provider, you can use this endpoint.
 
 The way to think of this is:
 
-- Given `user@domain.com` Lightning Address and an amount, this endpoint generates a Lightning Network Charge
-
-- If this Charge is paid, the payment is sent to `user@domain.com`
+<CardGroup cols={1}>
+  <Card title="First" icon="1" color="#000000">
+    Given `user@domain.com` Lightning Address and an `amount` property, this endpoint generates a Charge.
+  </Card>
+  <Card title="Second" icon="2" color="#000000">
+    If this new Charge is paid, the payment is received by `user@domain.com`.
+  </Card>
+</CardGroup>
 
 ## Configuration
 
 ### Header Parameters
-
-<ParamField required default="application/json" header="Content-Type" type="application/json" />
 
 <ParamField required header="apikey" type="string">
   ZBD Project API Key

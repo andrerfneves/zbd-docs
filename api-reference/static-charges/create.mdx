@@ -1,5 +1,6 @@
 ---
 title: "Create Static Charge"
+description: "Start accepting payments on Lightning with Static QR codes."
 api: "POST https://api.zebedee.io/v0/static-charges"
 ---
 
@@ -22,7 +23,7 @@ Static Charges also have the same core properties of Charges such as `internalId
 Use this API endpoint to create advanced Payment Requests on the Bitcoin Lightning Network. Enjoy static QR codes that can accept any number of payments, for various amounts, with additional metadata in the payment flow.
 
 <Tip>
-You can create a `multi-use` Static Charge with a fixed amount too, simply by setting `minAmount` and `maxAmount` to the same amount.
+  You can create a `multi-use` Static Charge with a fixed amount too, simply by setting `minAmount` and `maxAmount` to the same amount.
 </Tip>
 
 To understand more use cases for Static Charges, [check our in-depth guide](/knowledge-base/guides/static-charges).
@@ -30,8 +31,6 @@ To understand more use cases for Static Charges, [check our in-depth guide](/kno
 ## Configuration
 
 ### Header Parameters
-
-<ParamField required header="Content-Type" default="application/json" type="application/json" />
 
 <ParamField required header="apikey" type="string">
   ZBD Project API Key
