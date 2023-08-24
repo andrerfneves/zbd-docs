@@ -289,6 +289,15 @@
       ]
     },
     {
+      "group": "Voucher",
+      "pages": [
+        "api-reference/vouchers/create",
+        "api-reference/vouchers/get",
+        "api-reference/vouchers/redeem",
+        "api-reference/vouchers/revoke"
+      ]
+    },
+    {
       "group": "Wallet",
       "pages": [
         "api-reference/wallet/get"
