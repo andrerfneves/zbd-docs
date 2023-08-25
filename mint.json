@@ -111,19 +111,9 @@
       "group": "Learn",
       "pages": [
         {
-          "group": "ZBD Login",
+          "group": "ZBD Dev Dashboard",
           "pages": [
-            "docs/zbd-login/intro",
-            "docs/zbd-login/building",
-            "docs/zbd-login/design",
-            "docs/zbd-login/walkthrough",
-            "docs/zbd-login/advanced"
-          ]
-        },
-        {
-          "group": "Dev Dashboard",
-          "pages": [
-            "docs/dashboard/overview",
+            "docs/dashboard/introduction",
             {
               "group": "Account",
               "pages": [
@@ -142,12 +132,25 @@
                 "docs/dashboard/projects/archive"
               ]
             },
-            {
-              "group": "Vouchers",
-              "pages": [
-                "docs/dashboard/vouchers"
-              ]
-            }
+            "docs/dashboard/vouchers"
+          ]
+        },
+        {
+          "group": "ZBD Login", 
+          "pages": [
+            "docs/zbd-login/intro",
+            "docs/zbd-login/building",
+            "docs/zbd-login/design",
+            "docs/zbd-login/walkthrough",
+            "docs/zbd-login/advanced"
+          ]
+        },
+        {
+          "group": "ZBD App",
+          "pages": [
+            "docs/zbd-app/download",
+            "docs/zbd-app/uri-schemes",
+            "docs/zbd-app/wallet-limits"
           ]
         },
         {
@@ -158,14 +161,6 @@
             "docs/zbd-shield/apikey",
             "docs/zbd-shield/connect",
             "docs/zbd-shield/faq"
-          ]
-        },
-        {
-          "group": "ZBD App",
-          "pages": [
-            "docs/zbd-app/download",
-            "docs/zbd-app/uri-schemes",
-            "docs/zbd-app/wallet-limits"
           ]
         },
         {

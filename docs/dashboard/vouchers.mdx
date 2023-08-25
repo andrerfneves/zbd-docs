@@ -1,24 +1,25 @@
 ---
 title: 'Vouchers'
+description: 'Learn about ZBD Vouchers and how to best leverage this feature.'
 ---
 
 A ZBD Voucher is a single-time use coupon that can be redeemed by another ZBD user to transfer funds from your Developer Wallet into their wallet.
 
-## Voucher Use Cases[​](#voucher-use-cases "Direct link to heading")
+## Voucher Use Cases
 
 You can create Vouchers anytime you want to send another ZBD user sats from your Developer Wallet.
 
 Examples:
 
-*   You want to gift a user but don’t know their gamertag or Lightning Address
+*   You want to gift a user but don’t know their ZBD username or Lightning Address
 *   You want to send a Voucher to a user’s email to re-engage them
 *   You want to run a promotion where you generate 100 Vouchers and give them away to people
 
-## Create Voucher[​](#create-voucher "Direct link to heading")
+## Create Voucher
 
 To create Vouchers, go to the `Vouchers` page in the Dev Dashboard and click `Create Voucher`. When you create a Voucher, it debits the funds from your Developer Wallet. Alternatively, you can use the [Create Voucher](/api-reference/vouchers/create) API endpoint.
 
-## Redeem Voucher[​](#redeem-voucher "Direct link to heading")
+## Redeem Voucher
 
 Vouchers are redeemed by entering the unique 8-digit code within the Dev Dashboard or Mobile App, or using the [Redeem Voucher](/api-reference/vouchers/redeem) API endpoint. The funds from the Voucher will be credited to your wallet balance. 
 
@@ -31,11 +32,11 @@ ZBD Mobile App users can redeem Vouchers by following these steps:
 4. Enter the Voucher Code
 5. Press `Redeem Voucher`
 
-## Share Voucher[​](#share-voucher "Direct link to heading")
+## Share Voucher
 
 The unique 8-digit code from a Voucher can be shared with another ZBD user, who can redeem it to transfer the funds from your wallet to their own.
 
-## View Created Vouchers[​](#view-created-vouchers "Direct link to heading")
+## View Created Vouchers
 
 There are multiple options to view Vouchers:
 
@@ -45,7 +46,7 @@ There are multiple options to view Vouchers:
 
 3. Use the [Get Voucher](/api-reference/vouchers/get) endpoint to retrieve the details about a Voucher. 
 
-## Revoke a Voucher[​](#revoke-a-voucher "Direct link to heading")
+## Revoke a Voucher
 
 If you issue a Voucher, but want to revoke (cancel) it, you can:
 
@@ -57,7 +58,7 @@ If you issue a Voucher, but want to revoke (cancel) it, you can:
     4.  Click `Revoke`
     5.  The Voucher funds will be credited to your Developer Wallet
 
-## Voucher Statuses[​](#voucher-statuses "Direct link to heading")
+## Voucher Statuses
 | Status | Description |
 | --- | --- |
 | Valid | This means the Voucher is active and available for another user to redeem. |
