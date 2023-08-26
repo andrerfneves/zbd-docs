@@ -124,11 +124,11 @@
             {
               "group": "Projects",
               "pages": [
-                "docs/dashboard/projects/create",
                 "docs/dashboard/projects/sandbox",
-                "docs/dashboard/projects/edit",
-                "docs/dashboard/projects/wallet",
+                "docs/dashboard/projects/create",
                 "docs/dashboard/projects/api",
+                "docs/dashboard/projects/wallet",
+                "docs/dashboard/projects/edit",
                 "docs/dashboard/projects/archive"
               ]
             },
@@ -149,14 +149,13 @@
           "group": "ZBD App",
           "pages": [
             "docs/zbd-app/download",
-            "docs/zbd-app/uri-schemes",
-            "docs/zbd-app/wallet-limits"
+            "docs/zbd-app/uri-schemes"
           ]
         },
         {
           "group": "ZBD Shield",
           "pages": [
-            "docs/zbd-shield/overview",
+            "docs/zbd-shield/introduction",
             "docs/zbd-shield/access",
             "docs/zbd-shield/apikey",
             "docs/zbd-shield/connect",
