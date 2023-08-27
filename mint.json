@@ -227,19 +227,53 @@
       "group": "Courses",
       "pages": [
         "courses/introduction",
-        "courses/test",
         {
-          "group": "Courses 2",
+          "group": "Bitcoin Lightning",
           "pages": [
-            "courses/introduction",
-            "courses/test",
+            "courses/lightning-network-101",
+            "courses/lnurl-101",
+            "courses/bitcoin-lightning-ui-ux",
+            "courses/bitcoin-lightning-product-design",
+            "courses/zbd-dev-crash-course",
+            "courses/build-bitcoin-lightning-app"         
+          ]
+        },
+        {
+          "group" : "Bitcoin Gaming",
+          "pages": [
+            "courses/build-bitcoin-game",
             {
-              "group": "Courses 3",
+              "group": "Game Anticheat",
               "pages": [
-                "courses/introduction",
-                "courses/test"
+                "courses/game-anticheat-introduction",
+                "courses/an-insecure-game",
+                "courses/hacking-saved-game",
+                "courses/hacking-memory-values",
+                "courses/decompiling-source-code",
+                "courses/altering-network-traffic",
+                "courses/making-a-more-secure-game"
               ]
             }
+          ]
+        },
+        {
+          "group": "Nostr",
+          "pages": [
+            "courses/nostr-dev-crash-course",
+            "courses/nostr-paid-relay"
+          ]
+        },
+        {
+          "group": "Learn Web Development",
+          "pages": [
+            "courses/javascript",
+            "courses/html-css",
+            "courses/networking",
+            "courses/api",
+            "courses/react",
+            "courses/typescript",
+            "courses/sql",
+            "courses/nextjs"
           ]
         }
       ]
