@@ -1,25 +1,38 @@
 ---
-title: 'The Lightning Charge Workflow Problem'
+title: 'Using Withdrawal QR Codes'
+description: 'Understanding the Lightning Charge Workflow Problem'
 ---
 
-<Frame type="glass" caption="Perform Lightning Network Withdrawals">
-  <img src="/img/eTDIAQq.png" alt="Perform Lightning Network Withdrawals" />
-</Frame>
-<br />
+## Introduction
 
 The Lightning Network is a push-based system: in order to receive payments, the payee must first create a Charge / Payment Request, which the payer can pay. This is a great workflow when users are making payments for goods and services. Usually this workflow is as follows:
 
-*   User performs action that requires a Payment
-*   You create a Lightning Charge for the specified amount and displays it in a QR Code
-*   User uses a Lightning Wallet (usually mobile phone wallet apps) to scan that QR Code and decode payment information
-*   User confirms Payment details and performs the Payment
-*   You receive Payment and unlock content/action for the user
+<CardGroup cols={2}>
+  <Card title="First" icon="1" color="#000000">
+    User performs action that requires a Payment.
+  </Card>
+  <Card title="Second" icon="2" color="#000000">
+    A Lightning Charge is created for the specified amount and displayed as QR.
+  </Card>
+  <Card title="Third" icon="3" color="#000000">
+    User uses a Lightning Wallet (usually mobile app) to scan QR and decode payment.
+  </Card>
+  <Card title="Fourth" icon="4" color="#000000">
+    User reviews and confirms request details and accepts the Payment.
+  </Card>
+</CardGroup>
 
-This is a great user experience between User and a Project (e.g. game or application). However, this user workflow is limited to **User paying Project**. To perform the reverse (Project paying User), as with all Lightning payments, the Project must first ask for a Lightning Network Charge/Invoice from the User, for a specific amount. This provides for subpar UX because the User is now an active participant when receiving funds.
+<CardGroup cols={1}>
+  <Card title="Fifth" icon="5" color="#000000">
+    You receive the Payment and unlock content/action for the user.
+  </Card>
+</CardGroup>
 
-  
+This is a great user experience between User and a Project (e.g. game or application). However, this user workflow is limited to **User paying Project**.
 
-# Enter Lightning Withdrawal Request
+To perform the reverse (Project paying User), as with all Lightning payments, the Project must first ask for a Lightning Network Charge/Invoice from the User, for a specific amount. This provides for subpar UX because the User is now an active participant when receiving funds.
+
+## Withdrawal Request API
 
 Withdrawal Requests are the exact opposite of a Charge. Whereas a Charge is a payment from a User to a Project, a Withdrawal Request can be understood as a payment from a Project to a User. In other words, a Charge is a QR code that accepts a Bitcoin payment while **a Withdrawal Request is a QR code that allows a User to claim Bitcoin**.
 
@@ -27,17 +40,17 @@ ZBD's Withdrawal Request capability is based on the [LNURL open-source specifica
 
 <Tip>If you've been able to create a ZBD Charge, then you will be able to create a ZBD Withdrawal Request easily.</Tip>  
 
-# Creating a Withdrawal Request
+### Creating a Withdrawal Request
 
 When creating a Withdrawal Request code to allow Lightning Wallets to withdraw funds from the Project (game or application) you must provide the following attributes to the [`/withdrawal-requests`](/api-reference/withdrawal-requests/create) endpoint:
 
 | Property | Status | Description |
 | --- | :-: | --- |
-| **amount** | _String_ | The Withdrawal Request amount (in millisatoshis). |
-| **description** | _String_ | The Withdrawal Request description (also applied as the description to the associated BOLT11 Lightning invoice). |
-| **internalId** | _String_ | An optional free-use attribute. Usually used by setting the Player/User ID of your Game/Application in order to link specific Withdrawal Requests to specific Players. |
-| **callbackUrl** | _String_ | The URL ZBD services will make a POST HTTP request to with information about the Withdrawal Requests's status updates. |
-| **expiresIn** | _Number_ | The desired expiration time for this Withdrawal Request (in seconds). |
+| `amount` | _String_ | The Withdrawal Request amount (in millisatoshis). |
+| `description` | _String_ | The Withdrawal Request description. |
+| `internalId` | _String_ | An optional free-use attribute. Usually used by setting the Player/User ID of your Game/Application in order to link specific Withdrawal Requests to specific Players. |
+| `callbackUrl` | _String_ | The URL ZBD services will make a POST HTTP request to with information about the Withdrawal Requests's status updates. |
+| `expiresIn` | _Number_ | The desired expiration time for this Withdrawal Request (in seconds). |
 
 To create the Withdrawal Request, use the ZBD API (or leverage one of our SDKs) by passing the correct attributes:
 
@@ -104,16 +117,16 @@ If the submitted request suceeds, you can expect a JSON API response that resemb
 }
 ```  
 
-# Displaying the Withdrawal Request QR Code
+### Displaying as QR Code
 
 In order to display the Withdrawal Request as a QR code, simple use the `data.invoice.request` attribute returned from the API response and pass it to your QR code generator of choice. The QR code should look something like this:
 
-<Frame type="glass" caption="Withdrawal Requests QR Code">
-  <img src="/img/v2/withdrawal-requests-qr.png" alt="Withdrawal Requests QR Code" />
+<Frame caption="Withdrawal Requests QR Code">
+  <img src="/img/v2/withdrawal-requests-qr.png" width="500" alt="Withdrawal Requests QR Code" />
 </Frame>
 <br />
 
-# Withdrawal Request Updates
+## Request Updates
 
 Note that the Withdrawal Request is created in a `pending` state as it still hasn't _been claimed_. All Withdrawal Requests will either **complete** or **expire**. If no User is able to Withdraw the funds on time before the Withdrawal Request's expiration time, the Request will expire and will therefore no longer be valid. To know the status of your specific Withdrawal Request, check the `status` attribute returned from the `CreateWithdrawalRequest` or `GetWithdrawalRequestDetails` API calls.
 

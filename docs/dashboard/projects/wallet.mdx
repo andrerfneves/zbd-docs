@@ -1,23 +1,52 @@
 ---
-title: 'Project Wallets'
+title: 'Project Wallet'
+sidebarTitle: 'Wallet'
+description: 'Learn how your ZBD Project Wallet works.'
 ---
 
-If you don't have a Project yet, [create one!](/docs/dashboard/projects/create)
+The `Wallet` tab available inside of your Project view in the ZBD Dev Dashboard is where you will find all information about movement of money through this Project.
 
-The Wallet tab of your Project displays your wallet balance, transaction count, and transaction history.
+The Project Wallet is a Bitcoin Lightning wallet that is generated for each Project you create. This Wallet is used to facilitate payments into and out of this Project to the Bitcoin Lightning Network.
 
-*   Wallet balance: The amount of Bitcoin you hold in this wallet
-*   Transaction count: The number of transactions you have made in the past 30 days
-*   Transaction history: The record of all transactions made from this Project wallet
 
-Each `Project` wallet is a distinct and fully-enabled Bitcoin Lightning wallet, meaning you can facilitate payments into and out of this wallet to interact with the Bitcoin Lightning Network.
+## Wallet Tab Data
 
-Any payments made using this Project’s API key will debit this Project wallet. You can easily transfer funds from one project wallet to another.
+Data points available in the Wallet tab include:
 
-<Tip>**Project wallets are distinct from your Developer wallet.** Your developer wallet is associated with your profile, while project wallets are generated whenever you create a new project.
-Your Developer wallet is akin to a central management account and the project wallet as being an individual app account.</Tip>  
+<CardGroup cols={2}>
+  <Card title="Wallet Balance" icon="bitcoin" color="#ff9900">
+    The amount of Bitcoin you currently hold in this Project Wallet.
+  </Card>
+  <Card title="Transaction count" icon="bitcoin" color="#ff9900">
+    The number of transactions from this Project Wallet in the past 30 days.
+  </Card>
+  <Card title="Transaction history" icon="bitcoin" color="#ff9900">
+    The record of all transactions made from this Project Wallet.
+  </Card>
+</CardGroup>
 
-Fund a Project Wallet by:
+## Wallet Architecture
 
-1.  Creating a Charge via API and paying it; or
-2.  Transferring funds from another Project or your Developer wallet (via UI or API)
+<Note>
+Each Project Wallet is a distinct and fully-enabled Bitcoin Lightning wallet.
+  
+In short, **1 Project = 1 Wallet = 1 API Key**.  
+</Note>
+
+**Any payments made using this Project's API key will debit this Project Wallet.** Any Charges created by this Project Wallet that are paid successfully, will be credited to this account.
+
+<Tip>
+**Project Wallets are distinct from your ZBD Developer Wallet.**
+  
+Your Developer Wallet is associated with your user profile, while Project Wallets are created whenever you make a new Project.
+
+Your Developer Wallet is akin to a `central management account` and the Project Wallet is an `individual app account`.
+</Tip>
+
+## Funding a Project Wallet
+
+To fund a Project Wallet you can either:
+
+- Transfer funds from one Project Wallet to another using the ZBD Dev Dashboard
+- Use the Internal Transfer API endpoint
+- Create a Charge (or Static Charge) and pay it

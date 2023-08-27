@@ -1,0 +1,73 @@
+---
+title: 'Lightning Charges (BOLT-11)'
+description: 'Learn about Lightning Charges and some use cases.'
+---
+
+## Introduction
+
+<Frame caption="Lightning Charge">
+  <img src="/img/v2/lightning-charge.png" alt="lightning charge graphic" />
+</Frame>
+
+Invoices are used to request payments from a peer on the Bitcoin Lightning Network. Invoices, charges, payment requests -- these are all terms for the same thing. 
+
+Invoices are single use, for a specified amount, and have an expiration time. They provide a way to specify to allow two nodes to exchange payments, even when they may not have a direct financial relationship with each other
+
+# Ideal Use Cases for Invoices
+
+Invoices are great for collecting payments at the point of sale or ecommerce due to their singular nature and ability to generate and associate with any user.
+
+## Point of Sale
+
+The merchant call pull up an app like ZBD, enter a USD amount and then generate an invoice that is rendered as a QR code. The consumer can then use their preferred Lightning app, scan the QR code and then pay it. It worked great because it’s for a specific amount, able to be paid immediately, and works across any provider using the Lightning Network.
+
+## Ecommerce
+
+The user can pull up a site like [emeralize.app](http://emeralize.app) and select a course that they want to purchase. They can click the QR code or the `Open in Wallet` button and pay the invoice. The invoice for emeralize is easy to track and associate it with a given user, to know which user to grant access to the course to and which creator to credit from the course earnings. 
+
+# Points of Friction for Invoices
+
+Invoices are not suitable to use when it comes to tips, donations, or user to user payments. 
+
+## User to User Payments / Tips / Donations / Zaps
+
+This is because often times when a user needs to pay another invoice, there is a delay in receiving from when a user receives an invoice and when they actually pay it. 
+
+So when Alice goes to pay Bob’s invoice, it may have only been valid for 10 minutes and an hour has gone by. Now it requires Alice to request another invoice from Bob. This doesn’t make sense when we have things like **********************************Lightning Address********************************** that allows for an identifier for a user that enables the ability to receive money.
+
+## Withdrawals / Transfers
+
+In order to withdraw or transfer money with an invoice it requires MANY steps, along with the user interacting with something that is not human-readable. 
+
+The user would need to know how to create an invoice from Lightning App A, copy the invoice, paste it in ZBD and then process the payment. Which a lot of new education is needed to know how to do. 
+
+Instead the user could use an LNURL Withdrawal or Send Payment to Lightning Address which allow for a 2-click or 1-click withdrawal respectively, which makes it a lot easier to perform.
+
+# Example of an Invoice
+```
+lnbc10u1p3l6k5rpp5zyk076u0y0xrvra0zfkn4lh3hppgku53ymxnghucqc7m0ftzuudsdqhtfz5y32yg4zjqsmgv9exwegcqzpgxqzfvsp5kp35tjpa7amkenrf84t58vhpk8f0utr70637qtf8ypz4m7r2w34s9qyyssqsj3gs7ufqd6kezw8sgqvtxj7cl3q6x0cjtr74waqlw5xd9g5084yufxhtjcnmd92pvlrd3ah2zs5cuag7j3cvwl2hpg6qq8k4cut5dqqatkg3k
+```
+
+[Click here to view the data decoded.](https://lightningdecoder.com/lnbc10u1p3l6k5rpp5zyk076u0y0xrvra0zfkn4lh3hppgku53ymxnghucqc7m0ftzuudsdqhtfz5y32yg4zjqsmgv9exwegcqzpgxqzfvsp5kp35tjpa7amkenrf84t58vhpk8f0utr70637qtf8ypz4m7r2w34s9qyyssqsj3gs7ufqd6kezw8sgqvtxj7cl3q6x0cjtr74waqlw5xd9g5084yufxhtjcnmd92pvlrd3ah2zs5cuag7j3cvwl2hpg6qq8k4cut5dqqatkg3k)
+
+# Example Product Flows of an Invoice
+
+## Ideal Case
+
+<Frame caption="Lightning Charge Success Flow">
+  <img src="/img/v2/lightning-charge-success-case.png" alt="lightning charge success flow" />
+</Frame>
+
+An ideal case for Lightning Network invoices would be that the payment is successful and everything goes as planned.
+
+## Error Case
+
+<Frame caption="Lightning Charge Error Flow">
+  <img src="/img/v2/lightning-charge-error-case.png" alt="lightning charge error flow" />
+</Frame>
+
+This is the error we discussed earlier when dealing with user-to-user payments.
+
+# Conclusion
+
+To conclude, invoices are ideal for point of sale and ecommerce transactions, but not suitable for tips, donations, or user-to-user payments due to the fact that they are not human-readable, have an expiration based on time, single-use, and require synchronous coordination between two users.

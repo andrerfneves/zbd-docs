@@ -1,6 +1,7 @@
 ---
 title: "Get Payment"
-api: "GET https://api.zebedee.io/v0/gamertag/transaction/{TRANSACTION_ID}"
+description: "Retrieve all data about a Payment sent to ZBD Username."
+api: "GET https://api.zebedee.io/v0/gamertag/transaction/{id}"
 ---
 
 ## Description
@@ -15,7 +16,7 @@ The idea here is to use the `transactionId` property returned from the [Pay to Z
 
 ### Path Parameters
 
-<ParamField required path="TRANSACTION_ID" type="string">
+<ParamField required path="id" type="string">
   Payment Transaction ID
 </ParamField>
 

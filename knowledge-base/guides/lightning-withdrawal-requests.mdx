@@ -1,0 +1,70 @@
+---
+title: 'Lightning Withdrawal Requests'
+description: 'Learn how to use Lightning Withdrawal Requests and common use cases.'
+---
+
+## Introduction
+
+LNURL Withdrawal is an HTTP endpoint that enables asynchronous withdrawals over the Lightning Network. It abstracts Invoices in order to orchestrate transfers, meaning the same user moving funds from Wallet A to Wallet B. It makes transferring or depositing money much easier.
+
+A brand or app can also create an LNURL Withdrawal Request with their logo for brand impressions just like ZBD does.
+
+<Frame caption="ZBD Withdrawal Request">
+  <img src="/img/v2/withdrawal-request-completed-qr.png" width="200" alt="ZBD Static Charge" />
+</Frame>
+
+<br />
+# Ideal Use Cases for LNURL Withdrawal Requests.
+
+There are many ideal use cases for LNURL Withdrawals.
+
+## Lightning Vouchers
+
+One great use case for LNURL Withdrawal Requests are as Lightning Vouchers. [azte.co](https://azte.co) allows users to pay cash and then the operate of the Azteco terminal prints out a receipt with a LNURL Withdrawal Request on it with a summary of their purchase.
+
+The user can then take the receipt, scan it with an LNURL enabled wallet, like the ZEBEDEE App, and deposit the funds into their wallet. 
+
+It’s that easy!
+
+## Rewards
+
+Many reward applications can also make use of an LNURL Withdrawal. Let’s say the user plays a game and earns some sats, then wants to claim their earned bitcoin. 
+
+The game could then generate an LNURL Withdrawal Request or a button with the lnurl withdrawal request as the hyperlink and the user can click it or scan the QR code. It’ll automatically open up the LNURL Withdrawal code to their preferred wallet and the user can confirm the deposit. 
+
+A few other examples could be completing surveys, engagement with a brand, a pool of rewards from spending, like from a credit card, and much more!
+
+## Lightning Money Transfers
+
+While LNURL Withdrawal Requests are quite easy for applications to move a user’s funds between wallets, it is most ideal to use a Lightning Address Payment for the premiere user experience, though some wallets don’t have support or are noncustodial. 
+
+Noncustodial and other wallets often times do have support for LNURL Withdrawal Requests, though may not have support for receiving or offer a Lightning Address to their users.
+
+LNURL Withdrawal Requests allow for 3-click withdrawals. The user can scan a QR or click a button, open another Lightning app, then confirm the deposit. Done!
+
+# Points of Friction for LNURL Withdrawal Requests
+
+## Nonhuman Readable
+
+LNURL Withdrawal Requests are not human readable, which can cause confusion for users. They are meant to be rendered as a QR code. So, if Alice sends Bob an LNURL Withdrawal Request as text and Bob isn’t familiar with it, he won’t know what to do with it. There is no distinguishing trait for the QR code either amongst other QR codes, so it must be used in the right context.
+
+## Lack of Support
+
+While, nearly every wallet out of the box supports LNURL Withdrawal Requests, some don’t. This is an error that the user can encounter. The wallets that currently don’t support it are Strike and CashApp.
+
+# LNRUL Withdrawal Request
+```
+lnurl1dp68gurn8ghj7ctsdyh85etzv4jx2efwd9hj7a3s9acxz7tvdaskgtthd96xserjv9mkzmpdwfjhzat9wd6r7um9vdex2apax5ckywpc8qukgvmyxg6kvdfhxcekgveh8y6rwepkxfnrzd3kx4nrgdt9xvcxzephxsuk2vecx5enwwfjxsuxgdp5vd3r2ce5v4snwvq3mys82
+```
+
+# Example Product Flows of an LNURL Withdrawal Request
+
+<Frame caption="ZBD Withdrawal Request Flow">
+  <img src="/img/v2/withdrawal-request-flow.png" alt="ZBD Withdrawal Request Flow" />
+</Frame>
+
+# Conclusion
+
+In conclusion, LNURL Withdrawal Requests are a powerful tool for enabling asynchronous money transfers over the Lightning Network. 
+
+Overall, can be used in a variety of contexts, including as Lightning Vouchers, for rewards programs, and for transferring money between wallets. While they have some points of friction, such as the fact that they are not human-readable, they are a useful addition to the Lightning Network ecosystem.

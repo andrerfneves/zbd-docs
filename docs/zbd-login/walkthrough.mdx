@@ -1,34 +1,36 @@
 ---
-title: 'Code Walkthrough'
+title: 'Implementation Walkthrough'
+sidebarTitle: 'Walkthrough'
+description: 'Detailed walkthrough of an implementation of ZBD Login.'
 ---
 
-## Client Side[​](#client-side "Direct link to heading")
+## Client Side
 
 When setting up OAuth2 from client side, you have two options:
 
-*   Build the entire flow yourself
-    *   Make a request for building the [authorization URL](/docs/zbd-login/walkthrough#building-authorization-url)
-    *   Handling the Webview with the created URL
-    *   Getting the `code` after authenticating with ZEBEDE
-    *   Making another request for [getting the token](/docs/zbd-login/walkthrough#getting-the-token-and-accessing-zbd-api)
-*   Make use of some of the available OAuth libraries available for the language you are working on, which would handle the initial steps of the flow
-    *   Install and set up configs accordingly to the library
-        *   If PKCE is available on the library you might receive the `code_verifier` from the response, after authenticating.
-        *   If PKCE is not available, you might need to [build the code\_challenge and code\_verifier](/docs/zbd-login/walkthrough#getting-the-token-and-accessing-zbd-api) yourself.
-    *   Getting `code` as response
-    *   Making the request for [getting the token](/docs/zbd-login/walkthrough#getting-the-token-and-accessing-zbd-api)
+- Build the entire flow yourself
+    - Make a request for building the [authorization URL](/docs/zbd-login/walkthrough#building-authorization-url)
+    - Handling the Webview with the created URL
+    - Getting the `code` after authenticating with ZEBEDE
+    - Making another request for [getting the token](/docs/zbd-login/walkthrough#getting-the-token-and-accessing-zbd-api)
+- Make use of some of the available OAuth libraries available for the language you are working on, which would handle the initial steps of the flow
+    - Install and set up configs accordingly to the library
+        - If PKCE is available on the library you might receive the `code_verifier` from the response, after authenticating.
+        - If PKCE is not available, you might need to [build the code\_challenge and code\_verifier](/docs/zbd-login/walkthrough#getting-the-token-and-accessing-zbd-api) yourself.
+    - Getting `code` as response
+    - Making the request for [getting the token](/docs/zbd-login/walkthrough#getting-the-token-and-accessing-zbd-api)
 
 If you chose the second option, there are open-source libraries for handling OAuth2 on Mobile using AppAuth ([iOS](https://github.com/openid/AppAuth-iOS) and [Android](https://github.com/openid/AppAuth-Android)), as well as for React Native using [react-native-app-auth](https://github.com/FormidableLabs/react-native-app-auth).
 
-## Server Side[​](#server-side "Direct link to heading")
+## Server Side
 
-### Node.js[​](#nodejs "Direct link to heading")
+### Node.js
 
 This flow go over all the steps for Logging in with ZBD, from Building the authorization URL, with proper PKCE Keys, to getting the accessToken and calling ZBD API.
 
 If you are using a library that provides PKCE guidelines, it will most likely be able to handle the initial flow (building auth URL and getting the code) just fine. In this case, feel free to jump to the [Token Section](https://www.notion.so/Login-with-ZEBEDEE-1c2c384d74eb4342bf4a9aa7967043ba).
 
-### Building Authorization URL[​](#building-authorization-url "Direct link to heading")
+### Building Authorization URL
 
 In case you are setting up the PKCE flow yourself (no usage of libraries), we will need to setup the `code_challenge` from a `code_verifier` which will be used later on, on token request.
 
@@ -114,7 +116,7 @@ export const getZBDLoginUrl = async (userId: string) => {
 
 When logging in using the provided URL, you will get a response including `state` and `code` which should be user now for getting the token, and user data:
 
-### Getting the token and accessing ZBD API[​](#getting-the-token-and-accessing-zbd-api "Direct link to heading")
+### Getting the token and accessing ZBD API
 
 ```js
 // called by ZBD oauth on login
@@ -208,8 +210,13 @@ Those values are send as payload on this next request:
 
 You are now able to proceed with your login logic and send the user data accordingly ⚡
 
-### Client Examples[​](#client-examples "Direct link to heading")
+## Code Examples
 
-React Native: [https://github.com/zebedeeio/login-zbd-react-native-example](https://github.com/zebedeeio/login-zbd-react-native-example)
-
-Express: [https://github.com/zebedeeio/login-zebedee-express-example](https://github.com/zebedeeio/login-zebedee-express-example)
+<CardGroup cols={2}>
+  <Card title="React Native + ZBD Login" icon="github" color="#000000" href="https://github.com/zebedeeio/login-zbd-react-native-example">
+    See the full source code.
+  </Card>
+  <Card title="Express.js + ZBD Login" icon="github" color="#000000" href="https://github.com/zebedeeio/login-zebedee-express-example">
+    See the full source code.
+  </Card>
+</CardGroup>
