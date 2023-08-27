@@ -235,31 +235,30 @@
         {
           "group": "Bitcoin Lightning",
           "pages": [
-            "courses/bitcoin-lightning-introduction",
             "courses/lightning-network-101",
             "courses/lnurl-101",
             "courses/bitcoin-lightning-ui-ux",
-            "courses/bitcoin-lightning-product-design"          
-          ]
-        },
-        {
-          "group": "Build With Me",
-          "pages": [
+            "courses/bitcoin-lightning-product-design",
             "courses/zbd-dev-crash-course",
-            "courses/build-bitcoin-game",
-            "courses/build-bitcoin-lightning-app"
+            "courses/build-bitcoin-lightning-app"         
           ]
         },
         {
-          "group": "Game Anticheat",
+          "group" : "Bitcoin Gaming",
           "pages": [
-            "courses/game-anticheat-introduction",
-            "courses/an-insecure-game",
-            "courses/hacking-saved-game",
-            "courses/hacking-memory-values",
-            "courses/decompiling-source-code",
-            "courses/altering-network-traffic",
-            "courses/making-a-more-secure-game"
+            "courses/build-bitcoin-game",
+            {
+              "group": "Game Anticheat",
+              "pages": [
+                "courses/game-anticheat-introduction",
+                "courses/an-insecure-game",
+                "courses/hacking-saved-game",
+                "courses/hacking-memory-values",
+                "courses/decompiling-source-code",
+                "courses/altering-network-traffic",
+                "courses/making-a-more-secure-game"
+              ]
+            }
           ]
         },
         {
@@ -272,12 +271,13 @@
         {
           "group": "Learn Web Development",
           "pages": [
-            "courses/web-introduction",
-            "courses/html-css",
             "courses/javascript",
-            "courses/networking-101",
+            "courses/html-css",
+            "courses/networking",
+            "courses/api",
             "courses/react",
-            "courses/nodejs",
+            "courses/typescript",
+            "courses/sql",
             "courses/nextjs"
           ]
         }
