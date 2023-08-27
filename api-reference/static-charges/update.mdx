@@ -1,33 +1,26 @@
 ---
 title: "Update Static Charge"
-api: "PATCH https://api.zebedee.io/v0/static-charges/{STATIC_CHARGE_ID}"
+description: "Change the configuration of a Static Charge QR code."
+api: "PATCH https://api.zebedee.io/v0/static-charges/{id}"
 ---
-
-## Description
-
-Perform updates to any of the allowed properties of a Static Charge.
 
 ## Usage
 
 Use this API endpoint with the specific Static Charge ID to update its properties. Usually you'd use this API for the purposes of `increasing slots` or `changing min/max amount` settings.
 
 <Info>
-Updating a Static Charge **WILL NOT modify the request/QR code**.
-
-The point of a Static Charge is that it **does not change**, while its contents can remain dynamic.
+  Updating a Static Charge **WILL NOT modify its QR code**. The point of a Static Charge is that it **does not change**, while its contents can remain dynamic.
 </Info>
 
 ## Configuration
 
 ### Path Parameters
 
-<ParamField required path="STATIC_CHARGE_ID" type="string">
-  ID of the Static Charge
+<ParamField required path="id" type="string">
+  Static Charge ID
 </ParamField>
 
 ### Header Parameters
-
-<ParamField required header="Content-Type" default="application/json" type="application/json" />
 
 <ParamField required header="apikey" type="string">
   ZBD Project API Key

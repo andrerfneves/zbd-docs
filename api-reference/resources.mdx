@@ -1,21 +1,33 @@
 ---
-title: 'Developer Tools'
+title: 'Resources'
 description: 'Learn about common use tools for developers integrating ZBD.'
 ---
 
 ## Utility APIs
 
-When integrating ZBD API for payments capabilities in your system, it's important to have utility data points / functionalities available.
+When integrating ZBD API for payments capabilities in your system, it's important to have utility functions ready to help you go from 0 to 1.
+We've made a set of these Utility APIs available to help you integrate faster.
 
-We've made a set of these Utility APIs available in the API Reference:
+<CardGroup cols={2}>
+  <Card title="BTC USD Exchange Rate" icon="bitcoin" color="#ff9900" href="/api-reference/utils/btc-usd">
+    Fetches the latest price for 1 Bitcoin in US dollars for price calculations.
+  </Card>
+  <Card title="Is Supported Region" icon="earth-americas" color="#000000" href="/api-reference/utils/is-supported-region">
+    Determines whether a user is located in a region ZBD is available in.
+  </Card>
+  <Card title="ZBD Production IPs" icon="wifi" color="#9563FF" href="/api-reference/utils/api">
+    Provides up-to-date static IP addresses for ZBD servers.
+  </Card>
+  <Card title="Internal Transfers" icon="bolt" color="#32d615" href="/api-reference/utils/api">
+    Move funds from one ZBD Project to another programmatically.
+  </Card>
+</CardGroup>
 
-- [BTC USD Exchange Rate](/api-reference/utils/btc-usd) -> Fetches the latest price for 1 Bitcoin in USD
-- [Is Supported Region](/api-reference/utils/is-supported-region) -> Fetches whether a user is located in a region ZBD services are available
-- [ZBD Production IPs](/api-reference/utils/api) -> Fetches the static IP addresses for ZBD servers
+## External resources
 
-## External Resources
+The ZBD API abstracts away all of the complexity around the Bitcoin and Lightning Network protocols, so you only have to know how to interact with a simple API.
 
-The ZBD API abstracts away all of the complexity around the Bitcoin and Lightning Network protocols. But if you want to dig deeper, here are some developer tools to know:
+But if you want to dig deeper, here are some developer resources to know:
 
 <CardGroup cols={2}>
   <Card title="Lightning Address" icon="arrow-up-right-from-square" color="#000000" href="https://lightningaddress.com">

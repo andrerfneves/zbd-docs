@@ -24,6 +24,10 @@
   },
   "topbarLinks": [
     {
+      "name": "Bounties",
+      "url": "https://console.algora.io/org/zebedeeio/bounties?status=open"
+    },
+    {
       "name": "API Status",
       "url": "https://status.zbd.dev/"
     },
@@ -46,6 +50,11 @@
       "icon": "books",
       "name": "Knowledge Base",
       "url": "knowledge-base"
+    },
+    {
+      "icon": "play",
+      "name": "Courses",
+      "url": "courses"
     }
   ],
   "navigation": [
@@ -61,38 +70,39 @@
         {
           "group": "Node.js",
           "pages": [
-            "docs/nodejs-sdk",
-            "docs/nextjs-playground-starter"
+            "docs/nodejs-quickstart",
+            "docs/nextjs-playground-starter",
+            "docs/express-quickstart"
           ]
         },
         {
           "group": "Serverless",
           "pages": [
-            "docs/vercel-edge-functions"
+            {
+              "group": "Vercel Edge Functions",
+              "pages": [
+                "docs/vercel-edge-functions/receive",
+                "docs/vercel-edge-functions/send"
+              ]
+            }
           ]
         },
         {
           "group": "Rust",
           "pages": [
-            "docs/rust-sdk"
+            "docs/rust-quickstart"
           ]
         },
         {
           "group": "Go",
           "pages": [
-            "docs/go-sdk"
-          ]
-        },
-        {
-          "group": "C#",
-          "pages": [
-            "docs/csharp-sdk"
+            "docs/go-quickstart"
           ]
         },
         {
           "group": "HTTP",
           "pages": [
-            "docs/http-rest"
+            "docs/http-quickstart"
           ]
         }
       ]
@@ -178,13 +188,6 @@
     {
       "group": "ZBD API",
       "pages": [
-        "knowledge-base/lightning-network",
-        "knowledge-base/glossary"
-      ]
-    },
-    {
-      "group": "ZBD API",
-      "pages": [
         "knowledge-base/payouts/lightning-address",
         "knowledge-base/payouts/lightning-charges",
         "knowledge-base/payouts/withdrawal-requests",
@@ -201,6 +204,7 @@
     {
       "group": "Miscellaneous",
       "pages": [
+        "knowledge-base/lightning-network",
         "knowledge-base/guides/nostr-relay",
         "knowledge-base/guides/lightning-address",
         "knowledge-base/guides/static-charges"
@@ -209,8 +213,74 @@
     {
       "group": "Community",
       "pages": [
-        "knowledge-base/guides/custom-lightning-address-app",
-        "knowledge-base/guides/send-payment-to-ln-address-app"
+        {
+          "group": "Tutorials & Guides",
+          "pages": [
+            "knowledge-base/guides/custom-lightning-address-app",
+            "knowledge-base/guides/send-payment-to-ln-address-app"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Resources",
+      "pages": [
+        "knowledge-base/glossary"
+      ]
+    },
+    {
+      "group": "Courses",
+      "pages": [
+        "courses/introduction",
+        {
+          "group": "Bitcoin Lightning",
+          "pages": [
+            "courses/lightning-network-101",
+            "courses/lnurl-101",
+            "courses/bitcoin-lightning-ui-ux",
+            "courses/bitcoin-lightning-product-design",
+            "courses/zbd-dev-crash-course",
+            "courses/build-bitcoin-lightning-app"         
+          ]
+        },
+        {
+          "group" : "Bitcoin Gaming",
+          "pages": [
+            "courses/build-bitcoin-game",
+            {
+              "group": "Game Anticheat",
+              "pages": [
+                "courses/game-anticheat-introduction",
+                "courses/an-insecure-game",
+                "courses/hacking-saved-game",
+                "courses/hacking-memory-values",
+                "courses/decompiling-source-code",
+                "courses/altering-network-traffic",
+                "courses/making-a-more-secure-game"
+              ]
+            }
+          ]
+        },
+        {
+          "group": "Nostr",
+          "pages": [
+            "courses/nostr-dev-crash-course",
+            "courses/nostr-paid-relay"
+          ]
+        },
+        {
+          "group": "Learn Web Development",
+          "pages": [
+            "courses/javascript",
+            "courses/html-css",
+            "courses/networking",
+            "courses/api",
+            "courses/react",
+            "courses/typescript",
+            "courses/sql",
+            "courses/nextjs"
+          ]
+        }
       ]
     },
     {
@@ -218,13 +288,15 @@
       "pages": [
         "api-reference/introduction",
         "api-reference/errors",
+        "api-reference/callbacks",
         "api-reference/resources"
       ]
     },
     {
-      "group": "Wallet",
+      "group": "Payment",
       "pages": [
-        "api-reference/wallet/get"
+        "api-reference/payments/send",
+        "api-reference/payments/get"
       ]
     },
     {
@@ -233,21 +305,6 @@
         "api-reference/charges/create",
         "api-reference/charges/get",
         "api-reference/charges/decode"
-      ]
-    },
-    {
-      "group": "Static Charge",
-      "pages": [
-        "api-reference/static-charges/create",
-        "api-reference/static-charges/get",
-        "api-reference/static-charges/update"
-      ]
-    },
-    {
-      "group": "Payment",
-      "pages": [
-        "api-reference/payments/send",
-        "api-reference/payments/get"
       ]
     },
     {
@@ -263,6 +320,20 @@
       "pages": [
         "api-reference/withdrawal-requests/create",
         "api-reference/withdrawal-requests/get"
+      ]
+    },
+    {
+      "group": "Wallet",
+      "pages": [
+        "api-reference/wallet/get"
+      ]
+    },
+    {
+      "group": "Static Charge",
+      "pages": [
+        "api-reference/static-charges/create",
+        "api-reference/static-charges/get",
+        "api-reference/static-charges/update"
       ]
     },
     {

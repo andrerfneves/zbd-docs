@@ -1,25 +1,24 @@
 ---
 title: "Create Charge"
+description: "Start receiving instant Bitcoin payments through the ZBD API."
 api: "POST https://api.zebedee.io/v0/charges"
 ---
 
 ## Description
 
-Creates a new [Charge](/knowledge-base/glossary#charge) / Payment Request in the Bitcoin Lightning Network, payable by any Lightning Network wallet.
+Creates a new [Charge](/knowledge-base/glossary#charge) in the Bitcoin Lightning Network, payable by any Lightning-capable wallet.
 
-These payment requests are single-use, fixed-amount QR codes. If you're looking for multi-use and multi-amount payment requests you want [Static Charges](/api-reference/static-charges/create).
+<Tip>These payment requests are single-use, fixed-amount QR codes. If you're looking for multi-use and multi-amount payment requests you want [Static Charges](/api-reference/static-charges/create).</Tip>
 
 ## Usage
 
-This API is used for `receiving` funds into your Project Wallet. The primary idea is to create one of these Charges anytime someone wishes to perform a payment TO you.
+This API is used for `receiving` funds into your ZBD Project. The primary idea is to create one of these Charges anytime someone wishes to perform a payment **TO** you.
 
-On a successful 200 HTTP response from the ZBD API, you should render the contents of `data.invoice.uri` in a QR code. This QR code can be scanned (and is understood) by any Bitcoin Lightning Network wallet.
+On a successful `200 HTTP response` from the ZBD API, you should render the contents of `data.invoice.uri` in a QR code. This QR code can be scanned by any Bitcoin Lightning wallet.
 
 ## Configuration
 
 ### Header Parameters
-
-<ParamField required header="Content-Type" default="application/json" type="application/json" />
 
 <ParamField required header="apikey" type="string">
   ZBD Project API Key

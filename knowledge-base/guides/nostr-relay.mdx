@@ -1,5 +1,6 @@
 ---
-title: 'Set Up a Paid Nostr Relay with ZBD API'
+title: 'Nostr Relay Quick Start'
+description: 'Learn how to set up a paid Nostr relay with ZBD.'
 ---
 
 <Frame type="glass" caption="Nostr Relay Guide">
@@ -11,11 +12,11 @@ This is a quickstart guide for those that wish to run a paid Nostr relay. There 
 
 This is a technical walkthrough of how to get it all setup!
 
-## VM Setup[​](#vm-setup "Direct link to heading")
+## VM Setup
 
 Choose your preferred VM provider - whether you use Linode, Digital Ocean, AWS, GCP, Azure, etc. For this guide I used the following setup in DigitalOcean:
 
-*   Ubuntu 22.10, 8GB memory, 160GB NVME SSDs
+* Ubuntu 22.10, 8GB memory, 160GB NVME SSDs
 
 I recommend at least 8GB of memory given the resource intensive nature of always-on websocket connections. Once your instance is up and running, SSH into that VM and follow the next steps.
 
@@ -37,7 +38,7 @@ passwd nostream
 chsh -s /bin/bash nostream
 ```
 
-## Setup Docker + Install[​](#setup-docker--install "Direct link to heading")
+## Setup Docker + Install
 
 Commands below will install Docker in your VM.
 
@@ -63,7 +64,7 @@ sudo apt update && sudo apt-get install docker-ce docker-ce-cli containerd.io do
 docker --version
 ```
 
-## Setup NGINX[​](#setup-nginx "Direct link to heading")
+## Setup NGINX
 
 Use the commands below to setup NGINX reverse proxy.
 
@@ -83,7 +84,7 @@ sudo service nginx restart
 sudo certbot --nginx -d subdomain.mydomain.com
 ```
 
-### NGINX Settings[​](#nginx-settings "Direct link to heading")
+### NGINX Settings
 
 Use the contents below as the contents of the _default_ NGINX settings file. Do remember to change the subdomain.domain.com to your domain.
 
@@ -101,7 +102,7 @@ server {
 }
 ```
 
-### DNS Settings[​](#dns-settings "Direct link to heading")
+### DNS Settings
 
 To map your VM’s IP address to your subdomain.mydomain.com you need to have an A record like below in your domain DNS settings.
 
@@ -112,11 +113,11 @@ To map your VM’s IP address to your subdomain.mydomain.com you need to have an
 
 You may need to setup a static/reserved IP address in order to map the A record to the _subdomain.mydomain.com_.
 
-## ZBD Developer Setup[​](#zebedee-developer-setup "Direct link to heading")
+## ZBD Setup
 
 Now that our VM is setup, let's get our Nostr relay hooked up to ZBD. First you're going to need a ZBD Dev Dashboard account.
 
-*   [Sign up for a ZBD Dev Dashboard account](https://dashboard.zebedee.io/signup)
+* [Sign up for a ZBD Dev Dashboard account](https://dashboard.zebedee.io/signup)
 
 <Tip>Follow our in-depth guide on [how to setup a ZBD Dev Dashboard account](/docs/dashboard/signup) for more details.</Tip>
 
@@ -131,11 +132,7 @@ Once your project is created, you will be taken to the PROJECT DETAILS view. Eac
 
 **Copy this API Key, you’re going to need it when setting up Nostream.**
 
-caution
-
-You will need a **Production API Key** for this integration. Sandbox API Keys are not supported yet for Nostr Relays.
-
-To get a Production API Key, you need to click _LIVE_ on your Project dashboard.
+<Warning>You will need a **Production API Key** for this integration. Sandbox API Keys are not supported yet for Nostr Relays. To get a Production API Key, you need to click *LIVE* on your Project dashboard.</Warning>
 
 <Frame type="glass" caption="Project Details - API">
   <img src="/img/v2/guides/nostr-relay/apikey.webp" alt="Project Details - API" />
@@ -146,7 +143,7 @@ _Bonus: you are also encouraged to place your VM’s IP addresses in the whiteli
 
 Now that we’ve gotten the ZBD API Key, let’s store it in the configuration file for Nostream and set it live!
 
-## Nostream Setup[​](#nostream-setup "Direct link to heading")
+## Nostream Setup
 
 Now that your VM is all setup, and you’ve got your ZBD API Key, let’s install and configure Nostream to run a paid relay powered by ZBD.
 
@@ -195,7 +192,7 @@ Ctrl+B  +  D
 tmux a
 ```
 
-### Settings.yaml Configuration[​](#settingsyaml-configuration "Direct link to heading")
+### Settings.yaml Configuration
 
 Go ahead and edit the contents of your Nostream settings file. The file can be found at _.nostr/settings.yaml_
 
@@ -229,7 +226,7 @@ Change _limits.event.pubkey.minBalance_ to the amount you are charging for admis
 
 **Your paid relay configuration is now complete!** Go back up to continue with the commands and add your ZEBEDEE\_API\_KEY to local.env file.
 
-## Done![​](#done "Direct link to heading")
+## Start Relay
 
 Once you restart the relay, you should see a console that looks a little bit like this.
 
@@ -240,7 +237,7 @@ Once you restart the relay, you should see a console that looks a little bit lik
 
 The special part is `Payments Provider: zebedee` and `Pay-to-relay = enabled`. You’re all set, let’s test the relay!
 
-## Relay Connectivity[​](#relay-connectivity "Direct link to heading")
+## Relay Connectivity
 
 In order to check that the relay is setup correctly, head on over to [WebSocketKing](https://websocketking.com/) and test the connection to your _subdomain.domain.com_.
 

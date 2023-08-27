@@ -1,41 +1,42 @@
 ---
 title: 'Errors'
+description: 'Troubleshoot problems with API calls.'
 ---
 
-The ZBD API follows standard HTTP response codes for handling success and error requests. If you are unfamiliar with HTTP requests, [please read more here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).
+The ZBD API follows standard HTTP response codes for handling success and error requests.
 
-<Note>HTTP response status codes indicate whether a specific HTTP request has been successfully completed.</Note>  
+<Note>If you are unfamiliar with HTTP requests, [please read more here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status).</Note>  
 
-# HTTP Status Codes
+## HTTP status codes
 
 Below is an overview of HTTP status codes available in the standard, which ZBD API adheres by:
 
 | HTTP Response Group | Status Code Range |
 | --- | :-: |
-| Informational Responses | 100-199 |
-| **Successful Responses** | 200-299 |
-| Redirects | 300-399 |
-| **Client Errors** | 400-499 |
-| **Server Errors** | 500-599 |
+| Informational Responses | `100-199` |
+| **Successful Responses** | `200-299` |
+| Redirects | `300-399` |
+| **Client Errors** | `400-499` |
+| **Server Errors** | `500-599` |
 
-  
+## Common response codes
 
-# ZBD API Status Codes
-
-As seen above, you are most likely to encounter the highlighted HTTP status codes ranges when interacting with the ZBD API. More details with the specific meaning of the status codes follow below:
+These are the HTTP status codes most often returned by the ZBD API.
 
 | Status Code | Details | Response Description |
 | :-: | :-: | --- |
-| 200 | Success | Request was successful. |
-| 400 | Bad Request | Either incorrect or missing parameters provided for the Request. |
-| 401 | Unauthorized | Request is not authorized. Make sure correct API Key is provided. |
-| 403 | Forbidden | Request is forbidden. Make sure your IP is located in a region/country that ZBD services are available in ([check Supported Regions page for more info](https://zebedee.io/countries)). |
-| 404 | Not Found | The requested endpoint/resource was not found. Make sure the API endpoint used is correct. |
-| 500 | Server Error | Something went wrong in the ZBD API Servers. |
+| `200` | Success | Request was successful. |
+| `400` | Bad Request | Either incorrect or missing parameters provided for the Request. |
+| `401` | Unauthorized | Request is not authorized. Make sure correct API Key is provided. |
+| `403` | Forbidden | Request is forbidden. Make sure your IP is located in a region/country that ZBD services are available in. |
+| `404` | Not Found | The requested endpoint/resource was not found. |
+| `422` | Missing Parameter | The requested endpoint expected a specific parameter to be provided. |
+| `429` | Rate Limited | Too many requests in short time-frame. |
+| `500` | Server Error | Something went wrong in the ZBD API servers. |
 
-## Error Messages[​](#error-messages "Direct link to heading")
+## Error messages
 
-To help identify the issue with your API requests, the error JSON response returned will include a **message** property that aims to be descriptive. Follow the details from the message, alongside the [API Reference](/api-reference/introduction) / [Documentation](/docs/overview) to resolve the issue.
+To help identify the issue with your API requests, the error JSON response returned will often include a **message** property that aims to be descriptive.
 
 Example of an error message from the API:
 

@@ -1,24 +1,19 @@
 ---
 title: "Get Charge"
-api: "GET https://api.zebedee.io/v0/charges/{CHARGE_ID}"
+description: "Retrieve all data about a single Charge."
+api: "GET https://api.zebedee.io/v0/charges/{id}"
 ---
-
-## Description
-
-Retrieves all information relating a specific [Charge](/knowledge-base/glossary#charge) / Payment Request.
 
 ## Usage
 
-While the best approach is to rely on the `callbackUrl` property and expect async Charge updates sent from ZBD servers, this API can be used to check any information about any Charge, specifically properties such as `status` and `internalId`.
-
-If you're not using the `callbackUrl` property, then you'll likely need this API to fetch whether a Charge has been paid.
+<Tip>While the best approach is to rely on the `callbackUrl` property and expect async Charge updates sent from ZBD servers, this API can be used to check any information about any Charge, specifically properties such as `status` and `internalId` which are likely useful for your application.</Tip>
 
 ## Configuration
 
 ### Path Parameters
 
-<ParamField required path="CHARGE_ID" type="string">
-  CHARGE ID
+<ParamField required path="id" type="string">
+  Charge ID
 </ParamField>
 
 ### Header Parameters
