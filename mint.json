@@ -201,7 +201,11 @@
         "knowledge-base/guides/game-with-bitcoin-rewards",
         "knowledge-base/guides/nostr-relay",
         "knowledge-base/guides/lightning-address",
-        "knowledge-base/guides/static-charges"
+        "knowledge-base/guides/static-charges",
+        "knowledge-base/guides/lightning-charges",
+        "knowledge-base/guides/lightning-withdrawal-requests"
+
+
       ]
     },
     {
