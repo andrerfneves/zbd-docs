@@ -230,28 +230,28 @@
         {
           "group": "Bitcoin Lightning",
           "pages": [
-            "courses/lightning-network-101",
-            "courses/lnurl-101",
-            "courses/bitcoin-lightning-ui-ux",
-            "courses/bitcoin-lightning-product-design",
-            "courses/zbd-dev-crash-course",
-            "courses/build-bitcoin-lightning-app"         
+            "courses/bitcoin-lightning/lightning-network-101",
+            "courses/bitcoin-lightning/lnurl-101",
+            "courses/bitcoin-lightning/ui-ux",
+            "courses/bitcoin-lightning/product-design",
+            "courses/bitcoin-lightning/zbd-dev-crash-course",
+            "courses/bitcoin-lightning/build-app"         
           ]
         },
         {
           "group" : "Bitcoin Gaming",
           "pages": [
-            "courses/build-bitcoin-game",
+            "courses/bitcoin-gaming/build-bitcoin-game",
             {
               "group": "Game Anticheat",
               "pages": [
-                "courses/game-anticheat-introduction",
-                "courses/an-insecure-game",
-                "courses/hacking-saved-game",
-                "courses/hacking-memory-values",
-                "courses/decompiling-source-code",
-                "courses/altering-network-traffic",
-                "courses/making-a-more-secure-game"
+                "courses/bitcoin-gaming/anticheat/introduction",
+                "courses/bitcoin-gaming/anticheat/an-insecure-game",
+                "courses/bitcoin-gaming/anticheat/hacking-saved-game",
+                "courses/bitcoin-gaming/anticheat/hacking-memory-values",
+                "courses/bitcoin-gaming/anticheat/decompiling-source-code",
+                "courses/bitcoin-gaming/anticheat/altering-network-traffic",
+                "courses/bitcoin-gaming/anticheat/making-a-more-secure-game"
               ]
             }
           ]
@@ -259,21 +259,21 @@
         {
           "group": "Nostr",
           "pages": [
-            "courses/nostr-dev-crash-course",
-            "courses/nostr-paid-relay"
+            "courses/nostr/dev-crash-course",
+            "courses/nostr/paid-relay"
           ]
         },
         {
           "group": "Learn Web Development",
           "pages": [
-            "courses/javascript",
-            "courses/html-css",
-            "courses/networking",
-            "courses/api",
-            "courses/react",
-            "courses/typescript",
-            "courses/sql",
-            "courses/nextjs"
+            "courses/web-dev/javascript",
+            "courses/web-dev/html-css",
+            "courses/web-dev/networking",
+            "courses/web-dev/api",
+            "courses/web-dev/react",
+            "courses/web-dev/typescript",
+            "courses/web-dev/sql",
+            "courses/web-dev/nextjs"
           ]
         }
       ]
