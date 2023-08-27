@@ -71,7 +71,7 @@
           "group": "Node.js",
           "pages": [
             "docs/nodejs-quickstart",
-            "docs/nextjs-playground-starter",
+            "docs/nextjs-playground",
             "docs/express-quickstart"
           ]
         },
@@ -138,9 +138,9 @@
         {
           "group": "ZBD Login", 
           "pages": [
-            "docs/zbd-login/intro",
-            "docs/zbd-login/building",
-            "docs/zbd-login/design",
+            "docs/zbd-login/introduction",
+            "docs/zbd-login/integration",
+            "docs/zbd-login/guidelines",
             "docs/zbd-login/walkthrough",
             "docs/zbd-login/advanced"
           ]
@@ -165,7 +165,7 @@
         {
           "group": "ZBD Streamer",
           "pages": [
-            "docs/zbd-streamer/overview",
+            "docs/zbd-streamer/introduction",
             "docs/zbd-streamer/customization"
           ]
         }
@@ -180,25 +180,25 @@
       ]
     },
     {
-      "group": "ZBD API",
+      "group": "Payouts",
       "pages": [
         "knowledge-base/payouts/lightning-address",
-        "knowledge-base/payouts/lightning-charges",
+        "knowledge-base/payouts/zbd-user",
         "knowledge-base/payouts/withdrawal-requests",
-        "knowledge-base/payouts/zbd-gamertag"
+        "knowledge-base/payouts/lightning-charges"
       ]
     },
     {
       "group": "Payins",
       "pages": [
         "knowledge-base/payins/charges",
-        "knowledge-base/payins/zbd-gamertag"
+        "knowledge-base/payins/zbd-user"
       ]
     },
     {
       "group": "Miscellaneous",
       "pages": [
-        "knowledge-base/lightning-network",
+        "knowledge-base/guides/game-with-bitcoin-rewards",
         "knowledge-base/guides/nostr-relay",
         "knowledge-base/guides/lightning-address",
         "knowledge-base/guides/static-charges"
@@ -210,8 +210,8 @@
         {
           "group": "Tutorials & Guides",
           "pages": [
-            "knowledge-base/guides/custom-lightning-address-app",
-            "knowledge-base/guides/send-payment-to-ln-address-app"
+            "knowledge-base/guides/custom-lightning-address",
+            "knowledge-base/guides/app-pay-lightning-address"
           ]
         }
       ]
@@ -219,7 +219,8 @@
     {
       "group": "Resources",
       "pages": [
-        "knowledge-base/glossary"
+        "knowledge-base/glossary",
+        "knowledge-base/lightning-network"
       ]
     },
     {

@@ -1,5 +1,6 @@
 ---
-title: 'Start Building'
+title: 'Integrating'
+description: 'Learn how to integrate ZBD Login into your application.'
 ---
 
 `ZBD Login` follows the [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749) standards in order to provide the best and safest experience to users. ZBD's OAuth2 implementation requires [PKCE (Proof Key for Code Exchange)](https://oauth.net/2/pkce/) as an additional feature for making sure the entire authentication flow is secure.
@@ -10,7 +11,7 @@ The authorization sequence begins when your app redirects a browser to a ZBD URL
 
 The app must store the `refresh token` for future use and use the `access token` to fetch user data through the ZBD API. When the `access token` expires, the app will use the `refresh token` to request a new one.
 
-<Frame type="glass" caption="ZBD Login - OAuth2 flow">
+<Frame caption="ZBD Login - OAuth2 flow">
   <img src="/img/oauth2-flow.png" alt="ZBD Login - OAuth2 flow" />
 </Frame>
 <br />
@@ -53,7 +54,7 @@ In order to properly redirect users to the ZBD login portal, you must open a bro
 }
 ```
 
-### Getting the ZBD User Profile Data
+### Getting ZBD User Profile Data
 
 * Profile: `GET` [https://api.zebedee.io/v1/oauth2/user](https://api.zebedee.io/v1/oauth2/user)
   * You can now call the ZBD API endpoints passing the provided `accessToken` from the previous endpoint on the request authorization header.
@@ -78,7 +79,7 @@ Response: {
 }
 ```
 
-### Getting the ZBD User Wallet Data
+### Getting ZBD User Wallet Data
 
 * Profile: `GET` [https://api.zebedee.io/v1/oauth2/wallet](https://api.zebedee.io/v1/oauth2/wallet)
   * You can now call the ZBD API endpoints passing the provided `accessToken` from the previous endpoints on the request authorization header.
@@ -115,7 +116,7 @@ In order to be able to implement `ZBD Login` functionality, you must first get y
 
 After creating a game inside of the ZBD Dev Dashboard, head on over to the `OAuth2` tab inside of that game's single details view.
 
-<Frame type="glass" caption="OAuth2 Menu - ZBD Dev Dashboard">
+<Frame caption="OAuth2 Menu - ZBD Dev Dashboard">
   <img
     src="/img/oauth2-keys.png"
     alt="OAuth2 Menu - ZBD Dev Dashboard"
@@ -149,7 +150,7 @@ Now its time to set up your OAuth2 redirect URLs. Head on over to the OAuth2 set
 
 From the opened OAuth2 Settings modal, you can add up to 3 redirect URLs (whether native mobile URIs or HTTPS-based URLs). To get started use the `+` button.
 
-<Frame type="glass" caption="Add Redirect URLs - ZBD Dev Dashboard">
+<Frame caption="Add Redirect URLs - ZBD Dev Dashboard">
   <img
     src="/img/oauth2-ru.png"
     alt="Add Redirect URLs - ZBD Dev Dashboard"

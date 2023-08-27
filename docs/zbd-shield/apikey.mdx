@@ -4,58 +4,41 @@ sidebarTitle: 'Link ZBD Project'
 description: 'Learn how to connect a ZBD Project to your ZBD Shield instance.'
 ---
 
-# Add an API Key to ZBD Shield
+ZBD Shield is the To connect a [ZBD Dev Dashboard](https://dashboard.zebedee.io) Project to ZBD Shield is required to route transactions for that Project through your ZBD Shield instance. This will be done by inputting the applicable Project’s API key from the Dev Dashboard into ZBD Shield.
 
-Connecting a [ZBD Dev Dashboard](https://dashboard.zebedee.io) Project to ZBD Shield is required to route transactions for that Project through your ZBD Shield instance. This will be done by inputting the applicable Project’s API key from the Dev Dashboard into ZBD Shield.
+## In ZBD Dev Dashboard
 
-## In the Dev Dashboard…[​](#in-the-developer-dashboard "Direct link to heading")
+- 1. In a separate tab, log in to your [ZBD Dev Dashboard](https://dashboard.zebedee.io) account.
 
-1.  In a separate tab, log in to your [Dev Dashboard](https://dashboard.zebedee.io) account
+- 2. Navigate to the applicable Project.
 
-danger
-
-If you do not have a [ZBD Dev Dashboard](https://dashboard.zebedee.io) account, please create one now ([here's a guide](/docs/dashboard/signup) if you need help).
-
-<Tip>To navigate to the Dev Dashboard directly from the ZBD Shield UI, look for the following button in the ZBD Shield navbar</Tip>
-
-2.  Navigate to the applicable Project
-
-<Tip>If you have not created a Project, please create one. Refer to [this guide](/docs/dashboard/projects/create) for more help.</Tip>
-
-3.  Go to the `API` tab
+- 3. Navigate to the `API` tab.
     
-4.  Copy your API key
+- 4. Copy your ZBD Project API key.
     
-
-<Frame type="glass" caption="ZBD Shield | Anomaly Screen">
+<Frame caption="ZBD Shield | Anomaly Screen">
   <img src="/img/v2/shield-copy-api-key.png" alt="ZBD Shield | Anomaly Screen" />
 </Frame>
 <br />
 
-Once you have your API key, you’re ready to insert it into ZBD Shield.
+Once you have your API key, you're ready to insert it into ZBD Shield instance.
 
-## Back to ZBD Shield…[​](#back-to-zbd-shield "Direct link to heading")
+## In ZBD Shield
 
-Now, we need to put that API key into ZBD Shield, so the two are linked.
+Now, we need to put that API key into ZBD Shield, so the two are linked and ZBD Shield can properly process your Project's transactions.
 
-1.  Return to your ZBD Shield instance
+- 1. Login to your ZBD Shield instance.
     
-2.  Go to `Settings`
+- 2. Navigate to `Settings`.
     
-3.  Go to `API Key`
+- 3. Navitate to `API Key`.
     
-4.  Paste your API key and press the checkmark button to save the entry
+- 4. Paste your ZBD Project API key and press the checkmark button to save the entry.
     
-
-<Frame type="glass" caption="ZBD Shield | Anomaly Screen">
+<Frame caption="ZBD Shield | Anomaly Screen">
   <img src="/img/v2/shield-input-api-key.png" alt="ZBD Shield | Anomaly Screen" />
 </Frame>
 <br />
 
-danger
+<Warning>If your API key is ever compromised, immediately [regenerate a new API key](/docs/dashboard/projects/api) in the [ZBD Dev Dashboard](https://dashboard.zebedee.io) and update the key in your ZBD Shield instance.</Warning>
 
-If your API key is ever compromised, immediately [regenerate a new API key](/docs/dashboard/projects/api) in the [Dev Dashboard](https://dashboard.zebedee.io) and update the key in your ZBD Shield instance.
-
-Congratulations! You’ve now linked a ZBD Project Wallet to your ZBD Shield instance.
-
-Next up: [Connect your game to ZBD Shield](/docs/zbd-shield/connect)
