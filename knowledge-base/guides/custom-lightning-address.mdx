@@ -1,75 +1,80 @@
 ---
-title: 'Custom Lightning Addresses Guide'
+title: 'Creating custom Lightning Addresses with ZBD'
+sidebarTitle: 'Custom Lightning Addresses'
+description: 'Learn how to create custom Lightning Addresses with ZBD API'
 ---
 
-<Frame type="glass" caption="Custom Lightning Addresses Guide">
-  <img src="/img/gWHQgvs.png" alt="Custom Lightning Addresses Guide" />
-</Frame>
-<br />
+## Contributor
 
-# Goal
+Thanks to our contributor for this guide, Santos Hernandez.
 
-The purpose of this workshop is to help you get your own custom static charge and Lightning Address for your own domain.
+<CardGroup cols={2}>
+  <Card title="Santos Hernandez" icon="at" color="#00000" href="https://github.com/zantoshi">
+    github.com/zantoshi
+  </Card>
+</CardGroup>
 
-# Audience
+## Goal
+
+The purpose of this workshop is to help you get your own custom static charge and Lightning Address for your own domain, using Python, Django, and ZBD API.
+
+## Audience
 
 This write-up is for a hobbyist or beyond developer who wants their own custom QR code and Lightning Address.
 
-# What This Unlocks
+## What this unlocks
 
-<Frame type="glass" caption="Custom Lightning Address App Screenshot">
+<Frame caption="Custom Lightning Address App Screenshot">
   <img src="/img/guides/custom-ln-address-app.jpeg" alt="Custom Lightning Address App Screenshot" />
 </Frame>
 <br />
 
 You'll get this awesome landing page. You'll create a Static Charge QR code to receive money to as well as an internet identifier called Lightning Address to receive money to.
 
-# Dependencies
+## Prerequisites
 
 You would need the following:
 
-*   Access to the ZBD API.
-    *   If you don’t have an account, register an account at [here](https://dashboard.zebedee.io/signup).
-*   A basic understanding of programming.
+- Access to the ZBD API.
+  - If you don't have an account, register an account at [here](https://dashboard.zebedee.io/signup).
+- A basic understanding of programming.
 
-# Static Charge & Lightning Address Explained
+## Static Charge & Lightning Address Explained
 
-## Static Charge and Lightning Address Use Cases[​](#static-charge-and-lightning-address-use-cases "Direct link to heading")
+### Use Cases
 
 Static Charges and Lightning Addresses are excellent for easily receiving payments. Static Charges can be set such that they can be used an unlimited number of times and they don’t expire. So it makes receiving payments easy.
 
 You can get your own Lightning Address and Static Charge that is tied to your own username and domain.
 
-## How does Static Charge Work?[​](#how-does-static-charge-work "Direct link to heading")
+### How do Static Charges work?
 
-A static charge is actually a URL that is used to process incoming payment requests by returning an invoice to the app requesting to make a payment for a specific amount. The app will then take the invoice and pay it.
+A Static Charge is actually a URL that is used to process incoming payment requests by returning an invoice to the app requesting to make a payment for a specific amount. The app will then take the invoice and pay it.
 
-## Example QR[​](#example-qr "Direct link to heading")
-
-<Frame type="glass" caption="Static Charge">
+<Frame caption="Example of Static Charge">
   <img src="/img/guides/staticCharge.png" alt="Static Charge" />
 </Frame>
 <br />
 
-## Example Lightning Address[​](#example-lightning-address "Direct link to heading")
+### Lightning Address Explained
 
-`santos@zbd.gg` - it looks like an example but it’s used to receive money to. It could also be an email at the same time. Whoa~.
+`santos@zbd.gg` - it looks like an example but it's used to receive money to. It could also be an email at the same time. Whoa~.
 
-# How to Make your Project Return Lightning Address Static Charge Metadata using Django
+## Return Lightning Address metadata using Django
 
-In this tutorial we’ll setup a Django project that allows you to receive payment to your own lightning address.
+In this tutorial we'll setup a Django project that allows you to receive payment to your own lightning address.
 
 ⛔ **WARNING!** THIS WILL OVERWRITE ANY FILES YOU CURRENTLY HAVE FOR THE DOMAIN!
 
-## Getting started[​](#getting-started "Direct link to heading")
+## Getting started
 
-### Install Python[​](#install-python "Direct link to heading")
+### Install Python
 
 If you already have python installed, skip this section.
 
 You can download and install python [here](https://www.python.org/downloads/release/python-3113/). Select your relevant operating system and install.
 
-### Install VS Code[​](#install-vs-code "Direct link to heading")
+### Install VS Code
 
 If you already have a code editor installed, skip this section.
 
@@ -77,7 +82,7 @@ This application is a Code Editor that will make it much easier to manage your c
 
 To get started quickly, you can clone the repository where most things are already setup.
 
-## Getting the Codebase and Installing Requirements[​](#getting-the-codebase-and-installing-requirements "Direct link to heading")
+### Installing Requirements
 
 In your terminal in VS Code, clone the following repository by running this command:
 
@@ -91,7 +96,7 @@ If you get an error try running:
 
 `pip3 install -r requirements.txt`
 
-## Plug and Play[​](#plug-and-play "Direct link to heading")
+### Plug and Play
 
 Now that you have the codebase setup and the requirements installed, let’s connect your Dev Dashboard account.
 
@@ -108,7 +113,7 @@ SECRET_KEY="YOUR_SECRET_KEY_HERE"
 
 We will be updating this throughout the tutorial.
 
-## Creating a Static Charge[​](#creating-a-static-charge "Direct link to heading")
+### Creating a Static Charge
 
 The ZBD API makes static charge creation very easy. Here is a high-level example of the URL, payload, and the response from the API.
 
@@ -118,7 +123,7 @@ Using the ZBD Doc Portal, send a POST Request to the following URL with the payl
 
 Navigate to the Doc Portal. Add this to your payload AFTER changing the `identifier` , `description` , `identifier`, and `succesMessage.`
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/1.png" alt="Screenshot 1" />
 </Frame>
 <br />
@@ -138,19 +143,19 @@ Paste it in the code box.
 
 **MAKE SURE TO UPDATE THE PARAMETERS OTHERWISE YOUR LIGHTNING ADDRESS WON’T WORK!**
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/2.png" alt="Screenshot 2" />
 </Frame>
 <br />
 
 Add your `apikey.`
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/3.png" alt="Screenshot 3" />
 </Frame>
 <br />
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/4.png" alt="Screenshot 4" />
 </Frame>
 <br />
@@ -193,7 +198,7 @@ Now each time that you receive payments to your Lightning Address, your ZBD proj
 
 **Update your .env file with the ID and the URI.**
 
-## Creating a Secret Key for Django[​](#creating-a-secret-key-for-django "Direct link to heading")
+### Creating a Secret Key for Django
 
 Run the following command in your terminal.
 
@@ -201,7 +206,7 @@ Run the following command in your terminal.
 
 **Copy the output and update your .env file with the output for SECRET\_KEY.**
 
-# Deploying your app to Namecheap
+## Deploying your app to Namecheap
 
 If you don’t have a domain and hosting already, you can sign-up for one at [namecheap.com](https://namecheap.com). Once you have a domain and hosting, you can proceed.
 
@@ -209,25 +214,25 @@ If you don’t have a domain and hosting already, you can sign-up for one at [na
 
 **Update your .env file with your own domain. It must be without http, https, or www. For example, my domain is `santos.lol` therefore I use that.**
 
-## Create Python App[​](#create-python-app "Direct link to heading")
+### Create Python App
 
 Log into your cPanel account. Search for or select `Setup Python App` .
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/5.png" alt="Screenshot 5" />
 </Frame>
 <br />
 
 Click `Create Application`
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/6.png" alt="Screenshot 6" />
 </Frame>
 <br />
 
 Setup the configuration as follows.
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/7.png" alt="Screenshot 7" />
 </Frame>
 <br />
@@ -242,17 +247,17 @@ Setup the configuration as follows.
 
 **This is what it looks like filled out:**
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/8.png" alt="Screenshot 8" />
 </Frame>
 <br />
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/9.png" alt="Screenshot 9" />
 </Frame>
 <br />
 
-## Connecting via FTP to Upload your App[​](#connecting-via-ftp-to-upload-your-app "Direct link to heading")
+### Connecting via FTP to Upload your App
 
 Download FileZilla [here](https://filezilla-project.org/), which is a File Transfer Protocol client. If you already have an FTP client. Please feel to proceed.
 
@@ -266,73 +271,73 @@ For your username, enter your namecheap cpanel username.
 
 Hit quick connect.
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/10.png" alt="Screenshot 10" />
 </Frame>
 <br />
 
 Once you’ve done that, look for your domain name and double click the folder. Now you’ll want to copy the files in `lightning-address-app` folder and drop them into the folder.
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/11.png" alt="Screenshot 11" />
 </Frame>
 <br />
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/12.png" alt="Screenshot 12" />
 </Frame>
 <br />
 
 You may see this, if you do, please overwrite the file.
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/13.png" alt="Screenshot 13" />
 </Frame>
 <br />
 
 **Wait for it to finish uploading everything and then once it’s done let’s install the requirements.**
 
-## Install Requirements & Restart the app[​](#install-requirements--restart-the-app "Direct link to heading")
+### Install Requirements & Restart the app
 
 Copy the command from your Python App from cPanel.
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/14.png" alt="Screenshot 14" />
 </Frame>
 <br />
 
 In a new tab, navigate to the terminal app.
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/15.png" alt="Screenshot 15" />
 </Frame>
 <br />
 
 Paste in the command and hit enter.
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/16.png" alt="Screenshot 16" />
 </Frame>
 <br />
 
 Type `pip3 install -r requirements.txt` .
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/17.png" alt="Screenshot 17" />
 </Frame>
 <br />
 
 Once it is done, go back to your `Setup a Python app` , hit the edit button, and then restart your Python app.
 
-<Frame type="glass" caption="">
+<Frame type="glass">
   <img src="/img/guides/18.png" alt="Screenshot 18" />
 </Frame>
 <br />
 
-## Try it out![​](#try-it-out "Direct link to heading")
+### Try it out!
 
 Try sending yourself a payment with the lightning address you just setup 🙂. Payments will fly directly into your associated Project Wallet. LFG 🚀.
 
-# Conclusion
+## Conclusion
 
 You now have your own custom Static Charge & Lightning Address powered by ZBD!

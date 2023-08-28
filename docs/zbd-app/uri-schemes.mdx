@@ -1,6 +1,15 @@
-# ZBD App URI Schemes
+---
+title: 'URI Schemes'
+description: 'Learn about the URI schemes ZBD App subscribes to.'
+---
 
-If you wish to open or trigger the ZBD App on iOS and Android devices, you may use the following URI schemes:
+## Introduction
+
+When building expeirences with the ZBD API, developers may wish to open the ZBD App from their own applications to trigger users for payments, posts, requests, and more. This can be done by using specific URI schemes.
+
+## Available Schemes
+
+To open or trigger the ZBD App on iOS or Android devices, the following URI schemes should work:
 
 ```
 zbd
@@ -12,18 +21,24 @@ zebedeeapp
 zebedeewallet
 ```
 
-To use the URI schemes above you may follow a URL similar to the ones below:
+## Using URI Schemes
+
+To use the URI schemes above you may craft a URL similar to the ones below:
+
+### Open ZBD to pay a Charge
 
 ```
-# Opening a Bitcoin Lightning Network invoice
 lightning:lnbc109......71fe
+```
 
-# Opening a LNURL QR code
+### Open ZBD to pay a Static Charge
+
+```
 lnurl:lnurl1dp68gurn...e3c3svx0h
+```
 
-# Opening ZBD App with Bitcoin Lightning Network invoice
-zebedee:lightning:lnbc109......71fe
+### Open ZBD to automatically redeem a Voucher
 
-# Opening ZBD App with redeeming Voucher
+```
 zebedee:voucher:XXXXXXXX
 ```

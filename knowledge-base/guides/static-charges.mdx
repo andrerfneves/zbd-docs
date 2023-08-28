@@ -3,26 +3,34 @@ title: 'Static Charge QR Codes'
 description: 'Learn how to use Static Charges and common use cases.'
 ---
 
-<Frame type="glass" caption="Static Charges Guide">
-  <img src="/img/r91FYxM.png" alt="Static Charges Guide" />
-</Frame>
-<br />
-
-## Description
+## Introduction
 
 Static Charges are a type of Payment Request QR code in the Bitcoin Lightning Network that has some incredible characteristics and capabiltiies. Whereas [Charges](/api-reference/charges/create) create `fixed-amount` and `single-use` Payment Requests that expire, [Static Charges](/api-reference/static-charges/create) provide you a lot more flexibility & capabilities, including:
 
-*   **Variable Amounts** -> Static Charges have both `minAmount` and `maxAmount` properties, allowing for variable amounts set by the payer.
-*   **Multi-use** -> By default Static Charges have no expiration time, making them usable for any N payers/payments.
-*   **Success Message** -> When a payer completes the payment flow for this Static Charge, a Success Message is displayed to them.
-*   **Slots** -> Static Charges can also have the notion of allowedSlots. This means only N payments will be accepted at this Static Charge before disabling them.
+<CardGroup cols={2}>
+  <Card title="Variable Amounts" icon="arrows-left-right-to-line" color="#000000">
+    Static Charges have both `minAmount` and `maxAmount` properties, allowing for the payer to define the amount.
+  </Card>
+  <Card title="Multi-use QRs" icon="stopwatch" color="#000000">
+    By default Static Charges have **no expiration time**, making them usable for any N payers and payments.
+  </Card>
+  <Card title="Slots" icon="ticket-simple" color="#000000">
+    Slots allow you to define that only N payments are to be accepted for this specific Static Charge QR.
+  </Card>
+  <Card title="Success Message" icon="receipt" color="#000000">
+    When a payment is completed, a `Success Message` can be displayed to the payer (e.g. receipt, link).
+  </Card>
+</CardGroup>
+<br />
 
-**A Static Charge is a static QR code that can be used an unlimited number of times, does not expire, accepts various amounts, accepts attached messages, and allows for full configurability --> ALL WHILE MAINTAINING THE SAME IMMUTABLE QR CODE.**
+## What is a Static Charge?
+
+A Static Charge is a static QR code that can be used an unlimited number of times, does not expire, accepts various amounts, accepts attached messages, and allows for full configurability, **all while maintaining the same QR code**.
 
 A Static Charge QR code looks like the one show below:
 
-<Frame type="glass" caption="ZBD Static Charge">
-  <img src="/img/static-charge.jpeg" alt="ZBD Static Charge" />
+<Frame caption="ZBD Static Charge">
+  <img src="/img/static-charge.jpeg" width="200" alt="ZBD Static Charge" />
 </Frame>
 <br />
 

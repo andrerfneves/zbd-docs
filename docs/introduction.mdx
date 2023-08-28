@@ -8,56 +8,46 @@ description: 'ZBD is the global Bitcoin payments API for developers.'
 Learn how to get ZBD set up in your project.
 
 <CardGroup cols={2}>
-  <Card title="Node.js Quick Start" icon="node-js" color="#3C873A" href="/api-reference/charges/create"></Card>
-  <Card title="Next.js Playground Starter" icon="node-js" color="#000000" href="/api-reference/charges/create"></Card>
-  <Card title="Rust Quick Start" icon="rust" color="#AA2704" href="/api-reference/charges/create"></Card>
-  <Card title="Go Quick Start" icon="golang" color="#00ADD8" href="/api-reference/charges/create"></Card>
-  <Card title="C# Quick Start" icon="c" color="#00ADD8" href="/api-reference/charges/create"></Card>
-  <Card title="HTTP REST Quick Start" icon="code" color="#9563FF" href="/api-reference/charges/create"></Card>
-  <Card title="Nostr Relay Quick Start" icon="hashtag" color="#e942f5" href="/api-reference/charges/create"></Card>
-  <Card title="Lightning Address Payouts" icon="bolt-lightning" color="#FCC01E" href="/api-reference/charges/create"></Card>
-  <Card title="Add Bitcoin Rewards to your Game" icon="gamepad" color="#32d615" href="/api-reference/charges/create"></Card>
-  <Card title="Accept Instant Bitcoin Payments" icon="bitcoin" color="#FF9900" href="/api-reference/charges/create"></Card>
+  <Card title="Node.js Quick Start" icon="node-js" color="#3C873A" href="/docs/nodejs-quickstart"></Card>
+  <Card title="Next.js Playground Starter" icon={<svg class="h-6 w-6" height="1024pt" viewBox=".5 -.2 1023 1024.1" width="1024pt" xmlns="http://www.w3.org/2000/svg"><path d="m478.5.6c-2.2.2-9.2.9-15.5 1.4-145.3 13.1-281.4 91.5-367.6 212-48 67-78.7 143-90.3 223.5-4.1 28.1-4.6 36.4-4.6 74.5s.5 46.4 4.6 74.5c27.8 192.1 164.5 353.5 349.9 413.3 33.2 10.7 68.2 18 108 22.4 15.5 1.7 82.5 1.7 98 0 68.7-7.6 126.9-24.6 184.3-53.9 8.8-4.5 10.5-5.7 9.3-6.7-.8-.6-38.3-50.9-83.3-111.7l-81.8-110.5-102.5-151.7c-56.4-83.4-102.8-151.6-103.2-151.6-.4-.1-.8 67.3-1 149.6-.3 144.1-.4 149.9-2.2 153.3-2.6 4.9-4.6 6.9-8.8 9.1-3.2 1.6-6 1.9-21.1 1.9h-17.3l-4.6-2.9c-3-1.9-5.2-4.4-6.7-7.3l-2.1-4.5.2-200.5.3-200.6 3.1-3.9c1.6-2.1 5-4.8 7.4-6.1 4.1-2 5.7-2.2 23-2.2 20.4 0 23.8.8 29.1 6.6 1.5 1.6 57 85.2 123.4 185.9s157.2 238.2 201.8 305.7l81 122.7 4.1-2.7c36.3-23.6 74.7-57.2 105.1-92.2 64.7-74.3 106.4-164.9 120.4-261.5 4.1-28.1 4.6-36.4 4.6-74.5s-.5-46.4-4.6-74.5c-27.8-192.1-164.5-353.5-349.9-413.3-32.7-10.6-67.5-17.9-106.5-22.3-9.6-1-75.7-2.1-84-1.3zm209.4 309.4c4.8 2.4 8.7 7 10.1 11.8.8 2.6 1 58.2.8 183.5l-.3 179.8-31.7-48.6-31.8-48.6v-130.7c0-84.5.4-132 1-134.3 1.6-5.6 5.1-10 9.9-12.6 4.1-2.1 5.6-2.3 21.3-2.3 14.8 0 17.4.2 20.7 2z"></path><path d="m784.3 945.1c-3.5 2.2-4.6 3.7-1.5 2 2.2-1.3 5.8-4 5.2-4.1-.3 0-2 1-3.7 2.1zm-6.9 4.5c-1.8 1.4-1.8 1.5.4.4 1.2-.6 2.2-1.3 2.2-1.5 0-.8-.5-.6-2.6 1.1zm-5 3c-1.8 1.4-1.8 1.5.4.4 1.2-.6 2.2-1.3 2.2-1.5 0-.8-.5-.6-2.6 1.1zm-5 3c-1.8 1.4-1.8 1.5.4.4 1.2-.6 2.2-1.3 2.2-1.5 0-.8-.5-.6-2.6 1.1zm-7.6 4c-3.8 2-3.6 2.8.2.9 1.7-.9 3-1.8 3-2 0-.7-.1-.6-3.2 1.1z"></path></svg>} href="/docs/nextjs-playground"></Card>
+  <Card title="Rust Quick Start" icon="rust" color="#AA2704" href="/docs/rust-quickstart"></Card>
+  <Card title="Go Quick Start" icon="golang" color="#00ADD8" href="/docs/go-quickstart"></Card>
+  <Card title="HTTP REST Quick Start" icon="code" color="#9563FF" href="/docs/http-quickstart"></Card>
+  <Card title="Nostr Relay Setup" icon="bitcoin" color="#FF9900" href="/knowledge-base/guides/nostr-relay"></Card>
+  <Card title="Lightning Address Payouts" icon="bolt-lightning" color="#FCC01E" href="/knowledge-base/payouts/lightning-address"></Card>
+  <Card title="Add Bitcoin Rewards to your Game" icon="gamepad" color="#32d615" href="/knowledge-base/guides/game-with-bitcoin-rewards"></Card>
 </CardGroup>
 
 ## What is ZBD?
 
-ZBD is a global fintech focused on developing payments solutions on top of Bitcoin's [Lightning Network](/knowledge-base/lightning-network) rails. Our technology stack is vast and supports all kinds of applications: Game Developers, Fintechs, Social Platforms, and AdTechs.
+ZBD is the payments platform for modern developers, providing the speed and reliability innovators need to create monetized and meaningfully-engaging user experiences.
 
-Our Lightning Network-powered infrastructure enables secure and instant Bitcoin transactions, and allows for frictionless payments of any size at extremely low fees. We remove the compliance, regulatory, and technical lift associated with incorporating modern global payment infrastructure into the fabric of app.
+We enable businesses and consumers to quickly introduce instantaneous Bitcoin payments to the fabric of their applications, games, and platforms. ZBD has the most comprehensive set of Bitcoin Lightning API capabilities and is industry-leader in supporting companies in the fields of gaming, social, adtech and fintech.
+
+With ZBD, it's easy! Anyone can do it. What are YOU building?
 
 ## Explore
 
 Discover the full range of features and capabilities.
 
 <CardGroup cols={3}>
-  <Card title="Charges" href="/api-reference/charges/create">
+  <Card title="Charges" icon="arrows-down-to-line" color="#000" href="/knowledge-base/payins/charges">
     QR codes to accept Bitcoin payments.
   </Card>
-  <Card title="Payments" href="/api-reference/charges/create">
+  <Card title="Payments" icon="arrows-up-to-line" color="#000" href="/knowledge-base/payouts/lightning-charges">
     Send instant payments globally.
   </Card>
-  <Card title="Lightning Address" href="/api-reference/charges/create">
+  <Card title="Lightning Address" icon="at" color="#000"  href="/knowledge-base/payouts/lightning-address">
     Like an email address, but for Bitcoin.
   </Card>
-  <Card title="Withdrawal Requests" href="/api-reference/charges/create">
+  <Card title="Withdrawal Requests" icon="qrcode" color="#000"  href="/knowledge-base/payouts/withdrawal-requests">
     Vouchers and QRs for instant withdrawals.
   </Card>
-  <Card title="ZBD Login" href="/api-reference/charges/create">
+  <Card title="ZBD Login" icon="user-shield" color="#000"  href="/docs/zbd-login">
     Login with Google, but now with global money.
   </Card>
-  <Card title="Sandbox APIs" href="/api-reference/charges/create">
+  <Card title="Sandbox APIs" icon="vial-circle-check" color="#000"  href="/docs/dashboard/projects/sandbox">
     Securely test, create, and iterate.
   </Card>
 </CardGroup>
 
-
-## ZBD App
-
-Know what you want to build? [Sign up today for a ZBD Dev Dashboard account](https://dashboard.zebedee.io/signup) and get access to an API Key to get started with payments on the [ZBD API](/knowledge-base/zbd-api/overview).
-
-You can use the REST API directly, or through one of the supported [Software Development Kits (SDK)](/knowledge-base/zbd-api/sdks). Follow the detailed [ZBD Dev Dashboard product walkthrough](/docs/dashboard/signup) to set up your account and to understand the many parts of the ZBD product suite.
-
-New to Bitcoin or Lightning Network? [Learn more with our in-depth guides](/knowledge-base/lightning-network).
-
-<Tip>Want to earn some Bitcoin to get started? Download the [ZBD App](https://zbd.gg) and play games, participate in events, or listen to podcasts for Bitcoin rewards!</Tip>

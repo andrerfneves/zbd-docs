@@ -71,7 +71,7 @@
           "group": "Node.js",
           "pages": [
             "docs/nodejs-quickstart",
-            "docs/nextjs-playground-starter",
+            "docs/nextjs-playground",
             "docs/express-quickstart"
           ]
         },
@@ -110,20 +110,11 @@
     {
       "group": "Learn",
       "pages": [
+        "docs/api",
         {
-          "group": "ZBD Login",
+          "group": "ZBD Dev Dashboard",
           "pages": [
-            "docs/zbd-login/intro",
-            "docs/zbd-login/building",
-            "docs/zbd-login/design",
-            "docs/zbd-login/walkthrough",
-            "docs/zbd-login/advanced"
-          ]
-        },
-        {
-          "group": "Dev Dashboard",
-          "pages": [
-            "docs/dashboard/overview",
+            "docs/dashboard/introduction",
             {
               "group": "Account",
               "pages": [
@@ -134,26 +125,38 @@
             {
               "group": "Projects",
               "pages": [
-                "docs/dashboard/projects/create",
                 "docs/dashboard/projects/sandbox",
-                "docs/dashboard/projects/edit",
-                "docs/dashboard/projects/wallet",
+                "docs/dashboard/projects/create",
                 "docs/dashboard/projects/api",
+                "docs/dashboard/projects/wallet",
+                "docs/dashboard/projects/edit",
                 "docs/dashboard/projects/archive"
               ]
             },
-            {
-              "group": "Vouchers",
-              "pages": [
-                "docs/dashboard/vouchers"
-              ]
-            }
+            "docs/dashboard/vouchers"
+          ]
+        },
+        {
+          "group": "ZBD Login", 
+          "pages": [
+            "docs/zbd-login/introduction",
+            "docs/zbd-login/integration",
+            "docs/zbd-login/guidelines",
+            "docs/zbd-login/walkthrough",
+            "docs/zbd-login/advanced"
+          ]
+        },
+        {
+          "group": "ZBD App",
+          "pages": [
+            "docs/zbd-app/download",
+            "docs/zbd-app/uri-schemes"
           ]
         },
         {
           "group": "ZBD Shield",
           "pages": [
-            "docs/zbd-shield/overview",
+            "docs/zbd-shield/introduction",
             "docs/zbd-shield/access",
             "docs/zbd-shield/apikey",
             "docs/zbd-shield/connect",
@@ -161,20 +164,13 @@
           ]
         },
         {
-          "group": "ZBD App",
-          "pages": [
-            "docs/zbd-app/download",
-            "docs/zbd-app/uri-schemes",
-            "docs/zbd-app/wallet-limits"
-          ]
-        },
-        {
           "group": "ZBD Streamer",
           "pages": [
-            "docs/zbd-streamer/overview",
+            "docs/zbd-streamer/introduction",
             "docs/zbd-streamer/customization"
           ]
-        }
+        },
+        "docs/nbd"
       ]
     },
     {
@@ -186,25 +182,31 @@
       ]
     },
     {
-      "group": "ZBD API",
+      "group": "Knowledge Base",
+      "pages": [
+        "knowledge-base/introduction"
+      ]
+    },
+    {
+      "group": "Payouts",
       "pages": [
         "knowledge-base/payouts/lightning-address",
-        "knowledge-base/payouts/lightning-charges",
+        "knowledge-base/payouts/zbd-user",
         "knowledge-base/payouts/withdrawal-requests",
-        "knowledge-base/payouts/zbd-gamertag"
+        "knowledge-base/payouts/lightning-charges"
       ]
     },
     {
       "group": "Payins",
       "pages": [
         "knowledge-base/payins/charges",
-        "knowledge-base/payins/zbd-gamertag"
+        "knowledge-base/payins/zbd-user"
       ]
     },
     {
       "group": "Miscellaneous",
       "pages": [
-        "knowledge-base/lightning-network",
+        "knowledge-base/guides/game-with-bitcoin-rewards",
         "knowledge-base/guides/nostr-relay",
         "knowledge-base/guides/lightning-address",
         "knowledge-base/guides/static-charges"
@@ -216,8 +218,8 @@
         {
           "group": "Tutorials & Guides",
           "pages": [
-            "knowledge-base/guides/custom-lightning-address-app",
-            "knowledge-base/guides/send-payment-to-ln-address-app"
+            "knowledge-base/guides/custom-lightning-address",
+            "knowledge-base/guides/app-pay-lightning-address"
           ]
         }
       ]
@@ -225,26 +227,82 @@
     {
       "group": "Resources",
       "pages": [
-        "knowledge-base/glossary"
+        "knowledge-base/glossary",
+        "knowledge-base/lightning-network"
       ]
     },
     {
       "group": "Courses",
       "pages": [
-        "courses/introduction",
-        "courses/test",
+        "courses/introduction"
+      ]
+    },
+    {
+      "group": "Bitcoin Lightning",
+      "pages": [
+        "courses/lightning-network-101",
+        "courses/lnurl-101",
         {
-          "group": "Courses 2",
+          "group": "ZBD 101",
           "pages": [
-            "courses/introduction",
-            "courses/test",
-            {
-              "group": "Courses 3",
-              "pages": [
-                "courses/introduction",
-                "courses/test"
-              ]
-            }
+            "courses/zbd101/zbd-dev-101",
+            "courses/zbd101/build-lightning-app"  
+          ]
+        },
+        {
+          "group": "Bitcoin UI / UX",
+          "pages": [
+            "courses/bitcoin-lightning-ui-ux",
+            "courses/bitcoin-lightning-product-design"
+          ]
+        }      
+      ]
+    },
+    {
+      "group" : "Bitcoin Gaming",
+      "pages": [
+        "courses/build-bitcoin-game",
+        {
+          "group": "Game Dev Security",
+          "pages": [
+            "courses/game-security/introduction",
+            "courses/game-security/insecure-game",
+            "courses/game-security/hacking-saved-game",
+            "courses/game-security/hacking-memory-values",
+            "courses/game-security/decompiling-source-code",
+            "courses/game-security/altering-network-traffic",
+            "courses/game-security/securing-game"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Nostr",
+      "pages": [
+        "courses/nostr-101",
+        "courses/nostr-relay"
+      ]
+    },
+    {
+      "group": "Web Development",
+      "pages": [
+        {
+          "group": "Web Dev 101",
+          "pages": [
+            "courses/webdev101/introduction",
+            "courses/webdev101/html-css",
+            "courses/webdev101/javascript",
+            "courses/webdev101/api"
+          ]
+        },
+        {
+          "group": "Web Dev 201",
+          "pages": [
+            "courses/webdev201/introduction",
+            "courses/webdev201/networking",
+            "courses/webdev201/typescript",
+            "courses/webdev201/react",
+            "courses/webdev201/sql"
           ]
         }
       ]
@@ -286,6 +344,15 @@
       "pages": [
         "api-reference/withdrawal-requests/create",
         "api-reference/withdrawal-requests/get"
+      ]
+    },
+    {
+      "group": "Voucher",
+      "pages": [
+        "api-reference/vouchers/create",
+        "api-reference/vouchers/get",
+        "api-reference/vouchers/redeem",
+        "api-reference/vouchers/revoke"
       ]
     },
     {
