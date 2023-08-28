@@ -110,6 +110,7 @@
     {
       "group": "Learn",
       "pages": [
+        "docs/api",
         {
           "group": "ZBD Dev Dashboard",
           "pages": [
@@ -168,7 +169,8 @@
             "docs/zbd-streamer/introduction",
             "docs/zbd-streamer/customization"
           ]
-        }
+        },
+        "docs/nbd"
       ]
     },
     {
@@ -177,6 +179,12 @@
         "docs/examples",
         "docs/sdk",
         "docs/integrations"
+      ]
+    },
+    {
+      "group": "Knowledge Base",
+      "pages": [
+        "knowledge-base/introduction"
       ]
     },
     {
@@ -226,54 +234,75 @@
     {
       "group": "Courses",
       "pages": [
-        "courses/introduction",
+        "courses/introduction"
+      ]
+    },
+    {
+      "group": "Bitcoin Lightning",
+      "pages": [
+        "courses/lightning-network-101",
+        "courses/lnurl-101",
         {
-          "group": "Bitcoin Lightning",
+          "group": "ZBD 101",
           "pages": [
-            "courses/lightning-network-101",
-            "courses/lnurl-101",
+            "courses/zbd101/zbd-dev-101",
+            "courses/zbd101/build-lightning-app"  
+          ]
+        },
+        {
+          "group": "Bitcoin UI / UX",
+          "pages": [
             "courses/bitcoin-lightning-ui-ux",
-            "courses/bitcoin-lightning-product-design",
-            "courses/zbd-dev-crash-course",
-            "courses/build-bitcoin-lightning-app"         
+            "courses/bitcoin-lightning-product-design"
+          ]
+        }      
+      ]
+    },
+    {
+      "group" : "Bitcoin Gaming",
+      "pages": [
+        "courses/build-bitcoin-game",
+        {
+          "group": "Game Dev Security",
+          "pages": [
+            "courses/game-security/introduction",
+            "courses/game-security/insecure-game",
+            "courses/game-security/hacking-saved-game",
+            "courses/game-security/hacking-memory-values",
+            "courses/game-security/decompiling-source-code",
+            "courses/game-security/altering-network-traffic",
+            "courses/game-security/securing-game"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Nostr",
+      "pages": [
+        "courses/nostr-101",
+        "courses/nostr-relay"
+      ]
+    },
+    {
+      "group": "Web Development",
+      "pages": [
+        {
+          "group": "Web Dev 101",
+          "pages": [
+            "courses/webdev101/introduction",
+            "courses/webdev101/html-css",
+            "courses/webdev101/javascript",
+            "courses/webdev101/api"
           ]
         },
         {
-          "group" : "Bitcoin Gaming",
+          "group": "Web Dev 201",
           "pages": [
-            "courses/build-bitcoin-game",
-            {
-              "group": "Game Anticheat",
-              "pages": [
-                "courses/game-anticheat-introduction",
-                "courses/an-insecure-game",
-                "courses/hacking-saved-game",
-                "courses/hacking-memory-values",
-                "courses/decompiling-source-code",
-                "courses/altering-network-traffic",
-                "courses/making-a-more-secure-game"
-              ]
-            }
-          ]
-        },
-        {
-          "group": "Nostr",
-          "pages": [
-            "courses/nostr-dev-crash-course",
-            "courses/nostr-paid-relay"
-          ]
-        },
-        {
-          "group": "Learn Web Development",
-          "pages": [
-            "courses/javascript",
-            "courses/html-css",
-            "courses/networking",
-            "courses/api",
-            "courses/react",
-            "courses/typescript",
-            "courses/sql",
-            "courses/nextjs"
+            "courses/webdev201/introduction",
+            "courses/webdev201/networking",
+            "courses/webdev201/typescript",
+            "courses/webdev201/react",
+            "courses/webdev201/sql"
           ]
         }
       ]
