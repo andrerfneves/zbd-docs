@@ -9,6 +9,9 @@
     "default": "light",
     "isHidden": true
   },
+  "metadata": {
+    "og:image": "https://cdn.zbd.gg/zbd/api-seo.png"
+  },
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#9563FF",
