@@ -192,6 +192,7 @@
       "pages": [
         "knowledge-base/payouts/lightning-address",
         "knowledge-base/payouts/zbd-user",
+        "knowledge-base/payouts/email",
         "knowledge-base/payouts/withdrawal-requests",
         "knowledge-base/payouts/lightning-charges"
       ]
@@ -337,6 +338,12 @@
         "api-reference/lightning-address/send",
         "api-reference/lightning-address/validate",
         "api-reference/lightning-address/create"
+      ]
+    },
+    {
+      "group": "Email",
+      "pages": [
+        "api-reference/email/send"
       ]
     },
     {
