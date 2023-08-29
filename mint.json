@@ -381,7 +381,7 @@
         "api-reference/zbd-user/send",
         "api-reference/zbd-user/get",
         "api-reference/zbd-user/create",
-        "api-reference/zbd-user/get-user-id",
+        "api-reference/zbd-user/get-userid",
         "api-reference/zbd-user/get-username"
       ]
     },
