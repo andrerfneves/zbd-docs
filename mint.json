@@ -376,13 +376,13 @@
       ]
     },
     {
-      "group": "ZBD Username",
+      "group": "ZBD User",
       "pages": [
-        "api-reference/username/send",
-        "api-reference/username/get",
-        "api-reference/username/create",
-        "api-reference/username/get-user-id",
-        "api-reference/username/get-username"
+        "api-reference/zbd-user/send",
+        "api-reference/zbd-user/get",
+        "api-reference/zbd-user/create",
+        "api-reference/zbd-user/get-user-id",
+        "api-reference/zbd-user/get-username"
       ]
     },
     {
@@ -395,7 +395,7 @@
         {
           "group": "Sandbox APIs",
           "pages": [
-            "api-reference/username/sandbox/send"
+            "api-reference/zbd-user/sandbox/send"
           ]
         }
       ]
