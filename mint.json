@@ -390,7 +390,7 @@
       "pages": [
         "api-reference/utils/btc-usd",
         "api-reference/utils/is-supported-region",
-        "api-reference/utils/api",
+        "api-reference/utils/ip",
         "api-reference/internal-transfer/create",
         {
           "group": "Sandbox APIs",
