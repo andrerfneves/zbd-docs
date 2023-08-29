@@ -71,7 +71,7 @@
           "group": "Node.js",
           "pages": [
             "docs/nodejs-quickstart",
-            "docs/nextjs-playground",
+            "docs/nextjs-quickstart",
             "docs/express-quickstart"
           ]
         },
