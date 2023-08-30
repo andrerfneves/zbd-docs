@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "ZBD API",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/zbd.svg",
+    "light": "/logo/zbd.svg"
   },
   "modeToggle": {
     "default": "light",
