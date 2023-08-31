@@ -103,6 +103,12 @@
           ]
         },
         {
+          "group": "C#",
+          "pages": [
+            "docs/csharp-sdk"
+          ]
+        },
+        {
           "group": "HTTP",
           "pages": [
             "docs/http-quickstart"
