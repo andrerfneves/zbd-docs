@@ -4,6 +4,12 @@ description: "Generate a payment request for a ZBD User."
 api: "POST https://api.zebedee.io/v0/gamertag/charges"
 ---
 
+<Warning>
+  ZBD API is migrating the terms **ZBD Gamertags** to **ZBD Usernames**. There are no breaking changes to you as a developer, but beware of upcoming API changes
+
+  In general, if you used to search for 'Gamertag' inside zbd.dev documentation, now search for 'Username'. Please do also note some ZBD API endpoints are still using `gamertag` in the URL.
+</Warning>
+
 ## Description
 
 While you can use the [Pay to ZBD Username](/api-reference/zbd-user/send) endpoint to make a direct Bitcoin payment to a given ZBD user, if for whatever reason you'd want to create a general Lightning Network Charge / Payment Request QR code, you can use this endpoint.

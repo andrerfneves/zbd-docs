@@ -4,6 +4,12 @@ description: "Retrieve all data about a Payment sent to ZBD User."
 api: "GET https://api.zebedee.io/v0/gamertag/transaction/{id}"
 ---
 
+<Warning>
+  ZBD API is migrating the terms **ZBD Gamertags** to **ZBD Usernames**. There are no breaking changes to you as a developer, but beware of upcoming API changes
+
+  In general, if you used to search for 'Gamertag' inside zbd.dev documentation, now search for 'Username'. Please do also note some ZBD API endpoints are still using `gamertag` in the URL.
+</Warning>
+
 ## Description
 
 In order to get data on payments sent to ZBD Usernames, you can use this endpoint. The data payload returned will inform you of the `status` of that transaction as well as any associated `fees`.

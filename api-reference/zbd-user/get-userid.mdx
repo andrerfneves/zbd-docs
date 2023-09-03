@@ -4,6 +4,12 @@ description: "Retrieve username from a ZBD user ID."
 api: "GET https://api.zebedee.io/v0/user-id/gamertag/{GAMERTAG}"
 ---
 
+<Warning>
+  ZBD API is migrating the terms **ZBD Gamertags** to **ZBD Usernames**. There are no breaking changes to you as a developer, but beware of upcoming API changes
+
+  In general, if you used to search for 'Gamertag' inside zbd.dev documentation, now search for 'Username'. Please do also note some ZBD API endpoints are still using `gamertag` in the URL.
+</Warning>
+
 ## Description
 
 Make use of this endpoint to get a given User's ID when provided with a ZBD Username.
