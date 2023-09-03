@@ -5,14 +5,14 @@ description: 'Learn how to pay Lightning Network Charges using ZBD.'
 
 ## Payment API
 
-In order to make a payment against a Lightning Network Payment Request (a.k.a Lightning Invoices, or Charges), you simply have to use the [Send Payment API](/api-reference/lightning-address/send) endpoint. A Payment accepts the following attributes:
+In order to make a payment against a Lightning Network Payment Request (a.k.a Lightning Invoices, or Charges), you simply have to use the [Send Payment API](/api-reference/payments/send) endpoint. A Payment accepts the following attributes:
 
 | Property | Status | Description |
 | --- | :-: | --- |
 | `invoice` | _String_ | The Lightning payment request, or invoice, that is meant to be paid. |
 | `description` | _String_ | The Payment description (only used for internal record-keeping). |
 | `internalId` | _String_ | An optional free-use attribute. Usually used by setting the Player/User ID of your Game/Application in order to link specific Payments to specific users. |
-| `callbackUrl` | _String_ | The URL ZBD services will make a POST HTTP request to with information about the Payment's status updates. |
+| `callbackUrl` | _String_ | The URL ZBD services will make a POST HTTP request to with information about the Payment's status updates. See [Callbacks](/api-reference/callbacks) for more. |
 
 To perform the Payment, use the API (or leverage one of our SDKs) by passing the correct attributes:
 
