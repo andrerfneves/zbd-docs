@@ -3,6 +3,12 @@ title: 'Request Charge for ZBD User'
 description: 'Learn how to generate payment requests specifically for ZBD users.'
 ---
 
+<Warning>
+  ZBD API is migrating the terminology from **ZBD Gamertags** to **ZBD Usernames**. There are no breaking changes to you as a developer.
+
+  In general, if you used to search for 'Gamertag' inside zbd.dev documentation, now search for 'Username'. Please do also note some ZBD API endpoints are still using `gamertag` in the URL.
+</Warning>
+
 ## ZBD Username Charge API
 
 While you can use the [Send Bitcoin to ZBD Username](/api-reference/zbd-user/send) endpoint to make a direct payment to a ZBD user, if you want to create a regular Lightning Network payment request / Charge QR code for that given user, you can do so using the [Create Charge for ZBD Username](/api-reference/zbd-user/create) endpoint.

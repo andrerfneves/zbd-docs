@@ -3,6 +3,12 @@ title: 'Send Bitcoin to ZBD User'
 description: 'Learn how to instantly send Bitcoin to a ZBD user.'
 ---
 
+<Warning>
+  ZBD API is migrating the terminology from **ZBD Gamertags** to **ZBD Usernames**. There are no breaking changes to you as a developer.
+
+  In general, if you used to search for 'Gamertag' inside zbd.dev documentation, now search for 'Username'. Please do also note some ZBD API endpoints are still using `gamertag` in the URL.
+</Warning>
+
 ## Introduction
 
 The ZBD API allows for developers to create Charges, perform Payments, and process Withdrawal Requests for any user, wallet, or service that understands / speaks the Lightning Network protocol. These capabilities are possible because of the underlying `Lightning Charges / Payment Requests / Invoices`, the single-use payable QR codes the platform can create and handle.
