@@ -12,6 +12,12 @@
   "metadata": {
     "og:image": "https://cdn.zbd.gg/zbd/api-seo.png"
   },
+  "feedback": {
+    "thumbsRating": true
+  },
+  "search": {
+    "prompt": "Search zbd.dev"
+  },
   "favicon": "/favicon.png",
   "colors": {
     "primary": "#9563FF",
