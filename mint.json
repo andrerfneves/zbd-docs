@@ -84,8 +84,15 @@
             {
               "group": "Vercel Edge Functions",
               "pages": [
-                "docs/vercel-edge-functions/receive",
-                "docs/vercel-edge-functions/send"
+                "docs/vercel-edge-functions/send",
+                "docs/vercel-edge-functions/receive"
+              ]
+            },
+            {
+              "group": "Supabase Edge Functions",
+              "pages": [
+                "docs/supabase-edge-functions/send",
+                "docs/supabase-edge-functions/receive"
               ]
             }
           ]
