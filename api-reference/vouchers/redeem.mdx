@@ -15,10 +15,12 @@ Enter a valid 8-digit voucher Code to redeem the sats to your Project wallet.
 
 ### Header Parameters
 
-<ParamField required header="Content-Type" default="application/json" type="application/json" />
-
 <ParamField required header="apikey" type="string">
   ZBD Project API Key
+</ParamField>
+
+<ParamField initialValue="application/json" header="Content-Type" type="string">
+  Content Type
 </ParamField>
 
 ### Body
