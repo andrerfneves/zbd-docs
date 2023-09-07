@@ -69,9 +69,7 @@
   "navigation": [
     {
       "group": "Documentation",
-      "pages": [
-        "docs/introduction"
-      ]
+      "pages": ["docs/introduction"]
     },
     {
       "group": "Quick Start",
@@ -105,27 +103,19 @@
         },
         {
           "group": "Rust",
-          "pages": [
-            "docs/rust-quickstart"
-          ]
+          "pages": ["docs/rust-quickstart"]
         },
         {
           "group": "Go",
-          "pages": [
-            "docs/go-quickstart"
-          ]
+          "pages": ["docs/go-quickstart"]
         },
         {
           "group": "C#",
-          "pages": [
-            "docs/csharp-quickstart"
-          ]
+          "pages": ["docs/csharp-quickstart"]
         },
         {
           "group": "HTTP",
-          "pages": [
-            "docs/http-quickstart"
-          ]
+          "pages": ["docs/http-quickstart"]
         }
       ]
     },
@@ -159,7 +149,7 @@
           ]
         },
         {
-          "group": "ZBD Login", 
+          "group": "ZBD Login",
           "pages": [
             "docs/zbd-login/introduction",
             "docs/zbd-login/integration",
@@ -170,10 +160,7 @@
         },
         {
           "group": "ZBD App",
-          "pages": [
-            "docs/zbd-app/download",
-            "docs/zbd-app/uri-schemes"
-          ]
+          "pages": ["docs/zbd-app/download", "docs/zbd-app/uri-schemes"]
         },
         {
           "group": "ZBD Shield",
@@ -197,17 +184,11 @@
     },
     {
       "group": "Resources",
-      "pages": [
-        "docs/examples",
-        "docs/sdk",
-        "docs/integrations"
-      ]
+      "pages": ["docs/examples", "docs/sdk", "docs/integrations"]
     },
     {
       "group": "Knowledge Base",
-      "pages": [
-        "knowledge-base/introduction"
-      ]
+      "pages": ["knowledge-base/introduction"]
     },
     {
       "group": "Payouts",
@@ -248,16 +229,11 @@
     },
     {
       "group": "Resources",
-      "pages": [
-        "knowledge-base/glossary",
-        "knowledge-base/lightning-network"
-      ]
+      "pages": ["knowledge-base/glossary", "knowledge-base/lightning-network"]
     },
     {
       "group": "Courses",
-      "pages": [
-        "courses/introduction"
-      ]
+      "pages": ["courses/introduction"]
     },
     {
       "group": "Bitcoin Lightning",
@@ -268,7 +244,7 @@
           "group": "ZBD 101",
           "pages": [
             "courses/zbd101/zbd-dev-101",
-            "courses/zbd101/build-lightning-app"  
+            "courses/zbd101/build-lightning-app"
           ]
         },
         {
@@ -277,11 +253,11 @@
             "courses/bitcoin-lightning-ui-ux",
             "courses/bitcoin-lightning-product-design"
           ]
-        }      
+        }
       ]
     },
     {
-      "group" : "Bitcoin Gaming",
+      "group": "Bitcoin Gaming",
       "pages": [
         "courses/build-bitcoin-game",
         {
@@ -293,17 +269,17 @@
             "courses/game-security/hacking-memory-values",
             "courses/game-security/decompiling-source-code",
             "courses/game-security/altering-network-traffic",
-            "courses/game-security/securing-game"
+            "courses/game-security/securing-game",
+            "courses/game-security/replay-attacks",
+            "courses/game-security/securing-data",
+            "courses/game-security/app-check"
           ]
         }
       ]
     },
     {
       "group": "Nostr",
-      "pages": [
-        "courses/nostr-101",
-        "courses/nostr-relay"
-      ]
+      "pages": ["courses/nostr-101", "courses/nostr-relay"]
     },
     {
       "group": "Web Development",
@@ -340,10 +316,7 @@
     },
     {
       "group": "Payment",
-      "pages": [
-        "api-reference/payments/send",
-        "api-reference/payments/get"
-      ]
+      "pages": ["api-reference/payments/send", "api-reference/payments/get"]
     },
     {
       "group": "Charge",
@@ -379,9 +352,7 @@
     },
     {
       "group": "Wallet",
-      "pages": [
-        "api-reference/wallet/get"
-      ]
+      "pages": ["api-reference/wallet/get"]
     },
     {
       "group": "Static Charge",
@@ -393,9 +364,7 @@
     },
     {
       "group": "Keysend",
-      "pages": [
-        "api-reference/keysend/send"
-      ]
+      "pages": ["api-reference/keysend/send"]
     },
     {
       "group": "ZBD User",
@@ -416,9 +385,7 @@
         "api-reference/internal-transfer/create",
         {
           "group": "Sandbox APIs",
-          "pages": [
-            "api-reference/zbd-user/sandbox/send"
-          ]
+          "pages": ["api-reference/zbd-user/sandbox/send"]
         }
       ]
     },
