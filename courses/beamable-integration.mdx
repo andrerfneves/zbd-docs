@@ -1,33 +1,33 @@
-# Zebedee and Beamable Starter Project
+# ZBD and Beamable Starter Project
 
 - [Unity Setup](#setup-unity)
 - [Beamable Setup](#setting-up-beamable)
 - [Running microservices](#running-the-microservice)
-- [Login with Zebedee Demo](#zebedee-login)
+- [Login with ZBD Demo](#ZBD-login)
 - [Publishing your microservice](#publishing-your-microservice)
 - [Troubleshooting](#troubleshooting)
 
-### **Why use Beamable with Zebedee**
+### **Why use Beamable with ZBD**
 
-    To ensure the security of your game account on Zebedee, it is crucial to safeguard your API key and avoid exposing it within any client-side code. By leveraging Beamable in conjunction with Zebedee, you gain a seamless integration solution that allows for easy incorporation of Zebedee functionalities into your game. Leveraging the power of Beamable's microservices and Realm configurations, you can establish safe integration of Zebedee within your game environment.
+    To ensure the security of your game account on ZBD, it is crucial to safeguard your API key and avoid exposing it within any client-side code. By leveraging Beamable in conjunction with ZBD, you gain a seamless integration solution that allows for easy incorporation of ZBD functionalities into your game. Leveraging the power of Beamable's microservices and Realm configurations, you can establish safe integration of ZBD within your game environment.
 
 ---
 
 ## Package Overview
 
-This is a starting point/reference package to show how to integrate Zebedee into your app using Beamable Microservices. There are two main demo scenes in this package, a general-purpose overview demo and a Login demo.
+This is a starting point/reference package to show how to integrate ZBD into your app using Beamable Microservices. There are two main demo scenes in this package, a general-purpose overview demo and a Login demo.
 
-### Zebedee Login Demo
+### ZBD Login Demo
 
-This demo scene is a working implementation of Zebedee login using Beamable Microservices on an Android device. Once configured this demo can be built to an Android device and tested out.
+This demo scene is a working implementation of ZBD login using Beamable Microservices on an Android device. Once configured this demo can be built to an Android device and tested out.
 
 ### Microservices Demo
 
-This shows how you can use Beamable microservices to integrate with Zebedee safely. There is a fully functional microservice that you can use in your project or use as a guide to create your own.
+This shows how you can use Beamable microservices to integrate with ZBD safely. There is a fully functional microservice that you can use in your project or use as a guide to create your own.
 
 ### UI Kit Demo
 
-The UI Kit is a starting point for how the Zebedee integration can look in your app. We have provided assets to make the job easier.
+The UI Kit is a starting point for how the ZBD integration can look in your app. We have provided assets to make the job easier.
 
 There is a playable scene to demo the assets to see what the look and feel is like.
 
@@ -45,12 +45,12 @@ There is a playable scene to demo the assets to see what the look and feel is li
 
 1. Install Newtonsoft JSON
 2. Install Beamable
-3. Download and Install the Zebedee Unity Package
+3. Download and Install the ZBD Unity Package
 4. Install Docker Desktop
 
 ### Detailed instructions
 
-Before starting with the Zebedee package we will need to get the project ready. We will need to install two dependencies in Unity:
+Before starting with the ZBD package we will need to get the project ready. We will need to install two dependencies in Unity:
 
 - Newtonsoft JSON
 - Beamable
@@ -75,7 +75,7 @@ You can follow the instructions here: [https://docs.beamable.com/docs/installing
   <img src="/img/v2/guides/beamable/Untitled1.png" alt="Login to Beamable" />
 </Frame>
 
-**Next download the latest Zebedee Package from here:**
+**Next download the latest ZBD Package from here:**
 
 Go to the GitHub repository below and download the latest release `.unitypackage` file
 
@@ -91,11 +91,11 @@ To install the package just drag and drop the file into the Unity project explor
 
 ## Setting Up Beamable
 
-### Securely store your Zebedee API key
+### Securely store your ZBD API key
 
-To interact with the Zebedee API, you must obtain an API Key from your Zebedee developer dashboard. If you are unsure about the process, you can refer to the following guide for step-by-step instructions: [https://zbd.dev/docs/dashboard/introduction](https://zbd.dev/docs/dashboard/introduction).
+To interact with the ZBD API, you must obtain an API Key from your ZBD developer dashboard. If you are unsure about the process, you can refer to the following guide for step-by-step instructions: [https://zbd.dev/docs/dashboard/introduction](https://zbd.dev/docs/dashboard/introduction).
 
-**After obtaining your API key**, the next step is to incorporate it into your project's Realm Configuration on Beamable. To facilitate this process, please refer to the provided guide that explains how to log in to Beamable and create a game: [https://docs.beamable.com/docs/installing-beamable](https://docs.beamable.com/docs/installing-beamable). If you are utilizing the Zebedee / Beamable starter project, you can skip the installation steps and proceed directly to logging in and creating a game.
+**After obtaining your API key**, the next step is to incorporate it into your project's Realm Configuration on Beamable. To facilitate this process, please refer to the provided guide that explains how to log in to Beamable and create a game: [https://docs.beamable.com/docs/installing-beamable](https://docs.beamable.com/docs/installing-beamable). If you are utilizing the ZBD / Beamable starter project, you can skip the installation steps and proceed directly to logging in and creating a game.
 
 In the Beamable dashboard in the left side menu go to “Operate” → “Config”
 
@@ -113,8 +113,8 @@ In the Beamable dashboard in the left side menu go to “Operate” → “Confi
 
 | Namespace: | Key: | Value: | Notes: |
 | --- | --- | --- | --- |
-| ZebedeeAPI | clientsecret | your client secret | This is only needed for the Zebedee Login Example |
-| ZebedeeAPI | apikey | your API key | This is needed for any interaction with the Zebedee API |
+| ZebedeeAPI | clientsecret | your client secret | This is only needed for the ZBD Login Example |
+| ZebedeeAPI | apikey | your API key | This is needed for any interaction with the ZBD API |
 
 
 <Frame>
@@ -129,7 +129,7 @@ Here is an example of how your Realm configuration should look:
   <img src="/img/v2/guides/beamable/Untitled6.png" alt="Realm config overview" />
 </Frame>
 
-     💡 Note: To use sample microservice you must use the same namespace and key. On your microservice, these can be anything you want.
+     💡 **Note:** To use sample microservice you must use the same namespace and key. On your microservice, these can be anything you want.
 
 ## Running the microservice
 
@@ -144,21 +144,19 @@ In Unity go to Window > Beamable > Open Microservices Manager
 Here you will see the ZebedeeMicroservice
 
 <Frame>
-  <img src="/img/v2/guides/beamable/Untitled8.png" alt="Zebedee microservice in Unity" />
+  <img src="/img/v2/guides/beamable/Untitled8.png" alt="ZBD microservice in Unity" />
 </Frame>
 
-> 💡 If you see this warning below make sure you have Docker installed.
-<Frame>
-  <img src="/img/v2/guides/beamable/Untitled9.png" width="500" alt="Docker warning" />
-</Frame>
+💡 **Note:** If you see this warning make sure you have Docker installed.
+ <img src="/img/v2/guides/beamable/Untitled9.png" width="500" alt="Docker warning" />
 
 After you are done with your development you will need to publish your microservice to Beamable. This will allow it to be used from anywhere. Check out the [Publishing section](https://www.notion.so/Zebedee-Beamable-Integration-b4123eef49854b878e9635584cb3bdd4?pvs=21) below to learn more.
 
 ## Sample Unity Scenes
 
-### Zebedee Overview
+### ZBD Overview
 
-This scene is an interactive way to test out the microservice and how it can be used with Zebedee
+This scene is an interactive way to test out the microservice and how it can be used with ZBD
 
 To check out how to integrate the microservice with your code check out the “MyController.cs” file in the scripts directory.
 
@@ -173,7 +171,7 @@ await ctx.OnReady;
 var result = await ctx.Microservices().ZebedeeMicroservice().GetWallet();
 
 // Here we take the string and convert it to a response object
-// The Zebedee sdk has a response object for all responses.
+// The ZBD sdk has a response object for all responses.
 // This allows you to easily get the data you need.
 var jsonObject = JsonConvert.DeserializeObject<GetWalletDetails_Response>(result);
 ```
@@ -188,13 +186,13 @@ public string ApiKey => _settings.GetSetting("ZebedeeAPI", "apikey");
 public string ClientSecret => _settings.GetSetting("ZebedeeAPI", "clientsecret");
 ```
 
-### Zebedee Login
+### ZBD Login
 
-This scene shows how you can integrate Zebedee login with an Android build.
+This scene shows how you can integrate ZBD login with an Android build.
 
-This uses the microservice to communicate with Zebedee to let your users log in securely.
+This uses the microservice to communicate with ZBD to let your users log in securely.
 
-To use the demo you first need to add your Client ID from your Zebedee developer dashboard and add it to the login controller in the login demo scene:
+To use the demo you first need to add your Client ID from your ZBD developer dashboard and add it to the login controller in the login demo scene:
 
 <Frame>
   <img src="/img/v2/guides/beamable/Untitled10.png" alt="Add client ID to demo scene" />
@@ -204,7 +202,7 @@ Once you have added your client ID you can build it for Android.
 
 Next, you will need to publish your microservice to Beamable. Once your microservice is published you will be able to use it from anywhere. Check out the [Publishing section](#publishing-your-microservice) to earn more:
 
-To see how to integrate the Zebedee OAuth2 flow you can check out the “LoginController.cs” script. This handles the initial start of the login flow as well as the deep link.
+To see how to integrate the ZBD OAuth2 flow you can check out the “LoginController.cs” script. This handles the initial start of the login flow as well as the deep link.
 
 This class Handles both the microservice calls as well as the application logic to implement this functionality in Unity.
 
