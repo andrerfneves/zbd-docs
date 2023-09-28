@@ -155,7 +155,13 @@
             "docs/zbd-login/integration",
             "docs/zbd-login/guidelines",
             "docs/zbd-login/walkthrough",
-            "docs/zbd-login/advanced"
+            "docs/zbd-login/advanced",
+            {
+              "group": "Integrations",
+              "pages": [
+                "docs/zbd-login/integrations/next"
+              ]
+            }
           ]
         },
         {
