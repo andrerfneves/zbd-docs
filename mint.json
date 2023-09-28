@@ -116,6 +116,10 @@
         {
           "group": "HTTP",
           "pages": ["docs/http-quickstart"]
+        },
+        {
+          "group": "replit",
+          "pages": ["docs/replit-quickstart"]
         }
       ]
     },
