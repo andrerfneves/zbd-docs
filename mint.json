@@ -118,7 +118,7 @@
           "pages": ["docs/http-quickstart"]
         },
         {
-          "group": "replit",
+          "group": "Replit",
           "pages": ["docs/replit-quickstart"]
         }
       ]
