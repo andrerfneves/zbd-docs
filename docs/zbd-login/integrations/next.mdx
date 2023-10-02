@@ -62,6 +62,15 @@ To get the OAuth2 and Live API Key credentials from your ZBD Project, go to [ZBD
   <img src="/img/oauth2/nextauth-oauth2.png" width="400" alt="ZBD + NextAuth.js" />
 </Frame>
 
+## Setting up OAuth2 Callbacks
+When setting up ZBD OAuth2 you must not forget to enter the appropriate callback URL. This works with both your local and production development environments.
+
+In this example, NextAuth expects a callback in the path. For example, your local environment would be `http://localhost:3000/api/auth/callback/zbd`. Therefore we must add this to the ZBD Dev Dashboard like so:
+
+<Frame>
+  <img src="/img/oauth2/nextauth-oauth2-settings.png" width="400" alt="ZBD + NextAuth.js" />
+</Frame>
+
 ## Adding ZBD Login provider to NextAuth.js
 
 Now pass the ZBD provider to the NextAuth.js main configuration and you should be able to login with ZBD.
