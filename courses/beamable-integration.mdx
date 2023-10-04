@@ -1,238 +1,229 @@
 # ZBD and Beamable Starter Project
 
-- [Unity Setup](#setup-unity)
-- [Beamable Setup](#setting-up-beamable)
-- [Running microservices](#running-the-microservice)
-- [Login with ZBD Demo](#ZBD-login)
-- [Publishing your microservice](#publishing-your-microservice)
-- [Troubleshooting](#troubleshooting)
+## Why use Beamable with ZBD?
 
-### **Why use Beamable with ZBD**
+To ensure the security of your game integration with the [ZBD API](/api-reference/introduction), it is _crucial_ to safeguard your [ZBD API Key](/docs/dashboard/projects/api) and avoid exposing it within any client-side code. 
 
-    To ensure the security of your game account on ZBD, it is crucial to safeguard your API key and avoid exposing it within any client-side code. By leveraging Beamable in conjunction with ZBD, you gain a seamless integration solution that allows for easy incorporation of ZBD functionalities into your game. Leveraging the power of Beamable's microservices and Realm configurations, you can establish safe integration of ZBD within your game environment.
+By leveraging Beamable's Microservices and Realm (environment) configurations, you can secure your ZBD API Key by moving it from the game client to a server.
+
+> A microservice architecture, or "microservice", is a solution of developing software systems that focuses on building single-function modules with well-defined interfaces and operations.
+> 
+> https://docs.beamable.com/docs/microservices-feature-overview
+
+This provides you a path for a seamless integration solution that powers easy and safe incorporation of ZBD functionalities into your game.
 
 ---
 
-## Package Overview
+## ZBD Unity Package Overview
 
-This is a starting point/reference package to show how to integrate ZBD into your app using Beamable Microservices. There are two main demo scenes in this package, a general-purpose overview demo and a Login demo.
+The ZBD Unity Package is a great starting point/reference package to safely integrate the [ZBD API](/api-reference/introduction) into your game using Beamable Microservices. See instructions to download the ZBD Unity Package [here](#3-download-zbd-unity-package).
+
+The ZBD Unity Package contains the following:
+
+### Microservice Demo
+
+This demo showcases how you can use a Beamable Microservice to integrate with the [ZBD API](/api-reference/introduction) safely. You can utilize the fully functional Microservice in your project, or use this as a guide to create your own Microservices.
 
 ### ZBD Login Demo
 
-This demo scene is a working implementation of ZBD login using Beamable Microservices on an Android device. Once configured this demo can be built to an Android device and tested out.
-
-### Microservices Demo
-
-This shows how you can use Beamable microservices to integrate with ZBD safely. There is a fully functional microservice that you can use in your project or use as a guide to create your own.
+This demo showcases a working implementation of [ZBD Login](/docs/zbd-login/introduction) (OAuth2) using Beamable Microservices on an Android device, enabling you to quickly achieve secure login to your game. 
 
 ### UI Kit Demo
 
-The UI Kit is a starting point for how the ZBD integration can look in your app. We have provided assets to make the job easier.
+This demo showcases how you can integrate ZBD reward balances and reward withdrawal flows into your game, including a playable scene to visualize the look and feel of the UI. _Note: There is no functionality in this demo; this simply showcases UI elements that can be used in your project(s)._
 
-There is a playable scene to demo the assets to see what the look and feel is like.
-
-    💡 **NOTE:** There is no functionality in this demo. This is just to show UI elements that can be used in your projects.
+To integrate this package into your game, you'll need to [set up Unity](#unity-setup), [set up Beamable](#beamable-setup), [run Beamable Microservices locally](#run-microservices-locally), then [publish Microservices on the Beamable platform](#publish-microservices-on-beamable-platform). 
 
 ---
 
+## Unity Setup
 
+You can begin with a new Unity project, or work from an existing one.
 
-## Setup Unity
+### 1. Install Newtonsoft JSON
 
-     💡 This can be done on a new project or an existing one.
-
-**Steps:**
-
-1. Install Newtonsoft JSON
-2. Install Beamable
-3. Download and Install the ZBD Unity Package
-4. Install Docker Desktop
-
-### Detailed instructions
-
-Before starting with the ZBD package we will need to get the project ready. We will need to install two dependencies in Unity:
-
-- Newtonsoft JSON
-- Beamable
-
-**Start by installing Newtonsoft JSON:**
-
-1. In Unity go to the package manager > install package by name > enter `com.unity.nuget.newtonsoft-json`
-2. Click “Add”
+1. In Unity, go to the `Package Manager` -> `Add package by name` -> input `com.unity.nuget.newtonsoft-json`.
+2. Click `Add`.
 
 <Frame>
   <img src="/img/v2/guides/beamable/beamable-json-package.png" alt="Installing Newtonsoft JSON" />
 </Frame>
 
+### 2. Install Beamable
 
-**Next, install Beamable:**
+Follow the instructions [here](https://docs.beamable.com/docs/installing-beamable).
 
-You can follow the instructions here: [https://docs.beamable.com/docs/installing-beamable](https://docs.beamable.com/docs/installing-beamable)
+### 3. Download ZBD Unity Package
 
-### Log in to Beamable
+1. Go to the [GitHub repository](https://github.com/zebedeeio/beamable-starter/releases) and download the latest release `.unitypackage` file.
 
-<Frame>
-  <img src="/img/v2/guides/beamable/beamable-login.png" alt="Login to Beamable" />
-</Frame>
+2. Drag and drop the file into the Unity project explorer to install the package.
 
-**Next download the latest ZBD Package from here:**
+### 4. Install Docker Desktop
 
-Go to the GitHub repository below and download the latest release `.unitypackage` file
+[Docker Desktop](https://www.docker.com/) is needed to run and test the Microservice locally.
 
-[https://github.com/zebedeeio/beamable-starter/releases](https://github.com/zebedeeio/beamable-starter/releases)
+---
 
-To install the package just drag and drop the file into the Unity project explorer.
+## Beamable Setup
 
-**Next, install Docker:**
+### 1. Obtain ZBD API Key
 
-[https://www.docker.com/](https://www.docker.com/)
+To interact with the [ZBD API](/api-reference/introduction), you must obtain an [API Key](/docs/dashboard/projects/api) from your [ZBD Dev Dashboard](https://dashboard.zebedee.io/) account. If you are unsure about the process, see [this guide](/docs/dashboard/introduction) for step-by-step instructions.
 
-     💡 Docker is needed to run and test the Microservice locally
+### 2. Add ZBD API Key to your Beamable Project
 
-## Setting Up Beamable
+You need to add the ZBD API Key to your project's Realm Configuration on Beamable. Please refer to [this guide](https://docs.beamable.com/docs/installing-beamable), which explains how to log in to Beamable and create a game. _If you are utilizing the ZBD / Beamable starter project, you can skip the installation steps and proceed directly to logging in and creating a game._
 
-### Securely store your ZBD API key
+1. In the Beamable Portal in the left side menu go to `Operate` -> `Config`
 
-To interact with the ZBD API, you must obtain an API Key from your ZBD developer dashboard. If you are unsure about the process, you can refer to the following guide for step-by-step instructions: [https://zbd.dev/docs/dashboard/introduction](https://zbd.dev/docs/dashboard/introduction).
-
-**After obtaining your API key**, the next step is to incorporate it into your project's Realm Configuration on Beamable. To facilitate this process, please refer to the provided guide that explains how to log in to Beamable and create a game: [https://docs.beamable.com/docs/installing-beamable](https://docs.beamable.com/docs/installing-beamable). If you are utilizing the ZBD / Beamable starter project, you can skip the installation steps and proceed directly to logging in and creating a game.
-
-In the Beamable dashboard in the left side menu go to “Operate” → “Config”
-
-<Frame>
-  <img src="/img/v2/guides/beamable/beamable-config.png"  alt="Realm Configuration on Beamable" />
-</Frame>
-
-**Next, we will need to add a new config. Click on “+ Add Config”**
+2. Add a new config by clicking `+ Add Config`
 
 <Frame>
   <img src="/img/v2/guides/beamable/beamable-realm-config.png" alt="Add config to realm" />
 </Frame>
 
-**Add two Config Values:**
+3. Add two Config Values:
 
 | Namespace: | Key: | Value: | Notes: |
 | --- | --- | --- | --- |
 | ZebedeeAPI | clientsecret | your client secret | This is only needed for the ZBD Login Example |
-| ZebedeeAPI | apikey | your API key | This is needed for any interaction with the ZBD API |
-
+| ZebedeeAPI | apikey | your API Key | This is needed for any interaction with the ZBD API |
 
 <Frame>
-  <img src="/img/v2/guides/beamable/beamable-config-api.png" width="50%" alt="API key config" />
+  <img src="/img/v2/guides/beamable/beamable-config-api.png" width="50%" alt="API Key config" />
   <img src="/img/v2/guides/beamable/beamable-config-secret.png" alt="Client secret config" />
 </Frame>
 
 Here is an example of how your Realm configuration should look:
 
-
 <Frame>
   <img src="/img/v2/guides/beamable/beamable-realm-overview.png" alt="Realm config overview" />
 </Frame>
 
-     💡 **Note:** To use sample microservice you must use the same namespace and key. On your microservice, these can be anything you want.
+     💡 **Note:** To use the provided sample Microservice, you must use these exact namespace and key values.
 
-## Running the microservice
+---
 
-Before testing out the microservice we must first get it running locally.
+## Run Microservices Locally
 
-In Unity go to Window > Beamable > Open Microservices Manager
+By leveraging Microservices, we are securing our ZBD API Key by moving it from the game client to a server.
+
+Before testing the Microservices, we need to run it locally.
+
+### 1. Open Microservices Manager
+
+In Unity, go to `Window` -> `Beamable` ->  `Open Microservices Manager`
 
 <Frame>
-  <img src="/img/v2/guides/beamable/beamable-toolbox.png" alt="Open microservices manager window" />
+  <img src="/img/v2/guides/beamable/beamable-toolbox.png" alt="Open Microservices manager window" />
 </Frame>
 
-Here you will see the ZebedeeMicroservice
+💡 **Note:** Here you will see the `ZebedeeMicroservice`
 
 <Frame>
-  <img src="/img/v2/guides/beamable/beamable-microservice-manager.png" alt="ZBD microservice in Unity" />
+  <img src="/img/v2/guides/beamable/beamable-microservice-manager.png" alt="ZBD Microservice in Unity" />
 </Frame>
 
-💡 **Note:** If you see this warning make sure you have Docker installed.
+💡 **Note:** If you see this warning, make sure you have Docker installed.
 <Frame>
  <img src="/img/v2/guides/beamable/beamable-docker.png" width="500" alt="Docker warning" />
 </Frame>
 
-After you are done with your development you will need to publish your microservice to Beamable. This will allow it to be used from anywhere. Check out the [Publishing section](https://www.notion.so/Zebedee-Beamable-Integration-b4123eef49854b878e9635584cb3bdd4?pvs=21) below to learn more.
+### 2. Run Microservice
 
-## Sample Unity Scenes
+Hit the `Play` button.
 
-### ZBD Overview
+---
 
-This scene is an interactive way to test out the microservice and how it can be used with ZBD
+## Publish Microservices on Beamable Platform
 
-To check out how to integrate the microservice with your code check out the “MyController.cs” file in the scripts directory.
+When you are ready to test on other devices (outside of Unity editor), you will need to publish your Microservice to Beamable.
 
-**Code explanation:**
+### 1. Open Beamable Publish Window
+
+In the `Microservices Manager` tab in Unity, click `Publish`.
+
+<Frame>
+  <img src="/img/v2/guides/beamable/beamable-publish.png" alt="Publish window in Unity" />
+</Frame>
+
+### 2. Publish Select Microservices
+
+In the `Publish` window, toggle on which Microservice(s) you want published, then click `Publish`. This will deploy your Microservice(s) to Beamable's platform.
+
+<Frame>
+  <img src="/img/v2/guides/beamable/beamable-deploy.png" alt="Publishing the Microservice" />
+</Frame>
+
+### 3. View Microservices Status
+
+Validate the applicable Microservice(s) are running by viewing the `Microservices` tab in the Beamable Portal.
+
+<Frame>
+  <img src="/img/v2/guides/beamable/beamable-running.png" alt="Beamable Portal Microservice overview" />
+</Frame>
+
+💡 For more details on publishing Microservices, check out the Beamable documentation [here](https://docs.beamable.com/docs/microservices-distributing).
+
+At this point, your game can now connect the published Beamable Microservice(s), which protects your ZBD API Key from the game client!
+
+---
+
+## Integrating the Microservices
+
+To see sample code for how to integrate Beamable Microservices, view the `MyController.cs` file in the scripts directory of the ZBD Unity Package within Unity. Insert this code in applicable area(s) of your game; e.g. when you're [Sending sats to a ZBD Username](/api-reference/zbd-user/send).
+
+To get data that needs to be secure from Beamable (as we do for the `apikey` and `clientsecret`), you can reference the code in `Config.cs` and the `GetAPIKey` function in `ZebedeeMicroservice.cs`.
 
 ```csharp
-// This code ensures that the beamable microservice is ready
+// This code ensures that the beamable Microservice is ready
 var ctx = BeamContext.Default;
 await ctx.OnReady;
 
-// This line makes the call to the microservice
+// This line makes the call to the Microservice
 var result = await ctx.Microservices().ZebedeeMicroservice().GetWallet();
 
 // Here we take the string and convert it to a response object
 // The ZBD sdk has a response object for all responses.
 // This allows you to easily get the data you need.
 var jsonObject = JsonConvert.DeserializeObject<GetWalletDetails_Response>(result);
-```
 
-**Getting configuration from Beamable:**
-
-To get data that needs to be secure from Beamable as we do for the “apikey” and “clientsecret” you can reference the code in “Config.cs” and the “GetAPIKey” function in “ZebedeeMicroservice.cs”
-
-```csharp
+// If needed for custom Microservice integration...
 // This code gets the value stored at the given key from Beamable
 public string ApiKey => _settings.GetSetting("ZebedeeAPI", "apikey");
 public string ClientSecret => _settings.GetSetting("ZebedeeAPI", "clientsecret");
 ```
 
-### ZBD Login
+---
 
-This scene shows how you can integrate ZBD login with an Android build.
+## ZBD Login Example Scene
 
-This uses the microservice to communicate with ZBD to let your users log in securely.
+This scene shows how you can integrate [ZBD Login](/docs/zbd-login/introduction) with an Android build.
 
-To use the demo you first need to add your Client ID from your ZBD developer dashboard and add it to the login controller in the login demo scene:
+This uses the Microservice to communicate with ZBD to let your users log in securely.
+
+To see how to integrate ZBD Login (OAuth2 flow) you can check out the `LoginController.cs` script. This handles the initial start of the login flow and the deep link functionality.
+
+### 1. Get ZBD OAuth2 Client ID
+
+Add your [Client ID](/docs/zbd-login/integration) from the [ZBD Dev Dashboard](https://dashboard.zebedee.io/) and add it to the `LoginController` in the ZBD Login demo scene.
 
 <Frame>
   <img src="/img/v2/guides/beamable/beamable-clientid.png" alt="Add client ID to demo scene" />
 </Frame>
 
-Once you have added your client ID you can build it for Android.
+### 2. Ensure Microservices are Published
 
-Next, you will need to publish your microservice to Beamable. Once your microservice is published you will be able to use it from anywhere. Check out the [Publishing section](#publishing-your-microservice) to earn more:
+If you haven't already, you will need to publish your Microservice(s) to Beamable. Once your Microservice(s) are published, you will be able to use it from anywhere. See [Publish Select Microservices](#2-publish-select-microservices) for more details. 
 
-To see how to integrate the ZBD OAuth2 flow you can check out the “LoginController.cs” script. This handles the initial start of the login flow as well as the deep link.
+### 3. Build for Android 
 
-This class Handles both the microservice calls as well as the application logic to implement this functionality in Unity.
+You can now build your game for Android. Learn more [here](https://docs.unity3d.com/Manual/android-BuildProcess.html).
 
-### Publishing your microservice
+---
 
-When you are done developing and want to test on other devices you will need to publish your microservice to Beamable. We have only been using it locally to develop. But to access from anywhere else we will need to publish it.
-
-In the microservices tab in Unity click on “Publish”
-
-<Frame>
-  <img src="/img/v2/guides/beamable/beamable-publish.png" alt="Publish window in Unity" />
-</Frame>
-
-Make sure your microservice is toggled on in the publish window and then click “Publish”. This will publish your microservice to beamable and allow it to be accessed from anywhere.
-
-<Frame>
-  <img src="/img/v2/guides/beamable/beamable-deploy.png" alt="Publishing the microservice" />
-</Frame>
-
-To check the status of the microservice and to make sure it is running. Check out the microservices tab in the Beamable dashboard.
-
-<Frame>
-  <img src="/img/v2/guides/beamable/beamable-running.png" alt="Beamable dashboard microservice overview" />
-</Frame>
-
-For more details on this project make sure to check out the Beamable documentation here: [https://docs.beamable.com/docs/microservices-distributing](https://docs.beamable.com/docs/microservices-distributing)
-
-### Troubleshooting
+## Troubleshooting
 
 ### General Issues
 
@@ -249,7 +240,7 @@ If you are experiencing any issues here are a few things to check:
   <img src="/img/v2/guides/beamable/beamable-logged-in.png" alt="Logged in message" />
 </Frame>
 
-- **Make sure you have the correct game in Beamable selected in Unity**
+- **Make sure you have the correct game selected in the Beamable plugin within Unity**
 
 <Frame>
   <img src="/img/v2/guides/beamable/beamable-switch-game.png" alt="Switching games" />
@@ -259,7 +250,7 @@ If you are experiencing any issues here are a few things to check:
   <img src="/img/v2/guides/beamable/beamable-game-list.png" alt="Select the correct game in Beamable" />
 </Frame>
 
-- **Make sure you are in the correct Beamable Realm in Unity**
+- **Ensure you are in the correct Beamable Realm (environment) in Unity**
 
 <Frame>
   <img src="/img/v2/guides/beamable/beamable-env.png" width="500" alt="Correct Beamable realm" />
@@ -267,7 +258,9 @@ If you are experiencing any issues here are a few things to check:
 
 ### 403 Errors
 
-These issues are usually caused by an improper docker or microservice setup. A few steps to check are:
+These issues are usually caused by an improper Docker or Microservice setup. 
+
+A few things to check:
 
 - **Docker is installed correctly and running**
 
@@ -276,14 +269,14 @@ These issues are usually caused by an improper docker or microservice setup. A f
   <img src="/img/v2/guides/beamable/beamable-docker.png" alt="Docker not installed" />
 </Frame>
 
-- **The microservice is running locally when developing (this can be checked by the play button being highlighted in the microservices tab in Unity)**
+- **The Microservice is running locally when developing (this can be checked by the play button being highlighted in the Microservices tab in Unity)**
 
 <Frame>
   <img src="/img/v2/guides/beamable/beamable-microservice-running.png" alt="Microservice running" />
 </Frame>
 
-- **If you are working on a “Published" microservice. Make sure the microservice is published and deploy to the correct realm from the Beamable dashboard.**
+- **If you are expecting a `Published` Microservice, ensure the Microservice is published and deployed to the correct Realm from the Beamable Portal.**
 
 <Frame>
-  <img src="/img/v2/guides/beamable/beamable-running.png" alt="Beamable microservice dashboard overview" />
+  <img src="/img/v2/guides/beamable/beamable-running.png" alt="Beamable Microservice Portal overview" />
 </Frame>
