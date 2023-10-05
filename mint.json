@@ -284,7 +284,8 @@
             "courses/game-security/securing-data",
             "courses/game-security/app-check"
           ]
-        }
+        },
+        "courses/beamable-integration"
       ]
     },
     {
