@@ -35,7 +35,7 @@ With ZBD, it's easy! Anyone can do it. **[What are YOU building?](https://dashbo
 
 - [Help & Support](https://help.zebedee.io)
 - [Twitter](https://twitter.com/zebedeeio)
-- [Discord](https://discord.gg/zbd)
+- [Dev Discord](https://discord.gg/zbd)
 - [Download ZBD](https://zbd.gg)
 
 ## Contributing
