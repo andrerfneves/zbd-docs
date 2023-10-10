@@ -34,7 +34,7 @@
   "topbarLinks": [
     {
       "name": "Bounties",
-      "url": "https://console.algora.io/org/zebedeeio/bounties?status=open"
+      "url": "https://console.algora.io/org/zbd/bounties?status=open"
     },
     {
       "name": "API Status",
