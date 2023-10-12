@@ -8,6 +8,8 @@ api: "GET https://api.zebedee.io/v0/charges/{id}"
 
 <Tip>While the best approach is to rely on the `callbackUrl` property and expect async Charge updates sent from ZBD servers, this API can be used to check any information about any Charge, specifically properties such as `status` and `internalId` which are likely useful for your application.</Tip>
 
+<Note>For most use cases it is unlikely you will hit a rate limit, however it is recommended to avoid practices such as "long polling" especially if your server collectively "long polls" for multiple clients as this could cumulatively cause a rate limit to be reached.</Note>
+
 ## Configuration
 
 ### Path Parameters
