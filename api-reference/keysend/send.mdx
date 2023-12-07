@@ -41,18 +41,24 @@ Additional metadata and TLV record data can be attached to this endpoint as well
 </ParamField>
 
 <ParamField initialValue="‎" body="callbackUrl" type="string">
-  The endpoint ZBD will POST Charge updates to
+  The endpoint ZBD will POST Keysend Payment updates to
 </ParamField>
 
-<ParamField initialValue={{"id": 1}} body="metadata" type="object">
+<ParamField initialValue={{id: 1}} body="metadata" type="object">
   Open metadata object property
 </ParamField>
 
-<ParamField initialValue={[]} body="tlvRecords" type="array">
-  TLV data records
+<ParamField initialValue={[{ type: 123, value: 'customeValue' }]} body="tlvRecords" type="array">
+  List of TLV records
+  <Expandable title="tlvRecord" defaultOpen>
+    <ParamField body="type" type="number" initialValue={123}>
+      type of the TLV record
+    </ParamField>
+    <ParamField body="value" type="string" initialValue="myTLVRecordValue">
+      value of the TLV record
+    </ParamField>
+  </Expandable>
 </ParamField>
-
-<CodeGroup />
 
 <ResponseExample>
 
