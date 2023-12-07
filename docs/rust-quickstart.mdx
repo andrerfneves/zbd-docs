@@ -52,7 +52,7 @@ use zebedee_rust::{charges::*, ZebedeeClient};
 
 #[tokio::main]
 async fn main(){
-    let apikey: String = end::var("ZBD_API_KEY").unwrap();
+    let apikey: String = env::var("ZBD_API_KEY").unwrap();
     let zbd_client = ZebedeeClient::new().apikey(apikey).build();
 
     let charge = Charge{
