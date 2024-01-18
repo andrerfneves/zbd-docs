@@ -286,7 +286,14 @@
             "courses/game-security/app-check"
           ]
         },
-        "courses/beamable-integration"
+        "courses/beamable-integration",
+        {
+          "group": "Rewarded Play",
+          "pages": [
+            "courses/rewarded-play/introduction-to-rewarded-play",
+            "courses/rewarded-play/integrating-player-rewards-in-a-game"
+          ]
+        }
       ]
     },
     {
