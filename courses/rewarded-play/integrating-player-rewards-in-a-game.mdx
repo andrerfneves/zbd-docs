@@ -1,5 +1,6 @@
 ---
-title: 'Integrating player rewards in a game'
+title: 'Integrating Player Rewards in a Game'
+sidebarTitle: 'Integration Player Rewards'
 description: 'From setting up your account, to using our APIs in a secure way and massively engaging your users with Bitcoin rewards!'
 ---
 
@@ -7,12 +8,10 @@ This guide will take you step by step through everything you need to know to int
 
 Here's what's in this guide:
 
-|Section|What you’ll learn|Key points|
-|----|----|----|
-| [Setting up your account](#setting-up-your-account) |Signing up and funding your account.|- Main wallet holds most of your funds|
-|||-Project wallets are connected to games and have API keys attached to them|
-| [Under the hood: ZBD API in your game](#under-the-hood) |The backend part of using ZBD.|- Store API keys on a secure server!|
-|||- The two recommended ZBD integration paths: Send to Email vs Log in with ZBD|
+|Section    |What you’ll learn|Key points|
+|--------|----|----|
+| [Setting up your account](#setting-up-your-account) |Signing up and funding your account.|- Main wallet holds most of your funds <br/><br/> -Project wallets are connected to games and have API keys attached to them|
+| [Under the hood: ZBD API in your game](#under-the-hood) |The backend part of using ZBD.|- Store API keys on a secure server! <br/><br/> - The two recommended ZBD integration paths: Send to Email vs Log in with ZBD|
 | [The front-end: In-game UI/UX](#the-front-end) |The front end part: How players withdraw rewards and how they earn them in the first place.|- Creating a withdrawal flow (with a premade template)|
 |||- Earning mechanics: Simple on-size-fits-all vs custom integrations to fit a specific game|
 
@@ -34,17 +33,17 @@ You will then have to do the following:
     + **If you didn’t sign up with a code**, that’s totally fine. Just complete the simple ID verification process in our platform
 
 ### Step 2: Create and fund Project
-#### There are two types of wallets inside the ZBD Dashboard:
+**There are two types of wallets inside the ZBD Dashboard:**
 1. Main wallet - this is very secure and should hold most of your Bitcoin
 2. Projects - these are connected to API keys and should be topped up in small amounts regularly, to protect your funds from bots, hackers or simple mistakes.
     + **RULE OF THUMB**: Create one project per game. So basically ZBD Project = rewards wallet for your game. We recommend you give your project the same name as your game.
     + **STATING THE OBVIOUS**: If someone gets a hold of the API keys for your project wallet, they can drain all the Bitcoin inside that project.
 
-### Now, your project needs funds.
+**Now, your project needs funds.**
 
 **First, get some Bitcoin to your main wallet**. You can do this by pressing the *charge* button on the [wallet page](https://dashboard.zebedee.io/wallet) and making a transfer from any Bitcoin Lightning wallet or exchange that supports the Lightning protocol.
 
-If you don’t have access to an exchange account, our dashboard also features a Sandbox mode to get you started with testing payments. Just make sure you’re using our [Sandbox APIs and keys](https://zbd.dev/api-reference/zbd-user/sandbox/send), they’re separate from production ones!
+If you don’t have access to an exchange account, our dashboard also features a Sandbox mode to get you started with testing payments. Just make sure you’re using our [Sandbox APIs and keys](https://zbd.dev/api-reference/zbd-gamertag/sandbox/send), they’re separate from production ones!
 
 More ways to top up your balance from the ZBD Dashboard are coming soon!
 
@@ -56,9 +55,10 @@ More ways to top up your balance from the ZBD Dashboard are coming soon!
 <br />
 
 ## Under the hood
-**ZBD API in your game**
 
-### Before you get started: Do you have a server?
+### ZBD API in your game
+
+**Before you get started: Do you have a server?**
 
 We realize many games don’t require running any server-side code. For hypercasual and casual mobile games especially, it’s usually totally fine to run all code on the client. Unfortunately, this won’t work when you’re integrating any sort of real-money functionality.
 
@@ -67,11 +67,23 @@ We realize many games don’t require running any server-side code. For hypercas
 1. Your ZBD Project API keys - this gives access to sending out rewards
 2. User balances - how much a user has earned and not withdrawn yet
 
-#### No server? No worries, we have a solution
+**No server? No worries, we have a solution**
 
 We’ve partnered with **Beamable** to provide game devs without existing server infra with a simple yet powerful and safe solution. Sounds interesting? [Sign up for a Beamable account here](https://beamable.com/?referral=zbd).
 
-For a step by step guide on how to set up ZBD using Beamable for a Unity game, [click here](https://github.com/zebedeeio/beamable-starter).
+For a step by step guide on how to set up ZBD using Beamable for a Unity game:
+
+<br />
+<CardGroup cols={2}>
+  <Card title="Beamable + ZBD Guide" icon={<svg width="130" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 741.5 104.79"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><g id="Group_201" data-name="Group 201"><path id="Path_662" data-name="Path 662" fill="#000" d="M0,1.79H45.29A38.18,38.18,0,0,1,70.07,8.84a24.91,24.91,0,0,1,8.6,20.44,21.48,21.48,0,0,1-4.41,13.23,22.49,22.49,0,0,1-12.79,8.11,24.61,24.61,0,0,1,14.7,8.46,26.25,26.25,0,0,1,5.59,17.43,25.32,25.32,0,0,1-9.19,20.65,38.17,38.17,0,0,1-25.06,7.57H0ZM44.85,43.25a13.13,13.13,0,0,0,9.49-3.45,13.52,13.52,0,0,0,0-18.37A13.13,13.13,0,0,0,44.85,18H20.73V43.27Zm-1.76,45.3A21.19,21.19,0,0,0,56.6,84.94,15.81,15.81,0,0,0,56.6,63a21.12,21.12,0,0,0-13.51-3.6H20.73V88.55Z"></path><path id="Path_663" data-name="Path 663" fill="#000" d="M101.76,96.48a31.57,31.57,0,0,1-8.53-23.82V33.84A31.59,31.59,0,0,1,101.76,10q8.52-8.23,28.1-8.23h34.41V18H129.86a16.53,16.53,0,0,0-12,3.82,16.32,16.32,0,0,0-3.93,12.06V45.19h43.82V61.34H113.94V72.68a13.89,13.89,0,0,0,11.54,15.89,14.35,14.35,0,0,0,4.34,0h34.71v16.17H129.82Q110.29,104.73,101.76,96.48Z"></path><path id="Path_664" data-name="Path 664" fill="#000" d="M283.07,1.79H293.8A31.62,31.62,0,0,1,306.74,4a21.47,21.47,0,0,1,8.39,7,98.81,98.81,0,0,1,8.23,14.33l8.53,17.21,8.53-17.21A98.81,98.81,0,0,1,348.65,11,21.44,21.44,0,0,1,357,4a31.69,31.69,0,0,1,13-2.2h10.73V104.72H361.89V23.4A3.53,3.53,0,0,0,359,25a66.33,66.33,0,0,0-3.53,5.74L331.89,74.43,308.36,30.76Q306,26.64,304.83,25a4,4,0,0,0-2.94-1.77v81.47H283.07Z"></path><path id="Path_665" data-name="Path 665" fill="#000" d="M460.11,80.75H419.82l-6.91,24H392.17l25.15-82A60.54,60.54,0,0,1,422.91,9a17.77,17.77,0,0,1,7-6.91A22.16,22.16,0,0,1,440,0a21.66,21.66,0,0,1,10,2.06A18.48,18.48,0,0,1,457,9a58.43,58.43,0,0,1,5.66,13.68l25.14,82.05H467Zm-4.56-15.44L443.2,23q-1-3.83-3.24-3.82T436.71,23L424.36,65.31Z"></path><path id="Path_666" data-name="Path 666" fill="#000" d="M499.23,1.79h45.29A38.2,38.2,0,0,1,569.3,8.84a24.94,24.94,0,0,1,8.6,20.44,21.49,21.49,0,0,1-4.42,13.23,22.49,22.49,0,0,1-12.79,8.11,24.67,24.67,0,0,1,14.71,8.46A26.24,26.24,0,0,1,581,76.51a25.34,25.34,0,0,1-9.18,20.65,38.21,38.21,0,0,1-25.07,7.57h-47.5Zm44.85,41.46a13.09,13.09,0,0,0,9.48-3.45,13.5,13.5,0,0,0,0-18.37A13.09,13.09,0,0,0,544.08,18H520V43.27Zm-1.76,45.3a21.19,21.19,0,0,0,13.51-3.61,15.81,15.81,0,0,0,0-21.91,21.18,21.18,0,0,0-13.51-3.6H520V88.55Z"></path><path id="Path_667" data-name="Path 667" fill="#000" d="M601,96.48a32.4,32.4,0,0,1-8.16-23.82V1.79h20.76V72.66a17.39,17.39,0,0,0,3.53,12A14,14,0,0,0,628,88.55h33v16.17H628Q609.16,104.72,601,96.48Z"></path><path id="Path_668" data-name="Path 668" fill="#000" d="M678.7,96.48a31.57,31.57,0,0,1-8.53-23.82V33.84A31.59,31.59,0,0,1,678.7,10q8.52-8.23,28.1-8.23h34.41V18H706.8a16.53,16.53,0,0,0-12,3.82,16.28,16.28,0,0,0-3.9,12.06V45.19h43.82V61.34H690.91V72.68a13.89,13.89,0,0,0,11.54,15.89,14.35,14.35,0,0,0,4.34,0H741.5v16.17H706.79Q687.23,104.73,678.7,96.48Z"></path><path id="Path_669" data-name="Path 669" fill="#04c6f1" d="M250.87,104.71H271.6l-25.14-82A58.46,58.46,0,0,0,240.79,9a18.45,18.45,0,0,0-7-6.91,21.7,21.7,0,0,0-10-2.06,22.15,22.15,0,0,0-10.07,2.06,17.73,17.73,0,0,0-7,6.91,61,61,0,0,0-5.59,13.68L176,104.71h20.73c10.73-37.21-1.89,6.41,23.82-81.75q1-3.83,3.24-3.82T227.06,23C252,108.59,237.21,57.41,250.87,104.71Z"></path></g></g></g></svg>} href="/courses/beamable-integration">
+    Step by step integration guide for games using Beamable and ZBD.
+  </Card>
+
+  <Card title="Starter Source Code" color="black" icon={"github"} href="https://github.com/zebedeeio/beamable-starter">
+    View the source code for an example implementation of Beamable and ZBD.
+  </Card>
+</CardGroup>
+<br />
 
 #### Storing your API key
 
@@ -172,9 +184,10 @@ First, you need to integrate Log in with ZBD - this is built on the OAuth2 proto
 
 Log in with ZBD is a way to get user data. You can use it to fetch a user’s ZBD Gamertag (basically their username on our system). To make payments, you just use our standard Send to Gamertag API.
 
-It’s similar to sending to email. To learn how to Send to Gamertag, check our docs [here](https://zbd.dev/api-reference/zbd-user/send).
+It’s similar to sending to email. To learn how to Send to Gamertag, check our docs [here](https://zbd.dev/api-reference/zbd-gamertag/send).
 
 ## The front-end
+
 **In-game UI/UX**
 
 This part of the guide will look at two things:
@@ -185,7 +198,7 @@ This part of the guide will look at two things:
 
 Why are we starting with how users claim rewards and not with how they get them? Because this part is simple and we have established very clear best-practices and prototypes. So this should be a breeze! 
 
-#### The components
+**The Components**
 
 This is what you’ll need to show inside your game:
 1. Reward counter - how much the user has earned (and not withdrawn yet)

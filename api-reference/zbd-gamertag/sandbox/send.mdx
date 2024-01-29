@@ -1,14 +1,8 @@
 ---
-title: "Pay to ZBD Username"
-description: "Start sending test Bitcoin payments to ZBD Users."
+title: "Pay to ZBD Gamertag"
+description: "Start sending test Bitcoin payments to ZBD Gamertags."
 api: "POST https://sandbox-api.zebedee.io/v0/gamertag/send-payment"
 ---
-
-<Warning>
-  ZBD API is migrating the terminology from **ZBD Gamertags** to **ZBD Usernames**. There are no breaking changes to you as a developer.
-
-  In general, if you used to search for 'Gamertag' inside zbd.dev documentation, now search for 'Username'. Please do also note some ZBD API endpoints are still using `gamertag` in the URL.
-</Warning>
 
 <Info>
 This API endpoint is to be used with the ZBD Sandbox API. To use this API you must first create a Project in the [ZBD Dev Dashboard](https://dashboard.zebedee.io/) and then generate a Sandbox API Key.
@@ -43,7 +37,7 @@ The idea behind this API endpoint is to allow developers integrating ZBD Gamerta
 </ParamField>
 
 <ParamField required body="gamertag" type="string">
-  Destination SANDBOX ZBD Username
+  Destination SANDBOX ZBD Gamertag
 </ParamField>
 
 <ParamField initialValue="‎" body="description" type="string">

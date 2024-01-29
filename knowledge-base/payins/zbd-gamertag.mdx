@@ -1,19 +1,13 @@
 ---
-title: 'Request Charge for ZBD User'
+title: 'Request Charge for ZBD Gamertag'
 description: 'Learn how to generate payment requests specifically for ZBD users.'
 ---
 
-<Warning>
-  ZBD API is migrating the terminology from **ZBD Gamertags** to **ZBD Usernames**. There are no breaking changes to you as a developer.
+## ZBD Gamertag Charge API
 
-  In general, if you used to search for 'Gamertag' inside zbd.dev documentation, now search for 'Username'. Please do also note some ZBD API endpoints are still using `gamertag` in the URL.
-</Warning>
+While you can use the [Send Bitcoin to ZBD Gamertag](/api-reference/zbd-gamertag/send) endpoint to make a direct payment to a ZBD user, if you want to create a regular Lightning Network payment request / Charge QR code for that given user, you can do so using the [Create Charge for ZBD Gamertag](/api-reference/zbd-gamertag/create) endpoint.
 
-## ZBD Username Charge API
-
-While you can use the [Send Bitcoin to ZBD Username](/api-reference/zbd-user/send) endpoint to make a direct payment to a ZBD user, if you want to create a regular Lightning Network payment request / Charge QR code for that given user, you can do so using the [Create Charge for ZBD Username](/api-reference/zbd-user/create) endpoint.
-
-In order to request Charges from a ZBD Username you just need to make a simple API call with a payload like the example below.
+In order to request Charges from a ZBD Gamertag you just need to make a simple API call with a payload like the example below.
 
 ```bash
 curl --location --request POST 'https://api.zebedee.io/v0/gamertag/charges' \
@@ -53,21 +47,21 @@ The response payload will include a **`invoiceRequest`** which is the contents o
 
 Once a payment is made and the Charge settles, the ZBD User will receive a Push Notification alerting them they've been sent some Bitcoin.
 
-## Multiplayer Commerce through ZBD Username Charges
+## Multiplayer Commerce through ZBD Gamertag Charges
 
-For App or Game Developers that wish to provide a more robust commerce experience for their users and gamers, requesting an invoice from ZBD Usernames can be one of the ways.
+For App or Game Developers that wish to provide a more robust commerce experience for their users and gamers, requesting an invoice from ZBD Gamertags can be one of the ways.
 
 **Think of yourself, the Developer, as the Orchestrator of payments.**
 
-By leveraging Lightning Network invoices tied to specific ZBD Username, you can ensure that the payment is made to the correct user, and that the payment has truly settled.
+By leveraging Lightning Network invoices tied to specific ZBD Gamertag, you can ensure that the payment is made to the correct user, and that the payment has truly settled.
 
 ### 1. Two-Step Payment Orchestration
 
 Let's say **Alice** wants to buy a sword from **Bob** inside of the game. Well that's easy, and there's two ways:
 
-### 2. ZBD Username Charges
+### 2. ZBD Gamertag Charges
 
-You can use the above endpoint to create a Charge from **Bob**'s ZBD Username, and display it for **Alice** to pay. Pass a `callbackUrl` on the ZBD API request and when the payment settles, you will be alerted of it and can then transfer the sword asset inside the game.
+You can use the above endpoint to create a Charge from **Bob**'s ZBD Gamertag, and display it for **Alice** to pay. Pass a `callbackUrl` on the ZBD API request and when the payment settles, you will be alerted of it and can then transfer the sword asset inside the game.
 
 **Yes, it's really that simple!**
 
@@ -77,6 +71,6 @@ Alternatively you could rely on the Project's own Wallet as a form of escrow. Yo
 
 <Info>Alice will effectively be paying the Project Wallet in this scenario.</Info>
 
-Once payment is settled, you can use the [Send Bitcoin to ZBD Username](/api-reference/zbd-user/send) endpoint and send the same amount to **Bob**. When this second payment settles you can then transfer the sword asset inside the game.
+Once payment is settled, you can use the [Send Bitcoin to ZBD Gamertag](/api-reference/zbd-gamertag/send) endpoint and send the same amount to **Bob**. When this second payment settles you can then transfer the sword asset inside the game.
 
 While this technically involves two transactions, it provides a bit more control to the Developer that wishes to manage the transfer of assets/in-game items a bit more closely and with more checks and balances in place. Both approaches are recommended.

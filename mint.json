@@ -204,7 +204,7 @@
       "group": "Payouts",
       "pages": [
         "knowledge-base/payouts/lightning-address",
-        "knowledge-base/payouts/zbd-user",
+        "knowledge-base/payouts/zbd-gamertag",
         "knowledge-base/payouts/email",
         "knowledge-base/payouts/withdrawal-requests",
         "knowledge-base/payouts/lightning-charges"
@@ -214,7 +214,7 @@
       "group": "Payins",
       "pages": [
         "knowledge-base/payins/charges",
-        "knowledge-base/payins/zbd-user"
+        "knowledge-base/payins/zbd-gamertag"
       ]
     },
     {
@@ -270,6 +270,14 @@
     {
       "group": "Bitcoin Gaming",
       "pages": [
+        {
+          "group": "Rewarded Play",
+          "pages": [
+            "courses/rewarded-play/introduction",
+            "courses/rewarded-play/integrating-player-rewards-in-a-game"
+          ]
+        },
+        "courses/beamable-integration",
         "courses/build-bitcoin-game",
         {
           "group": "Game Dev Security",
@@ -284,14 +292,6 @@
             "courses/game-security/replay-attacks",
             "courses/game-security/securing-data",
             "courses/game-security/app-check"
-          ]
-        },
-        "courses/beamable-integration",
-        {
-          "group": "Rewarded Play",
-          "pages": [
-            "courses/rewarded-play/introduction-to-rewarded-play",
-            "courses/rewarded-play/integrating-player-rewards-in-a-game"
           ]
         }
       ]
@@ -334,15 +334,13 @@
       ]
     },
     {
-      "group": "Payment",
-      "pages": ["api-reference/payments/send", "api-reference/payments/get"]
-    },
-    {
-      "group": "Charge",
+      "group": "ZBD Gamertag",
       "pages": [
-        "api-reference/charges/create",
-        "api-reference/charges/get",
-        "api-reference/charges/decode"
+        "api-reference/zbd-gamertag/send",
+        "api-reference/zbd-gamertag/get",
+        "api-reference/zbd-gamertag/create",
+        "api-reference/zbd-gamertag/get-userid",
+        "api-reference/zbd-gamertag/get-gamertag"
       ]
     },
     {
@@ -357,6 +355,18 @@
       "group": "Email",
       "pages": [
         "api-reference/email/send"
+      ]
+    },
+    {
+      "group": "Payment",
+      "pages": ["api-reference/payments/send", "api-reference/payments/get"]
+    },
+    {
+      "group": "Charge",
+      "pages": [
+        "api-reference/charges/create",
+        "api-reference/charges/get",
+        "api-reference/charges/decode"
       ]
     },
     {
@@ -392,16 +402,6 @@
       "pages": ["api-reference/keysend/send"]
     },
     {
-      "group": "ZBD User",
-      "pages": [
-        "api-reference/zbd-user/send",
-        "api-reference/zbd-user/get",
-        "api-reference/zbd-user/create",
-        "api-reference/zbd-user/get-userid",
-        "api-reference/zbd-user/get-username"
-      ]
-    },
-    {
       "group": "Utility",
       "pages": [
         "api-reference/utils/btc-usd",
@@ -410,7 +410,7 @@
         "api-reference/internal-transfer/create",
         {
           "group": "Sandbox APIs",
-          "pages": ["api-reference/zbd-user/sandbox/send"]
+          "pages": ["api-reference/zbd-gamertag/sandbox/send"]
         }
       ]
     },
@@ -448,6 +448,34 @@
     {
       "source": "/api/:path((?!request$).*)",
       "destination": "/api-reference/:path*"
+    },
+    {
+      "source": "/api-reference/zbd-user/send",
+      "destination": "/api-reference/zbd-gamertag/send"
+    },
+    {
+      "source": "/api-reference/zbd-user/get",
+      "destination": "/api-reference/zbd-gamertag/get"
+    },
+    {
+      "source": "/api-reference/zbd-user/create",
+      "destination": "/api-reference/zbd-gamertag/create"
+    },
+    {
+      "source": "/api-reference/zbd-user/get-userid",
+      "destination": "/api-reference/zbd-gamertag/get-userid"
+    },
+    {
+      "source": "/api-reference/zbd-user/get-username",
+      "destination": "/api-reference/zbd-gamertag/get-gamertag"
+    },
+    {
+      "source": "/knowledge-base/payouts/zbd-user",
+      "destination": "/knowledge-base/payouts/zbd-gamertag"
+    },
+    {
+      "source": "/knowledge-base/payins/zbd-user",
+      "destination": "/knowledge-base/payins/zbd-gamertag"
     }
   ]
 }
